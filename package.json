@@ -18,6 +18,7 @@
     "url": "https://github.com/EliseAur/aurtande-auctions/issues"
   },
   "devDependencies": {
+    "live-server": "^1.2.2",
     "sass": "^1.71.1"
   }
 }
