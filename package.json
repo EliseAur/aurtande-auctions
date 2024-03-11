@@ -16,5 +16,8 @@
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/EliseAur/aurtande-auctions/issues"
+  },
+  "devDependencies": {
+    "sass": "^1.71.1"
   }
 }
