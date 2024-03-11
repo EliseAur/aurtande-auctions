@@ -1,12 +1,16 @@
 {
   "name": "aurtande-auctions",
   "version": "0.0.1",
-  "description": "",
+  "description": "Semester Project 2 - Create an Auction website using an API powered by Noroff",
+  "type": "module",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git"
+  },
   "keywords": [],
-  "author": "",
+  "author": "Elise Aurtande <elise.aurtande@gmail.com>",
   "license": "ISC"
 }
