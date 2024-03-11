@@ -13,5 +13,8 @@
   },
   "keywords": [],
   "author": "Elise Aurtande <elise.aurtande@gmail.com>",
-  "license": "ISC"
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EliseAur/aurtande-auctions/issues"
+  }
 }
