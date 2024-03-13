@@ -22,6 +22,7 @@
     "url": "https://github.com/EliseAur/aurtande-auctions/issues"
   },
   "devDependencies": {
+    "eslint": "^8.57.0",
     "live-server": "^1.2.2",
     "prettier": "^3.2.5",
     "sass": "^1.71.1"
