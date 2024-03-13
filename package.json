@@ -9,7 +9,8 @@
     "watch": "sass src/scss:dist/css --watch & live-server",
     "start": "live-server",
     "dev": "npm-run-all --parallel watch start",
-    "format": "prettier -w src/**/*js"
+    "format": "prettier -w src/**/*js",
+    "lint": "eslint src/**/*.js"
   },
   "repository": {
     "type": "git",
