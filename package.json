@@ -10,7 +10,8 @@
     "start": "live-server",
     "dev": "npm-run-all --parallel watch start",
     "format": "prettier -w src/**/*js",
-    "lint": "eslint src/**/*.js"
+    "lint": "eslint src/**/*.js",
+    "lint-fix": "eslint src/**/*.js --cache --fix"
   },
   "repository": {
     "type": "git",
