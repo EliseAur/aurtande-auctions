@@ -1,0 +1,14 @@
+.nav-link {
+  border-radius: $btn-border-radius;
+
+  &:hover,
+  &:focus {
+    border-radius: $btn-border-radius;
+  }
+}
+
+.current {
+  text-decoration: underline;
+  text-underline-offset: 0.2rem;
+  text-decoration-thickness: 2px;
+}

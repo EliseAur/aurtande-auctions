@@ -1,0 +1,64 @@
+.form-control {
+  border-radius: $btn-border-radius;
+  background-clip: border-box;
+
+  &:focus {
+    box-shadow: none;
+  }
+}
+
+// .signin-content .form-control {
+//     height: 48.5px;
+// }
+
+.input-group {
+  border-radius: $btn-border-radius;
+}
+
+.input-group .form-control {
+  border-width: $card-border-width;
+  background-color: $card-bg;
+}
+
+.form-signin {
+  max-width: 400px;
+}
+.form-signin a {
+  font-size: 18px;
+}
+
+// .form-signin a {
+//     display: flex;
+//     justify-content: center;
+// }
+
+.valid-feedback,
+.invalid-feedback {
+  color: $navbar-dark-color;
+  border-radius: $btn-border-radius;
+}
+
+.feed__posts select {
+  background-color: $card-bg;
+  width: 179px;
+  border-width: $btn-border-width;
+  border-color: $card-bg;
+
+  &:hover,
+  &:active,
+  &:focus {
+    background: $card-bg;
+    border-width: $btn-border-width;
+    border-color: $card-bg;
+  }
+}
+
+.help {
+  display: none;
+}
+
+input:invalid + .help {
+  display: block;
+  border-radius: $btn-border-radius;
+  font-size: 14px;
+}

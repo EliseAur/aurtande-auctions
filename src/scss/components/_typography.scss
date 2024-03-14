@@ -1,0 +1,33 @@
+body {
+  font-family: $body-font-family;
+}
+
+h1,
+h3,
+.btn,
+.nav-link,
+.feed-name,
+.navbar-brand {
+  font-style: italic;
+}
+
+h1,
+.btn,
+.feed-name {
+  font-weight: 800;
+}
+
+.nav-link,
+option {
+  font-weight: 400;
+}
+
+.comment,
+.add-comment .btn,
+.add-comment .form-control {
+  font-size: $font-size-tiny;
+}
+
+.signin-content .btn-secondary {
+  font-size: 20px;
+}

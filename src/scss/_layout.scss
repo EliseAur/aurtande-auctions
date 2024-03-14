@@ -1,0 +1,53 @@
+.feed__share,
+.profile {
+  padding-top: 100px;
+}
+
+.follow-button {
+  width: 154px;
+}
+
+.profile-image,
+.user-img {
+  width: 65px;
+  height: 65px;
+}
+
+.comment {
+  border-radius: $btn-border-radius;
+}
+
+.profile__info,
+.profile__follow,
+.profile__bio {
+  border-radius: $card-border-radius;
+}
+
+.nameAndTitleDiv {
+  overflow: hidden;
+}
+
+#postContainer .feed-post {
+  margin-top: 30px;
+}
+
+.buttonDiv {
+  grid-template-columns: 94px 94px auto;
+}
+
+.buttonDiv small {
+  grid-column: 4;
+}
+
+.viewMoreButton {
+  max-width: 94px;
+}
+
+.commentCount,
+.reactionsCount {
+  max-width: 50px;
+}
+
+.navbar-brand img {
+  max-width: 200px;
+}
