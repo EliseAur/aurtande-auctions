@@ -1,7 +1,8 @@
 //Overwrites
 $primary: #212529;
 $secondary: #9be2f2;
-$body-bg: #f8f2e9;
+$main-bg: #f8f2e9;
+$body-bg: $primary;
 $card-bg: $body-bg;
 $input-bg: #fff;
 $navbar-dark-color: $input-bg;
@@ -11,7 +12,7 @@ $card-border-radius: 20px;
 $btn-border-radius-lg: 0.2rem;
 $btn-border-radius: 0.2rem;
 $card-border-width: 0;
-$body-font-family: 'trade-gothic-next', sans-serif; //custom
+$body-font-family: "trade-gothic-next", sans-serif; //custom
 // $input-border-width: 2.7px;
 // $input-focus-border-width: 2.7px;
 $input-border-color: $primary;

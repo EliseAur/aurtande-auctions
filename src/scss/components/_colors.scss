@@ -1,19 +1,21 @@
-// .body-signin {
-//     background-color: $bg-blue-grey-custom;
-// }
+.body-signin {
+  background-color: $main-bg;
+}
 
+main {
+  background-color: $main-bg;
+}
 .comment {
   background-color: $card-bg;
 }
 
 .form-signin {
-  background: url('../../images/login-hammer.png') center no-repeat;
+  background: url("../../../images/login-hammer.png") center no-repeat;
   background-size: cover;
 }
 
 .feed__share {
-  background: url('../../images/Two-people-workout-AdobeStock_195639931\(1\).jpg')
-    top no-repeat;
+  background: url("../../../images/home-background-2.png") bottom no-repeat;
   background-size: cover;
 }
 

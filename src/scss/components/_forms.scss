@@ -39,17 +39,19 @@
 }
 
 .feed__posts select {
-  background-color: $card-bg;
+  background-color: $primary;
+  color: $input-bg;
   width: 179px;
-  border-width: $btn-border-width;
-  border-color: $card-bg;
+  // border-width: $btn-border-width;
+  // border-color: $card-bg;
 
   &:hover,
   &:active,
   &:focus {
-    background: $card-bg;
-    border-width: $btn-border-width;
-    border-color: $card-bg;
+    background: $primary;
+    color: #fff;
+    // border-width: $btn-border-width;
+    // border-color: $card-bg;
   }
 }
 

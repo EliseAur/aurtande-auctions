@@ -81,8 +81,8 @@
   --bs-body-line-height: 1.5;
   --bs-body-color: #212529;
   --bs-body-color-rgb: 33, 37, 41;
-  --bs-body-bg: #f8f2e9;
-  --bs-body-bg-rgb: 248, 242, 233;
+  --bs-body-bg: #212529;
+  --bs-body-bg-rgb: 33, 37, 41;
   --bs-emphasis-color: #000;
   --bs-emphasis-color-rgb: 0, 0, 0;
   --bs-secondary-color: rgba(33, 37, 41, 0.75);
@@ -2457,10 +2457,10 @@ textarea.form-control-lg {
   outline: 0;
 }
 .form-range:focus::-webkit-slider-thumb {
-  box-shadow: 0 0 0 1px #f8f2e9, 0 0 0 0.25rem rgba(33, 37, 41, 0.25);
+  box-shadow: 0 0 0 1px #212529, 0 0 0 0.25rem rgba(33, 37, 41, 0.25);
 }
 .form-range:focus::-moz-range-thumb {
-  box-shadow: 0 0 0 1px #f8f2e9, 0 0 0 0.25rem rgba(33, 37, 41, 0.25);
+  box-shadow: 0 0 0 1px #212529, 0 0 0 0.25rem rgba(33, 37, 41, 0.25);
 }
 .form-range::-moz-focus-outer {
   border: 0;
@@ -4308,7 +4308,7 @@ textarea.form-control-lg {
   --bs-card-cap-color: ;
   --bs-card-height: ;
   --bs-card-color: ;
-  --bs-card-bg: #f8f2e9;
+  --bs-card-bg: #212529;
   --bs-card-img-overlay-padding: 1rem;
   --bs-card-group-margin: 0.75rem;
   position: relative;
@@ -11883,7 +11883,7 @@ textarea.form-control-lg {
 
 .input-group .form-control {
   border-width: 0;
-  background-color: #f8f2e9;
+  background-color: #212529;
 }
 
 .form-signin {
@@ -11901,15 +11901,13 @@ textarea.form-control-lg {
 }
 
 .feed__posts select {
-  background-color: #f8f2e9;
+  background-color: #212529;
+  color: #fff;
   width: 179px;
-  border-width: var(--bs-border-width);
-  border-color: #f8f2e9;
 }
 .feed__posts select:hover, .feed__posts select:active, .feed__posts select:focus {
-  background: #f8f2e9;
-  border-width: var(--bs-border-width);
-  border-color: #f8f2e9;
+  background: #212529;
+  color: #fff;
 }
 
 .help {
@@ -11937,6 +11935,8 @@ h3,
 }
 
 h1, .h1,
+h2,
+.h2,
 .btn,
 .feed-name {
   font-weight: 800;
@@ -11957,17 +11957,25 @@ option {
   font-size: 20px;
 }
 
-.comment {
+.body-signin {
   background-color: #f8f2e9;
 }
 
+main {
+  background-color: #f8f2e9;
+}
+
+.comment {
+  background-color: #212529;
+}
+
 .form-signin {
-  background: url("../../images/login-hammer.png") center no-repeat;
+  background: url("../../../images/login-hammer.png") center no-repeat;
   background-size: cover;
 }
 
 .feed__share {
-  background: url("../../images/Two-people-workout-AdobeStock_195639931(1).jpg") top no-repeat;
+  background: url("../../../images/home-background-2.png") bottom no-repeat;
   background-size: cover;
 }
 
@@ -12009,9 +12017,7 @@ option {
 }
 
 .current {
-  text-decoration: underline;
-  text-underline-offset: 0.2rem;
-  text-decoration-thickness: 2px;
+  color: #9be2f2;
 }
 
 .feed__share,
