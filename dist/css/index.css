@@ -4299,16 +4299,16 @@ textarea.form-control-lg {
   --bs-card-subtitle-color: ;
   --bs-card-border-width: 0;
   --bs-card-border-color: var(--bs-border-color-translucent);
-  --bs-card-border-radius: 20px;
-  --bs-card-box-shadow: ;
-  --bs-card-inner-border-radius: 20px;
+  --bs-card-border-radius: 0.3rem;
+  --bs-card-box-shadow: 2px 3px 3px 3px lightgray;
+  --bs-card-inner-border-radius: 0.3rem;
   --bs-card-cap-padding-y: 0.5rem;
   --bs-card-cap-padding-x: 1rem;
   --bs-card-cap-bg: rgba(var(--bs-body-color-rgb), 0.03);
   --bs-card-cap-color: ;
   --bs-card-height: ;
   --bs-card-color: ;
-  --bs-card-bg: #212529;
+  --bs-card-bg: #F9F6F1;
   --bs-card-img-overlay-padding: 1rem;
   --bs-card-group-margin: 0.75rem;
   position: relative;
@@ -11883,7 +11883,7 @@ textarea.form-control-lg {
 
 .input-group .form-control {
   border-width: 0;
-  background-color: #212529;
+  background-color: #F9F6F1;
 }
 
 .form-signin {
@@ -11930,7 +11930,8 @@ h3,
 .btn,
 .nav-link,
 .feed-name,
-.navbar-brand {
+.navbar-brand,
+.card-title {
   font-style: italic;
 }
 
@@ -11965,8 +11966,10 @@ main {
   background-color: #f8f2e9;
 }
 
-.comment {
-  background-color: #212529;
+.comment,
+.list-group,
+.list-group-item {
+  background-color: #F9F6F1;
 }
 
 .form-signin {
@@ -11977,6 +11980,12 @@ main {
 .feed__share {
   background: url("../../../images/home-background-2.png") bottom no-repeat;
   background-size: cover;
+}
+
+.card-img-top {
+  background: url("../../../images/camera.jpg") center no-repeat;
+  background-size: cover;
+  height: 150px;
 }
 
 .navbar .form-control:focus, .navbar .form-control:hover {
@@ -12007,6 +12016,10 @@ main {
 .profile__info h3,
 .profile__info .h3 {
   color: #9be2f2;
+}
+
+.card {
+  box-shadow: 1px 1px 1px 1px lightgray;
 }
 
 .nav-link {
@@ -12042,7 +12055,7 @@ main {
 .profile__info,
 .profile__follow,
 .profile__bio {
-  border-radius: 20px;
+  border-radius: 0.3rem;
 }
 
 .nameAndTitleDiv {
@@ -12072,6 +12085,14 @@ main {
 
 .navbar-brand img {
   max-width: 200px;
+}
+
+.list-group-item-1 {
+  height: 67px;
+}
+
+.list-group-item-2 {
+  height: 90px;
 }
 
 /*# sourceMappingURL=index.css.map */
