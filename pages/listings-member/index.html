@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create Listing | AurtandeAuctions</title>
+    <link
+      rel="icon"
+      href="../../images/favicon-16x16.png"
+      type="image/png"
+      sizes="16x16"
+    />
+    <link rel="stylesheet" href="https://use.typekit.net/yyb1tse.css" />
+    <link rel="stylesheet" href="../../dist/css/index.css" />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+      integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+      crossorigin="anonymous"
+      defer
+    ></script>
+    <!-- <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+      crossorigin="anonymous"
+      defer
+    ></script> -->
+    <script src="../../src/js/index.js" defer type="module"></script>
+  </head>
+  <body class="px-0">
+    <header>
+      <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#"
+            ><img
+              src="../../images/logo-white-small.png"
+              class="img-fluid p-1"
+              alt="Logo - Aurtande Auctions"
+            />
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="material-symbols-outlined display-3"
+              ><i class="bi bi-list"></i
+            ></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a
+                  class="nav-link fs-6 py-1 px-2 my-2 mx-1 current"
+                  aria-current="page"
+                  href="#"
+                  ><i class="bi bi-house-fill me-1"></i>Listings</a
+                >
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link fs-6 py-1 px-2 my-2 mx-1"
+                  aria-current="page"
+                  href="../listing-member/create/index.html"
+                  ><i class="bi bi-file-post"></i>Create Listing</a
+                >
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link fs-6 py-1 px-2 my-2 mx-1"
+                  aria-current="page"
+                  href="../account/index.html"
+                  ><i class="bi bi-person-fill"></i>Account</a
+                >
+              </li>
+              <li class="nav-item">
+                <a
+                  id="signOutButton"
+                  class="nav-link fs-6 py-1 px-2 my-2 mx-1"
+                  href="../../index.html"
+                  ><i class="bi bi-door-closed-fill"></i>Sign out</a
+                >
+              </li>
+            </ul>
+            <form id="search-form" class="d-flex" role="search">
+              <input
+                id="search-input"
+                class="form-control me-2 my-2 h-75"
+                type="search"
+                placeholder="Search"
+                aria-label="Search"
+              />
+              <button class="btn btn-outline-success my-2 h-75" type="submit">
+                Search
+              </button>
+            </form>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main class="row g-0 m-0">
+      <section class="text-center container feed__listings">
+        <div class="col-sm-8 col-md-7 col-lg-6 col-xl-5 col-xxl-4 mx-auto py-4">
+          <h1 class="h2 text-center">Create a listing</h1>
+          <div class="btn-share mt-3">
+            <p>
+              Got something special to sell or showcase?<br />Turn your unique
+              items into treasures for others.<br /><strong
+                ><em
+                  >Create a listing now and let the bidding begin!</em
+                ></strong
+              >
+            </p>
+            <a
+              href="../listing-member/create/index.html"
+              class="w-50 btn btn-lg btn-secondary btn-create mt-3 py-1"
+              >Create Listing</a
+            >
+          </div>
+        </div>
+      </section>
+      <section
+        class="feed__posts container py-5 col-12 col-sm-9 col-md-11 col-lg-10 col-xl-9 col-xxl-8 mx-auto px-0"
+      >
+        <div class="container mx-auto">
+          <div
+            class="row d-flex flex-column flex-sm-row justify-content-between ms-2 mb-3"
+          >
+            <div class="feed__posts-heading ps-0">
+              <h1 class="h2 mb-0">Latest Listings</h1>
+              <p>Start your Journey to Exclusive Finds!</p>
+            </div>
+            <select
+              class="text-start fs-6 btn form-select form-control h-100"
+              id="sort-posts"
+            >
+              <option value="default">Latest Listings</option>
+              <option value="authorAZ">Author (A-Z)</option>
+              <option value="authorZA">Author (Z-A)</option>
+            </select>
+          </div>
+
+          <!-- List of posts -->
+          <div id="postList" class="col-12">
+            <div class="row row-cols-2 row-cols-md-3 row-cols-lg-4 g-2 g-sm-3">
+              <div class="col card-col">
+                <div class="card h-100">
+                  <div class="card-img-top"></div>
+                  <ul class="list-group list-group-flush">
+                    <li class="list-group-item list-group-item-1">
+                      <h5 class="card-title h6">Old and Retro Camera</h5>
+                    </li>
+                    <li class="list-group-item list-group-item-2">
+                      <p class="card-text mb-1">
+                        <strong>Last bid:</strong> 200 $
+                      </p>
+                      <p class="card-text">
+                        <strong>Time left:</strong> 2 Days, 4 Hours
+                      </p>
+                    </li>
+                    <li class="list-group-item">
+                      <a
+                        href="../listing-member/index.html"
+                        class="viewMoreButton btn btn-sm btn-primary w-100"
+                        >View more</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col card-col">
+                <div class="card h-100">
+                  <div class="card-img-top"></div>
+                  <ul class="list-group list-group-flush">
+                    <li class="list-group-item list-group-item-1">
+                      <h5 class="card-title h6">
+                        Collection Of Handmade Vases
+                      </h5>
+                    </li>
+                    <li class="list-group-item list-group-item-2">
+                      <p class="card-text mb-1">
+                        <strong>Last bid:</strong> 200 $
+                      </p>
+                      <p class="card-text">
+                        <strong>Time left:</strong> 2 Days, 4 Hours
+                      </p>
+                    </li>
+                    <li class="list-group-item">
+                      <a
+                        href="../post/index.html?id=11559"
+                        class="viewMoreButton btn btn-sm btn-primary w-100"
+                        >View more</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col card-col">
+                <div class="card h-100">
+                  <div class="card-img-top"></div>
+                  <ul class="list-group list-group-flush">
+                    <li class="list-group-item list-group-item-1">
+                      <h5 class="card-title h6">
+                        Exclusive Purse made in Leather
+                      </h5>
+                    </li>
+                    <li class="list-group-item list-group-item-2">
+                      <p class="card-text mb-1">
+                        <strong>Last bid:</strong> 200 $
+                      </p>
+                      <p class="card-text">
+                        <strong>Time left:</strong> 2 Days, 4 Hours
+                      </p>
+                    </li>
+                    <li class="list-group-item">
+                      <a
+                        href="../post/index.html?id=11559"
+                        class="viewMoreButton btn btn-sm btn-primary w-100"
+                        >View more</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col card-col">
+                <div class="card h-100">
+                  <div class="card-img-top"></div>
+                  <ul class="list-group list-group-flush">
+                    <li class="list-group-item list-group-item-1">
+                      <h5 class="card-title h6">
+                        One Of A Kind - High Fashion Pumps
+                      </h5>
+                    </li>
+                    <li class="list-group-item list-group-item-2">
+                      <p class="card-text mb-1">
+                        <strong>Last bid:</strong> 200 $
+                      </p>
+                      <p class="card-text">
+                        <strong>Time left:</strong> 2 Days, 4 Hours
+                      </p>
+                    </li>
+                    <li class="list-group-item">
+                      <a
+                        href="../post/index.html?id=11559"
+                        class="viewMoreButton btn btn-sm btn-primary w-100"
+                        >View more</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="bg-dark text-light py-4 text-center">
+      <p class="mb-1">© 2024 - AurtandeAuctions</p>
+      <p class="mb-0">Created by Elise Aurtande</p>
+    </footer>
+  </body>
+</html>

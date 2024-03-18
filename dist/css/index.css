@@ -11977,7 +11977,7 @@ main {
   background-size: cover;
 }
 
-.feed__share {
+.feed__listings {
   background: url("../../../images/home-background-2.png") bottom no-repeat;
   background-size: cover;
 }
@@ -12033,7 +12033,7 @@ main {
   color: #9be2f2;
 }
 
-.feed__share,
+.feed__listings,
 .profile {
   padding-top: 100px;
 }

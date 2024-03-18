@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sign in | AurtandeAuctions</title>
+    <title>Listings-member | AurtandeAuctions</title>
     <link
       rel="icon"
       href="../../../images/favicon-16x16.png"
@@ -24,21 +24,20 @@
       crossorigin="anonymous"
       defer
     ></script> -->
-    <script src="./src/js/index.js" defer type="module"></script>
+    <script src="../../../src/js/index.js" defer type="module"></script>
   </head>
   <body class="body-signin">
     <header>
       <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
           <!-- <h1 class="mb-0 lh-1"> -->
-          <a class="navbar-brand" href="#"
+          <a class="navbar-brand" href="../../../index.html"
             ><img
               src="../../../images/logo-white-small.png"
               class="img-fluid p-1"
-              alt="logo - Aurtande Auctions"
+              alt="Logo - Aurtande Auctions"
             />
           </a>
-          <!-- </h1> -->
           <button
             class="navbar-toggler"
             type="button"
@@ -62,13 +61,6 @@
                   ><i class="bi bi-house-fill me-1"></i>Listings</a
                 >
               </li>
-              <!-- <li class="nav-item">
-                <a
-                  class="nav-link fs-4 p-1 px-lg-3 my-2 m-lg-2"
-                  href="../profile/"
-                  >Profile</a
-                >
-              </li> -->
               <li class="nav-item">
                 <a
                   id="signOutButton"
@@ -97,15 +89,10 @@
     <main
       class="form-signin d-flex flex-column justify-content-center col-md-8 col-lg-6 col-xl-5 vh-100 mx-auto pt-3 px-4"
     >
-      <!-- <img
-        src="../../../images/logo-dark-transparent.png"
-        class="pt-1 pb-4 mt-1 px-4"
-        alt=""
-      /> -->
       <div class="signin-content px-2 px-4">
         <!--Login form  -->
-        <form id="loginForm">
-          <h1 class="mb-3">Sign in</h1>
+        <form id="loginForm" action="../../listings-member/index.html">
+          <h1 class="h2 mb-3">Sign in</h1>
           <div class="form-group mb-3">
             <label>E-mail</label>
             <input
@@ -129,14 +116,12 @@
               minlength="8"
             />
           </div>
-
           <button class="w-100 btn btn-lg btn-secondary py-1">Sign in</button>
         </form>
-
         <div class="form-group mb-3 mt-4">
           <label>Not a member yet?</label>
           <a
-            href="./profile/register/"
+            href="../register/index.html"
             class="w-100 btn btn-lg btn-primary btn-create py-1"
             >Create account</a
           >

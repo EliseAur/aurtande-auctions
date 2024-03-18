@@ -35,7 +35,7 @@
             ><img
               src="../../../images/logo-white-small.png"
               class="img-fluid p-1"
-              alt="logo - Aurtande Auctions"
+              alt="Logo - Aurtande Auctions"
             />
           </a>
           <!-- </h1> -->
@@ -56,25 +56,18 @@
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
                 <a
-                  class="nav-link fs-4 p-1 px-lg-3 my-2 m-lg-2 current"
+                  class="nav-link fs-6 py-1 px-2 my-2 mx-1 current"
                   aria-current="page"
                   href="#"
-                  ><i class="bi bi-house-fill me-1"></i>Listings</a
+                  ><i class="bi bi-house-fill me-1"></i> Listings</a
                 >
               </li>
-              <!-- <li class="nav-item">
-                <a
-                  class="nav-link fs-4 p-1 px-lg-3 my-2 m-lg-2"
-                  href="../profile/"
-                  >Profile</a
-                >
-              </li> -->
               <li class="nav-item">
                 <a
                   id="signOutButton"
-                  class="nav-link fs-4 p-1 px-lg-3 my-2 m-lg-2"
+                  class="nav-link fs-6 py-1 px-2 my-2 mx-1"
                   href="./pages/account/login/index.html"
-                  ><i class="bi bi-door-open-fill me-1"></i>Sign in</a
+                  ><i class="bi bi-door-open-fill me-1"></i> Sign in</a
                 >
               </li>
             </ul>
@@ -95,7 +88,7 @@
       </nav>
     </header>
     <main class="row g-0 m-0">
-      <section class="text-center container feed__share">
+      <section class="text-center container feed__listings">
         <div class="col-sm-8 col-md-7 col-lg-6 col-xl-5 col-xxl-4 mx-auto py-4">
           <h1 class="h2 text-center">Create a listing</h1>
           <div class="btn-share mt-3">
@@ -108,15 +101,15 @@
               >
             </p>
             <a
-              href="../post/create/index.html"
+              href="./pages/account/login/index.html"
               class="w-50 btn btn-lg btn-secondary btn-create mt-3 py-1"
-              >Create post</a
+              >Sign in</a
             >
           </div>
         </div>
       </section>
       <section
-        class="feed__posts container py-5 col-12 col-sm-12 col-md-12 col-lg-10 col-xl-9 col-xxl-6 mx-auto px-0"
+        class="feed__posts container py-5 col-12 col-sm-9 col-md-11 col-lg-10 col-xl-9 col-xxl-8 mx-auto px-0"
       >
         <div class="container mx-auto">
           <div
@@ -130,7 +123,7 @@
               class="text-start fs-6 btn form-select form-control h-100"
               id="sort-posts"
             >
-              <option value="default">Latest posts</option>
+              <option value="default">Latest Listings</option>
               <option value="authorAZ">Author (A-Z)</option>
               <option value="authorZA">Author (Z-A)</option>
             </select>
@@ -138,7 +131,7 @@
 
           <!-- List of posts -->
           <div id="postList" class="col-12">
-            <div class="row row-cols-2 row-cols-sm-3 row-cols-md-4 g-2">
+            <div class="row row-cols-2 row-cols-md-3 row-cols-lg-4 g-2 g-sm-3">
               <div class="col card-col">
                 <div class="card h-100">
                   <div class="card-img-top"></div>
