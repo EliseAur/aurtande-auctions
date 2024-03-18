@@ -4308,7 +4308,7 @@ textarea.form-control-lg {
   --bs-card-cap-color: ;
   --bs-card-height: ;
   --bs-card-color: ;
-  --bs-card-bg: #F9F6F1;
+  --bs-card-bg: #f9f6f1;
   --bs-card-img-overlay-padding: 1rem;
   --bs-card-group-margin: 0.75rem;
   position: relative;
@@ -11883,7 +11883,7 @@ textarea.form-control-lg {
 
 .input-group .form-control {
   border-width: 0;
-  background-color: #F9F6F1;
+  background-color: #f9f6f1;
 }
 
 .form-signin {
@@ -11969,7 +11969,7 @@ main {
 .comment,
 .list-group,
 .list-group-item {
-  background-color: #F9F6F1;
+  background-color: #f9f6f1;
 }
 
 .form-signin {
