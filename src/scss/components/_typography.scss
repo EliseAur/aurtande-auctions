@@ -3,6 +3,7 @@ body {
 }
 
 h1,
+h2,
 h3,
 .btn,
 .nav-link,
@@ -14,22 +15,30 @@ h3,
 
 h1,
 h2,
+h3,
 .btn,
 .feed-name {
   font-weight: 800;
 }
 
 .nav-link,
-option {
+option,
+.viewMoreButton,
+.form-select,
+.create-listing__content .btn {
   font-weight: 400;
 }
 
 .comment,
+.description,
+.btn,
 .add-comment .btn,
 .add-comment .form-control {
-  font-size: $font-size-tiny;
+  font-size: 16px;
 }
 
-.signin-content .btn-secondary {
-  font-size: 20px;
+.viewMoreButton,
+.description,
+.create-listing__content .btn {
+  font-size: 14px;
 }

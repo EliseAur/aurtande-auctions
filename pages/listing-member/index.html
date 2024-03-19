@@ -1,0 +1,300 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Listing Details | AurtandeAuctions</title>
+    <link
+      rel="icon"
+      href="../../images/favicon-16x16.png"
+      type="image/png"
+      sizes="16x16"
+    />
+    <link rel="stylesheet" href="https://use.typekit.net/yyb1tse.css" />
+    <link rel="stylesheet" href="../../dist/css/index.css" />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+      integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+      crossorigin="anonymous"
+      defer
+    ></script>
+    <!-- <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+      crossorigin="anonymous"
+      defer
+    ></script> -->
+    <script src="../../src/js/index.js" defer type="module"></script>
+  </head>
+  <body class="px-0">
+    <header>
+      <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#"
+            ><img
+              src="../../images/logo-white-small.png"
+              class="img-fluid p-1"
+              alt="Logo - Aurtande Auctions"
+            />
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="material-symbols-outlined display-3"
+              ><i class="bi bi-list"></i
+            ></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a
+                  class="nav-link fs-6 py-1 px-2 my-2 mx-1"
+                  aria-current="page"
+                  href="../listings-member/index.html"
+                  ><i class="bi bi-house-fill me-1"></i>Listings</a
+                >
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link fs-6 py-1 px-2 my-2 mx-1"
+                  aria-current="page"
+                  href="./create/index.html"
+                  ><i class="bi bi-file-post"></i>Create Listing</a
+                >
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link fs-6 py-1 px-2 my-2 mx-1"
+                  aria-current="page"
+                  href="../account/index.html"
+                  ><i class="bi bi-person-fill"></i>Account</a
+                >
+              </li>
+              <li class="nav-item">
+                <a
+                  id="signOutButton"
+                  class="nav-link fs-6 py-1 px-2 my-2 mx-1"
+                  href="../../index.html"
+                  ><i class="bi bi-door-closed-fill"></i>Sign out</a
+                >
+              </li>
+            </ul>
+            <form id="search-form" class="d-flex" role="search">
+              <input
+                id="search-input"
+                class="form-control me-2 my-2 h-75"
+                type="search"
+                placeholder="Search"
+                aria-label="Search"
+              />
+              <button class="btn btn-outline-success my-2 h-75" type="submit">
+                Search
+              </button>
+            </form>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <div
+        class="create-listing d-flex flex-column justify-content-center col-md-8 col-lg-6 col-xl-5 mx-auto px-1 px-sm-5"
+      >
+        <div class="create-listing__content px-4 py-3 mx-auto">
+          <!--Listing details  -->
+          <h1 class="h2 mb-2">Old and Retro Camera</h1>
+          <div class="listing-images mx-2">
+            <div class="row">
+              <img
+                src="../../images/camera.jpg"
+                class="img-fluid p-1"
+                alt="Listing image"
+                data-bs-toggle="modal"
+                data-bs-target="#image-1"
+              />
+            </div>
+            <div class="row">
+              <img
+                src="../../images/camera.jpg"
+                class="img-fluid p-1 col"
+                alt="Listing image"
+                data-bs-toggle="modal"
+                data-bs-target="#image-2"
+              />
+              <img
+                src="../../images/camera.jpg"
+                class="img-fluid p-1 col"
+                alt="Listing image"
+                data-bs-toggle="modal"
+                data-bs-target="#image-3"
+              />
+              <img
+                src="../../images/camera.jpg"
+                class="img-fluid p-1 col"
+                alt="Listing image"
+                data-bs-toggle="modal"
+                data-bs-target="#image-4"
+              />
+            </div>
+          </div>
+          <!-- Modal-1 -->
+          <div
+            class="modal fade"
+            id="image-1"
+            tabindex="-1"
+            aria-labelledby="image-1"
+            aria-hidden="true"
+          >
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-body">
+                  <img
+                    src="../../images/camera.jpg"
+                    class="img-fluid p-1"
+                    alt="Logo - Aurtande Auctions"
+                  />
+                </div>
+                <div class="modal-footer">
+                  <button
+                    type="button"
+                    class="btn btn-secondary"
+                    data-bs-dismiss="modal"
+                  >
+                    Close
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Modal-2 -->
+          <div
+            class="modal fade"
+            id="image-2"
+            tabindex="-1"
+            aria-labelledby="image-2"
+            aria-hidden="true"
+          >
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-body">
+                  <img
+                    src="../../images/camera.jpg"
+                    class="img-fluid p-1"
+                    alt="Logo - Aurtande Auctions"
+                  />
+                </div>
+                <div class="modal-footer">
+                  <button
+                    type="button"
+                    class="btn btn-secondary"
+                    data-bs-dismiss="modal"
+                  >
+                    Close
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Modal-3 -->
+          <div
+            class="modal fade"
+            id="image-3"
+            tabindex="-1"
+            aria-labelledby="image-3"
+            aria-hidden="true"
+          >
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-body">
+                  <img
+                    src="../../images/camera.jpg"
+                    class="img-fluid p-1"
+                    alt="Logo - Aurtande Auctions"
+                  />
+                </div>
+                <div class="modal-footer">
+                  <button
+                    type="button"
+                    class="btn btn-secondary"
+                    data-bs-dismiss="modal"
+                  >
+                    Close
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Modal-4 -->
+          <div
+            class="modal fade"
+            id="image-4"
+            tabindex="-1"
+            aria-labelledby="image-4"
+            aria-hidden="true"
+          >
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-body">
+                  <img
+                    src="../../images/camera.jpg"
+                    class="img-fluid p-1"
+                    alt="Logo - Aurtande Auctions"
+                  />
+                </div>
+                <div class="modal-footer">
+                  <button
+                    type="button"
+                    class="btn btn-secondary"
+                    data-bs-dismiss="modal"
+                  >
+                    Close
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div>
+            <p class="mb-0 mt-2"><strong>Description:</strong></p>
+            <p class="description">
+              At vero eos et accusam et justo duo dolores et ea rebum. Stet
+              clita kasd gubergren, no sea takimata sanctus est Lorem ipsum
+              dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing
+              elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore
+              magna aliquyam erat, sed diam voluptua.
+            </p>
+          </div>
+          <div class="mb-4">
+            <p class="mb-2"><strong>Tags:</strong><span> Tag1, Tag2</span></p>
+            <p class="mb-2">
+              <strong>Last bid:</strong><span> No bids yet</span>
+            </p>
+            <p class="mb-2">
+              <strong>Time left:</strong><span> 2 Days, 4 Hours</span>
+            </p>
+          </div>
+          <div class="mt-2 mb-5">
+            <button
+              class="btn btn-lg btn-secondary text-dark btn-create py-1 mt-1 col-11 col-sm-5"
+            >
+              <i class="bi bi-pencil-square"></i> Update Listing
+            </button>
+            <button
+              class="btn btn-lg btn-primary btn-create py-1 mt-1 col-11 col-sm-5"
+            >
+              <i class="bi bi-trash-fill"></i> Delete Listing
+            </button>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer class="bg-dark text-light py-4 text-center">
+      <p class="mb-1">© 2024 - AurtandeAuctions</p>
+      <p class="mb-0">Created by Elise Aurtande</p>
+    </footer>
+  </body>
+</html>

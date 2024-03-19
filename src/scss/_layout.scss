@@ -1,4 +1,5 @@
 .feed__listings,
+.create-listing,
 .profile {
   padding-top: 100px;
 }
@@ -49,7 +50,7 @@
 }
 
 .navbar-brand img {
-  max-width: 200px;
+  max-width: 170px;
 }
 
 .list-group-item-1 {
@@ -58,6 +59,10 @@
 
 .list-group-item-2 {
   height: 90px;
+}
+
+.create-listing__content {
+  max-width: 470px;
 }
 // .card-col {
 //   padding: 0;
