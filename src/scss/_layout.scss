@@ -24,6 +24,10 @@
   border-radius: $card-border-radius;
 }
 
+.create-listing__content .img-fluid {
+  border-radius: $listing-images-border-radius;
+}
+
 .nameAndTitleDiv {
   overflow: hidden;
 }
@@ -63,6 +67,10 @@
 
 .create-listing__content {
   max-width: 470px;
+}
+
+.modal-dialog {
+  margin-top: 155px;
 }
 // .card-col {
 //   padding: 0;

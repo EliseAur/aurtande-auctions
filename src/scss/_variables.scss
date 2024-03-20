@@ -5,6 +5,7 @@ $main-bg: #f8f2e9;
 $body-bg: $primary;
 $card-bg: #f9f6f1;
 $input-bg: #fff;
+$table-bg: $card-bg;
 $navbar-dark-color: $input-bg;
 $navbar-dark-brand-color: $secondary;
 $navbar-dark-brand-hover-color: $navbar-dark-brand-color;
@@ -20,6 +21,8 @@ $input-border-color: $primary;
 $input-focus-border-color: $secondary;
 $btn-box-shadow: none; //Does not affect the styling of the .btn-class class. Why?
 $btn-focus-box-shadow: none; //Does not affect the styling of the .btn-class class. Why?
+$modal-header-border-color: $primary;
+$modal-inner-padding: 4px;
 
 //custom
 $nav-link-hover-color: $primary;
@@ -28,3 +31,5 @@ $font-size-tiny: 0.4rem;
 $signin-btn-hover-color: #000000cb;
 $btn-hover-bg: $secondary;
 $btn-hover-border-color: $navbar-dark-color;
+
+$listing-images-border-radius: 0.5rem;

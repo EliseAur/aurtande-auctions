@@ -46,7 +46,7 @@
             aria-expanded="false"
             aria-label="Toggle navigation"
           >
-            <span class="material-symbols-outlined display-3"
+            <span class="material-symbols-outlined display-5"
               ><i class="bi bi-list"></i
             ></span>
           </button>
@@ -162,7 +162,7 @@
                 <div class="modal-footer">
                   <button
                     type="button"
-                    class="btn btn-secondary"
+                    class="btn btn-secondary mt-0 me-2 mb-2 py-1"
                     data-bs-dismiss="modal"
                   >
                     Close
@@ -191,7 +191,7 @@
                 <div class="modal-footer">
                   <button
                     type="button"
-                    class="btn btn-secondary"
+                    class="btn btn-secondary mt-0 me-2 mb-2 py-1"
                     data-bs-dismiss="modal"
                   >
                     Close
@@ -220,7 +220,7 @@
                 <div class="modal-footer">
                   <button
                     type="button"
-                    class="btn btn-secondary"
+                    class="btn btn-secondary mt-0 me-2 mb-2 py-1"
                     data-bs-dismiss="modal"
                   >
                     Close
@@ -249,7 +249,7 @@
                 <div class="modal-footer">
                   <button
                     type="button"
-                    class="btn btn-secondary"
+                    class="btn btn-secondary mt-0 me-2 mb-2 py-1"
                     data-bs-dismiss="modal"
                   >
                     Close
@@ -277,17 +277,64 @@
               <strong>Time left:</strong><span> 2 Days, 4 Hours</span>
             </p>
           </div>
-          <div class="mt-2 mb-5">
-            <button
+          <div class="mt-2 mb-3 d-flex">
+            <!-- <button
               class="btn btn-lg btn-secondary text-dark btn-create py-1 mt-1 col-11 col-sm-5"
             >
               <i class="bi bi-pencil-square"></i> Update Listing
-            </button>
+            </button> -->
             <button
-              class="btn btn-lg btn-primary btn-create py-1 mt-1 col-11 col-sm-5"
+              class="btn btn-secondary text-dark btn-create flex-fill me-1"
             >
+              <i class="bi bi-pencil-square"></i> Update Listing
+            </button>
+            <button class="btn btn-primary btn-create flex-fill">
               <i class="bi bi-trash-fill"></i> Delete Listing
             </button>
+          </div>
+          <!-- Bid history -->
+          <div class="card p-3 mb-3">
+            <p><strong>Bid History</strong></p>
+            <table class="table table-borderless mb-0">
+              <tbody>
+                <tr>
+                  <th scope="row"><i class="bi bi-3-circle-fill"></i></th>
+                  <td>UserName</td>
+                  <td>200 $</td>
+                  <td>05.03.24</td>
+                </tr>
+                <tr>
+                  <th scope="row"><i class="bi bi-2-circle-fill"></i></th>
+                  <td>UserName</td>
+                  <td>200 $</td>
+                  <td>05.03.24</td>
+                </tr>
+                <tr>
+                  <th scope="row">
+                    <i class="bi bi-1-circle-fill"></i>
+                  </th>
+                  <td>UserName</td>
+                  <td>200 $</td>
+                  <td>05.03.24</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="card p-3 mb-5">
+            <p><strong>Contact info seller</strong></p>
+            <div class="d-flex flex-column flex-sm-row">
+              <div class="w-25 ms-0">
+                <img
+                  src="../../images/profile-2-christian-buehner-DItYlc26zVI-unsplash.jpg"
+                  class="img-fluid profile__user-img rounded-circle w-100"
+                  alt="Seller profile image"
+                />
+              </div>
+              <div class="ms-sm-4 mt-3">
+                <p class="mb-2"><strong>UserName</strong></p>
+                <p><strong>Email:</strong> andy87@stud.noroff.no</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
