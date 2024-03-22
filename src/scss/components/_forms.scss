@@ -21,16 +21,12 @@
 }
 
 .form-signin {
-  max-width: 400px;
-}
-.form-signin a {
-  font-size: 18px;
+  max-width: 435px;
 }
 
-// .form-signin a {
-//     display: flex;
-//     justify-content: center;
-// }
+.link {
+  font-size: 18px;
+}
 
 .valid-feedback,
 .invalid-feedback {
@@ -38,7 +34,7 @@
   border-radius: $btn-border-radius;
 }
 
-.feed__posts select {
+.form-select {
   background-color: $primary;
   color: $input-bg;
   width: 179px;
@@ -49,7 +45,7 @@
   &:active,
   &:focus {
     background: $primary;
-    color: #fff;
+    color: $input-bg;
     // border-width: $btn-border-width;
     // border-color: $card-bg;
   }

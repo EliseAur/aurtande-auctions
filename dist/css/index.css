@@ -2256,7 +2256,7 @@ textarea.form-control-lg {
 }
 
 .form-select {
-  --bs-form-select-bg-img: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e");
+  --bs-form-select-bg-img: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e");
   display: block;
   width: 100%;
   padding: 0.375rem 2.25rem 0.375rem 0.75rem;
@@ -11887,10 +11887,10 @@ textarea.form-control-lg {
 }
 
 .form-signin {
-  max-width: 400px;
+  max-width: 435px;
 }
 
-.form-signin a {
+.link {
   font-size: 18px;
 }
 
@@ -11900,12 +11900,12 @@ textarea.form-control-lg {
   border-radius: 0.2rem;
 }
 
-.feed__posts select {
+.form-select {
   background-color: #212529;
   color: #fff;
   width: 179px;
 }
-.feed__posts select:hover, .feed__posts select:active, .feed__posts select:focus {
+.form-select:hover, .form-select:active, .form-select:focus {
   background: #212529;
   color: #fff;
 }
@@ -11943,7 +11943,8 @@ h2,
 h3,
 .h3,
 .btn,
-.feed-name {
+.feed-name,
+.username {
   font-weight: 800;
 }
 
@@ -11951,7 +11952,7 @@ h3,
 option,
 .viewMoreButton,
 .form-select,
-.create-listing__content .btn {
+.content-wrapper .btn {
   font-weight: 400;
 }
 
@@ -11965,7 +11966,7 @@ option,
 
 .viewMoreButton,
 .description,
-.create-listing__content .btn {
+.content-wrapper .btn {
   font-size: 14px;
 }
 
@@ -11988,7 +11989,7 @@ main {
   background-size: cover;
 }
 
-.feed__listings {
+.listings-intro {
   background: url("../../../images/home-background-2.png") bottom no-repeat;
   background-size: cover;
 }
@@ -12044,20 +12045,18 @@ main {
   color: #9be2f2;
 }
 
-.feed__listings,
-.create-listing,
+.listings-intro,
+.content-wrapper,
 .profile {
-  padding-top: 100px;
+  padding-top: 110px;
 }
 
 .follow-button {
   width: 154px;
 }
 
-.profile-image,
-.user-img {
-  width: 65px;
-  height: 65px;
+.profile-image {
+  max-width: 130px;
 }
 
 .comment {
@@ -12070,7 +12069,7 @@ main {
   border-radius: 0.3rem;
 }
 
-.create-listing__content .img-fluid {
+.content-wrapper .img-fluid {
   border-radius: 0.5rem;
 }
 
@@ -12111,7 +12110,7 @@ main {
   height: 90px;
 }
 
-.create-listing__content {
+.content-wrapper {
   max-width: 470px;
 }
 

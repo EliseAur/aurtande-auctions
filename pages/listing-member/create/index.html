@@ -102,85 +102,81 @@
       </nav>
     </header>
     <main>
-      <div
-        class="create-listing d-flex flex-column justify-content-center col-md-8 col-lg-6 col-xl-5 mx-auto px-4"
+      <section
+        class="content-wrapper col-md-8 col-lg-6 col-xl-5 pb-3 px-3 mx-auto w-100"
       >
-        <div class="signin-content px-2 px-4 py-3">
-          <!--Create Listing form  -->
-          <form id="createListing" class="pb-4" action="../index.html">
-            <h1 class="h2 mb-3">Create your listing</h1>
-            <div class="form-group mb-3">
-              <label>Title</label>
-              <input
-                class="form-control"
-                type="title"
-                name="title"
-                placeholder="Title"
-                required
-              />
-            </div>
-            <div class="form-group mb-3">
-              <label>Description</label>
-              <textarea
-                type="text"
-                class="form-control"
-                name="body"
-                placeholder="Describe your listing"
-                required
-              ></textarea>
-            </div>
-            <div class="form-group mb-3">
-              <label class="mb-0">Tags</label>
-              <input
-                type="text"
-                class="form-control"
-                name="tags"
-                placeholder="Tag1, Tag2..."
-              />
-            </div>
-            <div class="form-group mb-3">
-              <label>Images</label>
-              <input
-                type="url"
-                class="form-control mb-2"
-                name="media"
-                placeholder="Paste in URL for image"
-              />
-              <input
-                type="url"
-                class="form-control mb-2"
-                name="media"
-                placeholder="Paste in URL for image"
-              />
-              <input
-                type="url"
-                class="form-control mb-2"
-                name="media"
-                placeholder="Paste in URL for image"
-              />
-              <input
-                type="url"
-                class="form-control mb-2"
-                name="media"
-                placeholder="Paste in URL for image"
-              />
-            </div>
-            <div class="form-group mb-3 d-flex flex-column">
-              <label class="mb-0">Ending date and time for bidding</label>
-              <input
-                type="datetime-local"
-                class="form-control mb-2"
-                name="ending-time"
-              />
-            </div>
-            <div class="btn-share mt-2">
-              <button class="w-100 btn btn-lg btn-secondary btn-create py-1">
-                Create Listing
-              </button>
-            </div>
-          </form>
-        </div>
-      </div>
+        <!--Create Listing form  -->
+        <form id="createListing" class="pb-4" action="../index.html">
+          <h1 class="h2 mb-3">Create your listing</h1>
+          <div class="form-group mb-3">
+            <label>Title</label>
+            <input
+              class="form-control"
+              type="title"
+              name="title"
+              placeholder="Title"
+              required
+            />
+          </div>
+          <div class="form-group mb-3">
+            <label>Description</label>
+            <textarea
+              type="text"
+              class="form-control"
+              name="body"
+              placeholder="Describe your listing"
+              required
+            ></textarea>
+          </div>
+          <div class="form-group mb-3">
+            <label class="mb-0">Tags</label>
+            <input
+              type="text"
+              class="form-control"
+              name="tags"
+              placeholder="Tag1, Tag2..."
+            />
+          </div>
+          <div class="form-group mb-3">
+            <label>Images</label>
+            <input
+              type="url"
+              class="form-control mb-2"
+              name="media"
+              placeholder="Paste in URL for image"
+            />
+            <input
+              type="url"
+              class="form-control mb-2"
+              name="media"
+              placeholder="Paste in URL for image"
+            />
+            <input
+              type="url"
+              class="form-control mb-2"
+              name="media"
+              placeholder="Paste in URL for image"
+            />
+            <input
+              type="url"
+              class="form-control mb-2"
+              name="media"
+              placeholder="Paste in URL for image"
+            />
+          </div>
+          <div class="form-group mb-3 d-flex flex-column">
+            <label class="mb-0">Ending date and time for bidding</label>
+            <input
+              type="datetime-local"
+              class="form-control mb-2"
+              name="ending-time"
+            />
+          </div>
+          <div class="mt-2">
+            <button class="btn btn-secondary py-1 w-100">Create Listing</button>
+          </div>
+        </form>
+      </section>
     </main>
     <footer class="bg-dark text-light py-4 text-center">
       <p class="mb-1">© 2024 - AurtandeAuctions</p>

@@ -1,17 +1,21 @@
-.feed__listings,
-.create-listing,
+.listings-intro,
+.content-wrapper,
 .profile {
-  padding-top: 100px;
+  padding-top: 110px;
 }
 
 .follow-button {
   width: 154px;
 }
 
-.profile-image,
-.user-img {
-  width: 65px;
-  height: 65px;
+// .profile-image,
+// .user-img {
+//   width: 65px;
+//   height: 65px;
+// }
+
+.profile-image {
+  max-width: 130px;
 }
 
 .comment {
@@ -24,7 +28,7 @@
   border-radius: $card-border-radius;
 }
 
-.create-listing__content .img-fluid {
+.content-wrapper .img-fluid {
   border-radius: $listing-images-border-radius;
 }
 
@@ -65,7 +69,7 @@
   height: 90px;
 }
 
-.create-listing__content {
+.content-wrapper {
   max-width: 470px;
 }
 

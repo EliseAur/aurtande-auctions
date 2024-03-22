@@ -17,7 +17,8 @@ h1,
 h2,
 h3,
 .btn,
-.feed-name {
+.feed-name,
+.username {
   font-weight: 800;
 }
 
@@ -25,7 +26,7 @@ h3,
 option,
 .viewMoreButton,
 .form-select,
-.create-listing__content .btn {
+.content-wrapper .btn {
   font-weight: 400;
 }
 
@@ -39,6 +40,6 @@ option,
 
 .viewMoreButton,
 .description,
-.create-listing__content .btn {
+.content-wrapper .btn {
   font-size: 14px;
 }
