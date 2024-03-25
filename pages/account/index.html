@@ -28,7 +28,7 @@
   </head>
   <body class="px-0">
     <header>
-      <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="top">
         <div class="container-fluid">
           <a class="navbar-brand" href="#"
             ><img
@@ -54,7 +54,7 @@
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
                 <a
-                  class="nav-link fs-6 py-1 px-2 my-2 mx-1"
+                  class="nav-link fs-6 px-2 my-2 mx-1"
                   aria-current="page"
                   href="../listings-member/index.html"
                   ><i class="bi bi-house-fill me-1"></i>Listings</a
@@ -62,7 +62,7 @@
               </li>
               <li class="nav-item">
                 <a
-                  class="nav-link fs-6 py-1 px-2 my-2 mx-1"
+                  class="nav-link fs-6 px-2 my-2 mx-1"
                   aria-current="page"
                   href="../listing-member/create/index.html"
                   ><i class="bi bi-file-post"></i>Create Listing</a
@@ -70,18 +70,18 @@
               </li>
               <li class="nav-item">
                 <a
-                  class="nav-link fs-6 py-1 px-2 my-2 mx-1 current"
+                  class="nav-link fs-6 px-2 my-2 mx-1 current"
                   aria-current="page"
                   href="#"
-                  ><i class="bi bi-person-fill"></i>Account</a
+                  ><i class="bi bi-person-fill me-1"></i>Account</a
                 >
               </li>
               <li class="nav-item">
                 <a
                   id="signOutButton"
-                  class="nav-link fs-6 py-1 px-2 my-2 mx-1"
+                  class="nav-link fs-6 px-2 my-2 mx-1"
                   href="../../index.html"
-                  ><i class="bi bi-door-closed-fill"></i>Sign out</a
+                  ><i class="bi bi-door-closed-fill me-1"></i>Sign out</a
                 >
               </li>
             </ul>
@@ -104,49 +104,51 @@
     <main>
       <!--Account details  -->
       <div
-        class="content-wrapper col-md-8 col-lg-6 col-xl-5 pb-3 px-3 mx-auto w-100"
+        class="content-wrapper account-wrapper col-md-8 col-lg-6 col-xl-5 pb-3 px-3 mx-auto w-100"
       >
-        <h1 class="h2 mb-2">My account</h1>
-        <section
-          class="d-flex flex-column flex-sm-row align-items-stretch mb-4"
-        >
-          <div class="card p-3 mb-3 mb-sm-0 flex-fill">
-            <div class="d-flex flex-column mx-auto">
-              <div class="profile-image mx-auto">
-                <img
-                  src="../../images/profile-2-christian-buehner-DItYlc26zVI-unsplash.jpg"
-                  class="img-fluid profile__user-img rounded-circle w-100"
-                  alt="Seller profile image"
-                />
-              </div>
-              <div class="mt-3 text-center">
-                <p class="mb-1 fs-4 h3">andy87</p>
-                <p>andy87@stud.noroff.no</p>
+        <section>
+          <h1 class="h2 mb-2">My account</h1>
+          <div class="d-flex flex-column flex-sm-row align-items-stretch">
+            <div class="card p-3 mb-3 mb-sm-0 flex-fill">
+              <div class="d-flex flex-column">
+                <div class="profile-image mx-auto">
+                  <img
+                    src="../../images/profile-2-christian-buehner-DItYlc26zVI-unsplash.jpg"
+                    class="img-fluid profile__user-img rounded-circle w-100"
+                    alt="Seller profile image"
+                  />
+                </div>
+                <div class="mt-3 text-center">
+                  <p class="mb-1 fs-4 h3">andy87</p>
+                  <p>andy87@stud.noroff.no</p>
+                </div>
+                <div class="">
+                  <button class="btn btn-primary w-100 mb-2">
+                    Change image
+                  </button>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="card p-4 mb-5 mb-sm-0 ms-sm-2">
-            <h2 class="h3 fs-4 mb-3">Activity</h2>
-            <div class="d-flex flex-column">
-              <div class="ms-0">
-                <p class="mb-2">
-                  <a href="#myListings">View all my listings</a>
-                </p>
-                <p class="mb-2"><a href="#myBids">View all my bids</a></p>
-                <p class="mb-2"><a href="#myWins">View all my wins</a></p>
+            <div class="card p-4 mb-sm-0 ms-sm-2">
+              <h2 class="h3 fs-4 mb-3">Activity</h2>
+              <div class="flex-grow-1">
+                <div class="ms-0">
+                  <p class="mb-2">
+                    <a href="#myListings">View all my listings</a>
+                  </p>
+                  <p class="mb-2"><a href="#myBids">View all my bids</a></p>
+                  <p class="mb-2"><a href="#myWins">View all my wins</a></p>
+                </div>
               </div>
               <div class="mt-3">
-                <button class="btn btn-secondary w-100 mb-2">
-                  Create listing
-                </button>
-                <!-- <button class="btn btn-primary w-100">Update Image</button> -->
+                <button class="btn btn-secondary w-100">Create listing</button>
               </div>
             </div>
           </div>
         </section>
-        <section id="myListings">
+        <section id="myListings" class="pt-5">
           <h2 class="fs-4">My Listings</h2>
-          <div class="row row-cols-2 g-2 g-sm-3 mb-4">
+          <div class="row row-cols-2 g-2 g-sm-3 mb-3">
             <div class="col card-col">
               <div class="card h-100">
                 <div class="card-img-top"></div>
@@ -198,10 +200,11 @@
               </div>
             </div>
           </div>
+          <p class="ms-2 link"><a href="#top">Back to top</a></p>
         </section>
-        <section id="myBids">
+        <section id="myBids" class="pt-5">
           <h2 class="fs-4">My Bids</h2>
-          <div class="row row-cols-2 g-2 g-sm-3 mb-4">
+          <div class="row row-cols-2 g-2 g-sm-3 mb-3">
             <div class="col card-col">
               <div class="card h-100">
                 <div class="card-img-top"></div>
@@ -253,10 +256,11 @@
               </div>
             </div>
           </div>
+          <p class="ms-1 link"><a href="#top">Back to top</a></p>
         </section>
-        <section id="myWins">
+        <section id="myWins" class="pt-5">
           <h2 class="fs-4">My Wins</h2>
-          <div class="row row-cols-2 g-2 g-sm-3 mb-4">
+          <div class="row row-cols-2 g-2 g-sm-3 mb-3">
             <div class="col card-col">
               <div class="card h-100">
                 <div class="card-img-top"></div>
@@ -308,6 +312,7 @@
               </div>
             </div>
           </div>
+          <p class="ms-1 link"><a href="#top">Back to top</a></p>
         </section>
       </div>
     </main>
