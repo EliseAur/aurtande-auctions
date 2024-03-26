@@ -7,19 +7,6 @@
   }
 }
 
-// .signin-content .form-control {
-//     height: 48.5px;
-// }
-
-.input-group {
-  border-radius: $btn-border-radius;
-}
-
-.input-group .form-control {
-  border-width: $card-border-width;
-  background-color: $card-bg;
-}
-
 .form-signin {
   max-width: 435px;
 }
@@ -28,35 +15,15 @@
   font-size: 18px;
 }
 
-.valid-feedback,
-.invalid-feedback {
-  color: $navbar-dark-color;
-  border-radius: $btn-border-radius;
-}
-
 .form-select {
   background-color: $primary;
   color: $input-bg;
   width: 179px;
-  // border-width: $btn-border-width;
-  // border-color: $card-bg;
 
   &:hover,
   &:active,
   &:focus {
     background: $primary;
     color: $input-bg;
-    // border-width: $btn-border-width;
-    // border-color: $card-bg;
   }
-}
-
-.help {
-  display: none;
-}
-
-input:invalid + .help {
-  display: block;
-  border-radius: $btn-border-radius;
-  font-size: 14px;
 }

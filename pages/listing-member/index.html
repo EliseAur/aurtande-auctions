@@ -267,27 +267,50 @@
             aliquyam erat, sed diam voluptua.
           </p>
         </div>
-        <div class="mb-4">
-          <p class="mb-2"><strong>Tags:</strong><span> Tag1, Tag2</span></p>
-          <p class="mb-2">
-            <strong>Last bid:</strong><span> No bids yet</span>
-          </p>
-          <p class="mb-2">
-            <strong>Time left:</strong><span> 2 Days, 4 Hours</span>
-          </p>
-        </div>
+        <table class="table table-borderless table-dark mb-3">
+          <tbody>
+            <tr>
+              <th scope="row" class="p-1 ps-0">Tags:</th>
+              <td class="p-1">Tag1, Tag2</td>
+            </tr>
+            <tr>
+              <th scope="row" class="p-1 ps-0">Last bid:</th>
+              <td class="p-1">200 $</td>
+            </tr>
+            <tr>
+              <th scope="row" class="p-1 ps-0">Time left:</th>
+              <td class="p-1">2 Days, 4 Hours</td>
+            </tr>
+            <tr>
+              <th scope="row" class="p-1 ps-0">Next bid:</th>
+              <td class="p-1">201 $</td>
+            </tr>
+            <tr>
+              <th scope="row" class="p-1 ps-0">Your bid:</th>
+              <td class="p-1">
+                <span class="position-absolute ps-2 pt-1 fs-6">$</span>
+                <input
+                  class="form-control w-50 ps-4 p-1 fs-6"
+                  id="bidPrice"
+                  name="bidPrice"
+                  type="number"
+                  min="201"
+                  required=""
+                  max="1000"
+                />
+              </td>
+            </tr>
+          </tbody>
+        </table>
         <div class="mt-2 mb-3 d-flex">
-          <button class="btn btn-secondary flex-fill me-1">
-            <i class="bi bi-pencil-square"></i> Update Listing
-          </button>
-          <button class="btn btn-primary flex-fill">
-            <i class="bi bi-trash-fill"></i> Delete Listing
+          <button class="btn btn-secondary flex-fill me-1 fs-6">
+            <i class="bi bi-credit-card-fill"></i> Submit bid
           </button>
         </div>
         <!-- Bid history -->
         <div class="card p-3 mb-3">
           <p><strong>Bid History</strong></p>
-          <table class="table table-borderless mb-0">
+          <table class="table table-borderless table-light mb-0">
             <tbody>
               <tr>
                 <th scope="row"><i class="bi bi-3-circle-fill"></i></th>
@@ -298,16 +321,14 @@
               <tr>
                 <th scope="row"><i class="bi bi-2-circle-fill"></i></th>
                 <td>UserName</td>
-                <td>200 $</td>
-                <td>05.03.24</td>
+                <td>120 $</td>
+                <td>04.03.24</td>
               </tr>
               <tr>
-                <th scope="row">
-                  <i class="bi bi-1-circle-fill"></i>
-                </th>
+                <th scope="row"><i class="bi bi-1-circle-fill"></i></th>
                 <td>UserName</td>
-                <td>200 $</td>
-                <td>05.03.24</td>
+                <td>50 $</td>
+                <td>03.03.24</td>
               </tr>
             </tbody>
           </table>

@@ -1,11 +1,8 @@
-.body-signin {
-  background-color: $main-bg;
-}
-
+.body-signin,
 main {
   background-color: $main-bg;
 }
-.comment,
+
 .list-group,
 .list-group-item {
   background-color: $card-bg;
@@ -61,11 +58,15 @@ main {
   }
 }
 
-.navbar-toggler:hover,
-.profile__info h3 {
+.navbar-toggler:hover {
   color: $secondary;
 }
 
 .card {
   box-shadow: 1px 1px 1px 1px lightgray;
+}
+
+p,
+label {
+  color: $text-color;
 }

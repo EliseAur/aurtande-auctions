@@ -7,7 +7,6 @@ h2,
 h3,
 .btn,
 .nav-link,
-.feed-name,
 .navbar-brand,
 .card-title {
   font-style: italic;
@@ -16,9 +15,7 @@ h3,
 h1,
 h2,
 h3,
-.btn,
-.feed-name,
-.username {
+.btn {
   font-weight: 800;
 }
 
@@ -30,16 +27,14 @@ option,
   font-weight: 400;
 }
 
-.comment,
 .description,
-.btn,
-.add-comment .btn,
-.add-comment .form-control {
+.btn {
   font-size: 16px;
 }
 
 .viewMoreButton,
 .description,
-.content-wrapper .btn {
-  font-size: 14px;
+.content-wrapper .btn,
+.card-text {
+  font-size: 15px;
 }

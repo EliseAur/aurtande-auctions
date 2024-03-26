@@ -103,10 +103,15 @@
     </header>
     <main>
       <section
+        id="createListingContainer"
         class="content-wrapper col-md-8 col-lg-6 col-xl-5 pb-3 px-3 mx-auto w-100"
       >
         <!--Create Listing form  -->
-        <form id="createListing" class="pb-4" action="../index.html">
+        <form
+          id="createListingForm"
+          class="pb-4"
+          action="../../account/my-listing/index.html"
+        >
           <h1 class="h2 mb-3">Create your listing</h1>
           <div class="form-group mb-3">
             <label>Title</label>
@@ -114,6 +119,7 @@
               class="form-control"
               type="title"
               name="title"
+              maxlength="28"
               placeholder="Title"
               required
             />
@@ -123,7 +129,7 @@
             <textarea
               type="text"
               class="form-control"
-              name="body"
+              name="description"
               placeholder="Describe your listing"
               required
             ></textarea>

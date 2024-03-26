@@ -6,19 +6,6 @@
   background-color: $signin-btn-hover-color;
 }
 
-.navbar-toggler {
-  border-width: 0;
-
-  &:focus {
-    border-width: 0;
-    box-shadow: $btn-focus-box-shadow;
-  }
-}
-
-.navbar .btn {
-  height: 48.5px;
-}
-
-.btn-sm {
-  border-radius: $btn-border-radius;
+.navbar-toggler:focus {
+  box-shadow: $btn-focus-box-shadow;
 }
