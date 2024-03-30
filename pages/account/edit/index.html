@@ -22,7 +22,10 @@
   </head>
   <body class="px-0 d-flex flex-column vh-100">
     <header>
-      <nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="top">
+      <nav
+        class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark"
+        id="top"
+      >
         <div class="container-fluid">
           <a class="navbar-brand" href="#"
             ><img
@@ -96,79 +99,29 @@
       </nav>
     </header>
     <main>
-      <!--Account details  -->
-
+      <!--Edit Profile Image  -->
       <section
-        class="content-wrapper account-wrapper col-md-8 col-lg-6 col-xl-5 pb-3 px-3 mx-auto w-100"
+        id="editProfileContainer"
+        class="content-wrapper pb-3 px-3 mx-auto"
       >
-        <h1 class="h2 mb-2">Update Profile Image</h1>
-        <div class="d-flex flex-column flex-sm-row align-items-stretch">
-          <div class="p-3 mb-3 mb-sm-0 flex-fill">
-            <form id="editProfile">
-              <div class="pb-4">
-                <h1 class="h2 mb-3">Update Profile Image</h1>
-                <div class="form-group mb-3">
-                  <label>Profile image</label>
-                  <input
-                    class="form-control"
-                    type="profile-image"
-                    name="profile-image"
-                    placeholder="URL"
-                  />
-                </div>
-                <div class="mt-2">
-                  <button type="submit" class="btn btn-secondary w-100">
-                    Update image
-                  </button>
-                </div>
-              </div>
-            </form>
-            <!-- <div class="d-flex flex-column">
-              <div class="profile-image mx-auto">
-                <img
-                  src="../../../images/profile-2-christian-buehner-DItYlc26zVI-unsplash.jpg"
-                  class="img-fluid profile__user-img rounded-circle w-100"
-                  alt="Seller profile image"
-                />
-              </div>
-              <div class="mt-3 text-center">
-                <p class="mb-1 fs-4 h3">andy87</p>
-                <p>andy87@stud.noroff.no</p>
-              </div>
-              <div>
-                <button class="btn btn-primary w-100 mb-2">
-                  <i class="bi bi-card-image me-1"></i>Change image
-                </button>
-              </div>
-            </div> -->
+        <form id="editProfile">
+          <h1 class="h2 mb-3">Update Profile Image</h1>
+          <div class="form-group mb-3">
+            <label>Profile image</label>
+            <input
+              class="form-control"
+              type="profile-image"
+              name="profile-image"
+              placeholder="URL"
+            />
           </div>
-        </div>
-      </section>
-      <section
-        id="profileDetailsContainer"
-        class="content-wrapper col-md-8 col-lg-6 col-xl-5 pb-3 px-3 mx-auto w-100"
-      >
-        <div id="editProfileContainer" class="card mb-3 pb-3 mt-5">
-          <form id="editProfile">
-            <div class="pb-4">
-              <h1 class="h2 mb-3">Update Profile Image</h1>
-              <div class="form-group mb-3">
-                <label>Profile image</label>
-                <input
-                  class="form-control"
-                  type="profile-image"
-                  name="profile-image"
-                  placeholder="URL"
-                />
-              </div>
-              <div class="mt-2">
-                <button type="submit" class="btn btn-secondary w-100">
-                  Update image
-                </button>
-              </div>
-            </div>
-          </form>
-        </div>
+          <button type="submit" class="btn btn-secondary w-100 mt-1">
+            <i class="bi bi-card-image me-1"></i>Update image
+          </button>
+        </form>
+        <a href="../index.html" class="btn btn-primary w-100 mt-3">
+          <i class="bi bi-person-fill me-1"></i>Back to Account
+        </a>
       </section>
     </main>
     <footer class="bg-dark text-light py-4 text-center mt-auto">
