@@ -1,0 +1,40 @@
+body {
+  font-family: $body-font-family;
+}
+
+h1,
+h2,
+h3,
+.btn,
+.nav-link,
+.navbar-brand,
+.card-title {
+  font-style: italic;
+}
+
+h1,
+h2,
+h3,
+.btn {
+  font-weight: 800;
+}
+
+.nav-link,
+option,
+.viewMoreButton,
+.form-select,
+.content-wrapper .btn {
+  font-weight: 400;
+}
+
+.description,
+.btn {
+  font-size: 16px;
+}
+
+.viewMoreButton,
+.description,
+.content-wrapper .btn,
+.card-text {
+  font-size: 15px;
+}

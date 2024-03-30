@@ -1,0 +1,72 @@
+.body-signin,
+main {
+  background-color: $main-bg;
+}
+
+.list-group,
+.list-group-item {
+  background-color: $card-bg;
+}
+
+.form-signin {
+  background: url("../../../images/login-hammer.png") center no-repeat;
+  background-size: cover;
+}
+
+.listings-intro {
+  background: url("../../../images/home-background-2.png") bottom no-repeat;
+  background-size: cover;
+}
+
+.card-img-top {
+  background: url("../../../images/camera.jpg") center no-repeat;
+  background-size: cover;
+  height: 150px;
+}
+
+.navbar .form-control {
+  &:focus,
+  &:hover {
+    border-color: $secondary;
+  }
+}
+
+.nav-link {
+  &:hover,
+  &:focus {
+    color: $primary;
+    background: $secondary;
+  }
+}
+
+.navbar-toggler {
+  &-child:hover {
+    color: $secondary;
+  }
+}
+
+.navbar .btn {
+  color: $navbar-dark-color;
+  border-color: $btn-hover-border-color;
+
+  &:hover,
+  &:focus {
+    background: $btn-hover-bg;
+    border-color: $secondary;
+    color: $primary;
+    box-shadow: $btn-focus-box-shadow;
+  }
+}
+
+.navbar-toggler:hover {
+  color: $secondary;
+}
+
+.card {
+  box-shadow: 1px 1px 1px 1px lightgray;
+}
+
+p,
+label {
+  color: $text-color;
+}

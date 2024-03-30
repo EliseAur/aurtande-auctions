@@ -1,0 +1,29 @@
+.form-control {
+  border-radius: $btn-border-radius;
+  background-clip: border-box;
+
+  &:focus {
+    box-shadow: none;
+  }
+}
+
+.form-signin {
+  max-width: 435px;
+}
+
+.link {
+  font-size: 18px;
+}
+
+.form-select {
+  background-color: $primary;
+  color: $input-bg;
+  width: 179px;
+
+  &:hover,
+  &:active,
+  &:focus {
+    background: $primary;
+    color: $input-bg;
+  }
+}

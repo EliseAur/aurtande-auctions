@@ -1,0 +1,37 @@
+//Overwrites
+$primary: #212529;
+$secondary: #9be2f2;
+$main-bg: #f8f2e9;
+$body-bg: $main-bg;
+$card-bg: #f9f6f1;
+$input-bg: #fff;
+$modal-content-bg: $primary;
+$navbar-dark-color: $input-bg;
+$navbar-dark-brand-color: $secondary;
+$navbar-dark-brand-hover-color: $navbar-dark-brand-color;
+$card-border-radius: 0.3rem;
+$btn-border-radius-lg: 0.2rem;
+$btn-border-radius: 0.2rem;
+$card-border-width: 0;
+$card-box-shadow: 2px 3px 3px 3px lightgray;
+$body-font-family: "trade-gothic-next", sans-serif; //custom
+$input-border-color: $primary;
+$input-focus-border-color: $secondary;
+$btn-box-shadow: none;
+$btn-focus-box-shadow: none;
+$modal-header-border-color: $primary;
+$modal-inner-padding: 4px;
+$form-select-indicator-color: $input-bg;
+
+$table-variants: (
+  "light": $card-bg,
+  "dark": $main-bg,
+);
+
+//custom
+$nav-link-hover-color: $primary;
+$signin-btn-hover-color: #000000cb;
+$btn-hover-bg: $secondary;
+$btn-hover-border-color: $navbar-dark-color;
+$listing-images-border-radius: 0.5rem;
+$text-color: #000;

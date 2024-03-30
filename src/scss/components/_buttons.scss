@@ -1,0 +1,11 @@
+.btn:focus {
+  box-shadow: $btn-focus-box-shadow;
+}
+
+.btn-primary:hover {
+  background-color: $signin-btn-hover-color;
+}
+
+.navbar-toggler:focus {
+  box-shadow: $btn-focus-box-shadow;
+}

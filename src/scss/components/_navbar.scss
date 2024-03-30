@@ -1,0 +1,12 @@
+.nav-link {
+  border-radius: $btn-border-radius;
+
+  &:hover,
+  &:focus {
+    border-radius: $btn-border-radius;
+  }
+}
+
+.current {
+  color: $secondary;
+}

@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Listing Details | AurtandeAuctions</title>
+    <title>Listing Details Loggedin | AurtandeAuctions</title>
     <link
       rel="icon"
       href="../../images/favicon-16x16.png"
@@ -50,16 +50,32 @@
                 <a
                   class="nav-link fs-6 px-2 my-2 mx-1"
                   aria-current="page"
-                  href="../../index.html"
+                  href="../listings-member/index.html"
                   ><i class="bi bi-house-fill me-1"></i>Listings</a
+                >
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link fs-6 px-2 my-2 mx-1"
+                  aria-current="page"
+                  href="./create/index.html"
+                  ><i class="bi bi-file-post me-1"></i>Create Listing</a
+                >
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link fs-6 px-2 my-2 mx-1"
+                  aria-current="page"
+                  href="../account/index.html"
+                  ><i class="bi bi-person-fill me-1"></i>Account</a
                 >
               </li>
               <li class="nav-item">
                 <a
                   id="signOutButton"
                   class="nav-link fs-6 px-2 my-2 mx-1"
-                  href="../account/login/index.html"
-                  ><i class="bi bi-door-closed-fill me-1"></i>Sign in</a
+                  href="../../index.html"
+                  ><i class="bi bi-door-closed-fill me-1"></i>Sign out</a
                 >
               </li>
             </ul>
@@ -261,24 +277,27 @@
               <th scope="row" class="p-1 ps-0">Next bid:</th>
               <td class="p-1">201 $</td>
             </tr>
+            <tr>
+              <th scope="row" class="p-1 ps-0">Your bid:</th>
+              <td class="p-1">
+                <span class="position-absolute ps-2 pt-1 fs-6">$</span>
+                <input
+                  class="form-control w-50 ps-4 p-1 fs-6"
+                  id="bidPrice"
+                  name="bidPrice"
+                  type="number"
+                  min="201"
+                  required=""
+                  max="1000"
+                />
+              </td>
+            </tr>
           </tbody>
         </table>
-        <p class="mb-0 description">
-          Log in or create your account to make a bid
-        </p>
-        <div class="mt-1 mb-3 d-flex">
-          <a
-            class="btn btn-secondary flex-fill w-100 me-1 fs-6"
-            href="../account/login/index.html"
-          >
-            <i class="bi bi-door-closed-fill me-1"></i>Log in
-          </a>
-          <a
-            class="btn btn-secondary flex-fill w-100 me-1 fs-6"
-            href="../account/register/index.html"
-          >
-            <i class="bi bi-person-fill-add"></i> Create account
-          </a>
+        <div class="mt-2 mb-3 d-flex">
+          <button class="btn btn-secondary flex-fill me-1 fs-6">
+            <i class="bi bi-credit-card-fill"></i> Submit bid
+          </button>
         </div>
         <!-- Bid history -->
         <div class="card p-3 mb-3">
