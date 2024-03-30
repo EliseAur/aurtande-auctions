@@ -97,13 +97,11 @@
     </header>
     <main>
       <!--Account details  -->
-      <div
-        class="content-wrapper account-wrapper col-md-8 col-lg-6 col-xl-5 pb-3 px-3 mx-auto w-100"
-      >
+      <div class="content-wrapper account-wrapper pb-3 px-3 mx-auto">
         <section>
           <h1 class="h2 mb-2">My account</h1>
           <div class="d-flex flex-column flex-sm-row align-items-stretch">
-            <div class="card p-3 mb-3 mb-sm-0 flex-fill">
+            <div class="card p-3 mb-3 mb-sm-0 w-100">
               <div class="d-flex flex-column">
                 <div class="profile-image mx-auto">
                   <img
@@ -114,28 +112,22 @@
                 </div>
                 <div class="mt-3 text-center">
                   <p class="mb-1 fs-4 h3">andy87</p>
-                  <p>andy87@stud.noroff.no</p>
+                  <p class="mb-1">andy87@stud.noroff.no</p>
+                  <p class="mt-3"><strong>Balance:</strong> 800 $</p>
                 </div>
-                <div class="">
-                  <a
-                    href="./edit/index.html"
-                    class="btn btn-primary w-100 mb-2"
-                  >
-                    <i class="bi bi-card-image me-1"></i>Change image
-                  </a>
-                </div>
+                <!-- <a href="./edit/index.html" class="btn btn-primary w-100 mb-2">
+                  <i class="bi bi-card-image me-1"></i>Change image
+                </a> -->
               </div>
             </div>
-            <div class="card p-4 mb-sm-0 ms-sm-2">
+            <div class="card p-4 mb-sm-0 ms-sm-2 w-100">
               <h2 class="h3 fs-4 mb-3">Activity</h2>
-              <div class="flex-grow-1">
-                <div class="ms-0">
-                  <p class="mb-2">
-                    <a href="#myListings">View all my listings</a>
-                  </p>
-                  <p class="mb-2"><a href="#myBids">View all my bids</a></p>
-                  <p class="mb-2"><a href="#myWins">View all my wins</a></p>
-                </div>
+              <div>
+                <p class="mb-2">
+                  <a href="#myListings">View all my listings</a>
+                </p>
+                <p class="mb-2"><a href="#myBids">View all my bids</a></p>
+                <p class="mb-2"><a href="#myWins">View all my wins</a></p>
               </div>
               <div class="mt-3">
                 <a
@@ -143,6 +135,9 @@
                   class="btn btn-secondary w-100"
                   >Create listing</a
                 >
+                <a href="./edit/index.html" class="btn btn-primary w-100 mt-2">
+                  <i class="bi bi-card-image me-1"></i>Change image
+                </a>
               </div>
             </div>
           </div>
