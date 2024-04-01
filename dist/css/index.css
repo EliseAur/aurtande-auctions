@@ -11844,6 +11844,10 @@ option,
   font-size: 15px;
 }
 
+footer p {
+  font-size: 14px;
+}
+
 .body-signin,
 main {
   background-color: #f8f2e9;
