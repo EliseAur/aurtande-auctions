@@ -125,18 +125,30 @@ export function listingTemplate(listingData) {
   listingImage.className = "listingImage  card-img-top ";
   listingImage.width = "100%";
 
+  //Dynamically sets the image source (src) of the image element to a placeholder image if the original image fails to load due to an error.
   listingImage.onerror = function () {
     console.error("Error loading image:", this.src);
-    this.src = "./images/placeholder-image-not-found.jpg";
+    if (window.location.href.includes("listings-member")) {
+      this.src = "../../images/placeholder-image-not-found.jpg";
+    } else {
+      this.src = "./images/placeholder-image-not-found.jpg";
+    }
   };
 
+  //Checks if listingData.media exists and contains at least one element. If listingData.media is not empty, it sets the image source (src) of the image element to the URL of the first element in listingData.media. If listingData.media is undefined or empty, it also sets the image source to a placeholder image based on the current page's URL.
   if (listingData.media && listingData.media.length > 0) {
     listingImage.src = listingData.media[0];
     listingImage.alt = `Main image in listing with title: ${listingData.title}`;
   } else {
-    console.log("media array is undefined or empty");
-    listingImage.src = "./images/placeholder-image-not-found.jpg";
-    listingImage.alt = "Image not found";
+    if (window.location.href.includes("listings-member")) {
+      console.log("media array is undefined or empty");
+      listingImage.src = "../../images/placeholder-image-not-found.jpg";
+      listingImage.alt = "Image not found";
+    } else {
+      console.log("media array is undefined or empty");
+      listingImage.src = "./images/placeholder-image-not-found.jpg";
+      listingImage.alt = "Image not found";
+    }
   }
 
   //---------------------------------------------

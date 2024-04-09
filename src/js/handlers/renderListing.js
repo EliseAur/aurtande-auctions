@@ -38,7 +38,7 @@ import * as postMethods from "../api/listings/index.js";
 export async function renderListingsNotLoggedIn() {
   const listings = await postMethods.getListings(100, 100);
   const container = document.querySelector("#listingList");
-  // container.innerHTML = "";
+  container.innerHTML = "";
 
   // // Reverse the array of listings to display the newest listings first
   // const reversedListings = listings.reverse();

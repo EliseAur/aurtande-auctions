@@ -30,6 +30,10 @@ function setupRoutingAndListeners() {
     case "/":
     case "/index.html":
     case "/aurtande-auctions/index.html":
+    case "/pages/listings-member/":
+    case "/pages/listings-member/index.html":
+    case "/aurtande-auctions/pages/listings-member/":
+    case "/aurtande-auctions/pages/listings-member/index.html":
       listeners.renderListingsNotLoggedIn();
       break;
 
