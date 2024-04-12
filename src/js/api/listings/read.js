@@ -8,22 +8,23 @@ import { authFetch } from "../authFetch.js";
  *
  * @returns {Promise<Object[]>} - A promise that resolves to an array of post objects.
  */
-export async function getListings(limit = 100, offset = 0) {
+export async function getListings() {
   const baseURL = API_AUCTION_URL;
   const action = "/listings";
   const getListingURL = new URL(`${baseURL}${action}`);
   // Set query parameters for pagination
-  getListingURL.searchParams.set("limit", limit);
-  getListingURL.searchParams.set("offset", offset);
+  // getListingURL.searchParams.set("limit", limit);
+  // getListingURL.searchParams.set("offset", offset);
 
   // Set query parameters for sorting
   getListingURL.searchParams.set("sort", "created");
   getListingURL.searchParams.set("sortOrder", "desc");
+  // limit = 100, offset = 0
 
   getListingURL.searchParams.set("_seller", true);
   getListingURL.searchParams.set("_bids", true);
   // getListingURL.searchParams.set("_tag", true);
-  // getListingURL.searchParams.set("_active", true);
+  getListingURL.searchParams.set("_active", true);
 
   console.log("Constructed URL:", getListingURL.toString());
 

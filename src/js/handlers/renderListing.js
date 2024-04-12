@@ -43,6 +43,7 @@ export async function renderListingsNotLoggedIn() {
   // // Reverse the array of listings to display the newest listings first
   // const reversedListings = listings.reverse();
 
-  templates.renderListingTemplates(listings, container);
-  console.log(listings);
+  const goodListings = postMethods.filterBadListings(listings);
+  templates.renderListingTemplates(goodListings, container);
+  console.log(goodListings);
 }
