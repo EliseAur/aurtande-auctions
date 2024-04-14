@@ -18,13 +18,13 @@ export async function getListings() {
 
   // Set query parameters for sorting
   getListingURL.searchParams.set("sort", "created");
-  getListingURL.searchParams.set("sortOrder", "desc");
+  // getListingURL.searchParams.set("sortOrder", "desc");
   // limit = 100, offset = 0
 
   getListingURL.searchParams.set("_seller", true);
   getListingURL.searchParams.set("_bids", true);
   // getListingURL.searchParams.set("_tag", true);
-  getListingURL.searchParams.set("_active", true);
+  // getListingURL.searchParams.set("_active", true);
 
   console.log("Constructed URL:", getListingURL.toString());
 
@@ -33,25 +33,25 @@ export async function getListings() {
   return await response.json();
 }
 
-// /**
-//  * Retrieves a specific post by its ID with additional information about the author, comments, and reactions.
-//  *
-//  * @param {string} id - The ID of the post to retrieve.
-//  * @throws {Error} - Throws an error if the post ID is not provided.
-//  * @returns {Promise<Object>} - A promise that resolves to the requested post object.
-//  */
-// export async function getPost(id) {
-//   if (!id) {
-//     throw new Error("Get requires a postID");
-//   }
+/**
+ * Retrieves a specific listing by its ID with additional information about....
+ *
+ * @param {string} id - The ID of the listing to retrieve.
+ * @throws {Error} - Throws an error if the listing ID is not provided.
+ * @returns {Promise<Object>} - A promise that resolves to the requested listing object.
+ */
+export async function getListing(id) {
+  if (!id) {
+    throw new Error("Get requires a listingID");
+  }
 
-//   const baseURL = API_SOCIAL_URL;
-//   const getPostURL = new URL(`${baseURL}${action}/${id}`);
-//   getPostURL.searchParams.set("_author", true);
-//   getPostURL.searchParams.set("_comments", true);
-//   getPostURL.searchParams.set("_reactions", true);
+  const baseURL = API_AUCTION_URL;
+  const action = "/listings";
+  const getListingURL = new URL(`${baseURL}${action}/${id}`);
+  getListingURL.searchParams.set("_seller", true);
+  getListingURL.searchParams.set("_bids", true);
 
-//   const response = await authFetch(getPostURL.toString());
+  const response = await authFetch(getListingURL.toString());
 
-//   return await response.json();
-// }
+  return await response.json();
+}

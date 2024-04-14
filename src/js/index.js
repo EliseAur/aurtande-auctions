@@ -36,6 +36,16 @@ function setupRoutingAndListeners() {
     case "/aurtande-auctions/pages/listings-member/index.html":
       listeners.renderListingsNotLoggedIn();
       break;
+    case "/pages/listing/":
+    case "/pages/listing/index.html":
+    case "/aurtande-auctions/pages/listing/":
+    case "/aurtande-auctions/pages/listing/index.html":
+    case "/pages/listing-member/":
+    case "/pages/listing-member/index.html":
+    case "/aurtande-auctions/pages/listing-member/":
+    case "/aurtande-auctions/pages/listing-member/index.html":
+      listeners.renderListingDetails();
+      break;
 
     default:
   }

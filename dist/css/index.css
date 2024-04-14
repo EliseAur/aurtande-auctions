@@ -11870,6 +11870,7 @@ main {
 
 .card-img-top {
   height: 150px;
+  background: #ddd;
 }
 
 .navbar .form-control:focus, .navbar .form-control:hover {
