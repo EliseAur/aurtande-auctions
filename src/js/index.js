@@ -44,7 +44,6 @@ function setupRoutingAndListeners() {
     case "/aurtande-auctions/pages/listing/":
     case "/aurtande-auctions/pages/listing/index.html":
       listeners.renderListingDetails();
-
       break;
     case "/pages/listing-member/":
     case "/pages/listing-member/index.html":
