@@ -91,3 +91,15 @@
 .listings-area {
   max-width: 970px;
 }
+
+.gallery-image {
+  height: 120px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.gallery-image-1 {
+  max-height: 250px;
+  width: 100%;
+  object-fit: cover;
+}

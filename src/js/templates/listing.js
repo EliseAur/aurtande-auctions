@@ -30,7 +30,8 @@ export function listingTemplate(listingData) {
   card.className = "card";
 
   const cardImage = document.createElement("div");
-  cardImage.className = "cardImage card-img-top";
+  // cardImage.className = "cardImage card-img-top";
+  cardImage.className = "img-container";
   listingUtils.createListingImage(listingData, cardImage);
 
   const cardTextList = document.createElement("ul");

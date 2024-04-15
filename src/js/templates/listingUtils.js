@@ -9,10 +9,10 @@ export function createListingImage(listingData, cardImage) {
   listingImage.onerror = function () {
     console.error("Error loading image:", this.src);
     if (window.location.href.includes("listings-member")) {
-      this.src = "../../images/placeholder-image-not-found.jpg";
+      this.src = "../../images/error-loading-image.jpeg";
     } else {
       // this.src = "./images/placeholder-image-not-found.jpg";
-      this.src = "https://placehold.co/600x150?text=Error+loading+image";
+      this.src = "../../images/error-loading-image.jpeg";
     }
   };
 

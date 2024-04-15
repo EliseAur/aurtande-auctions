@@ -13,7 +13,6 @@ import * as listeners from "./handlers/index.js";
  * setupRoutingAndListeners();
  */
 function setupRoutingAndListeners() {
-  listeners.setLogoutFormListener();
   switch (location.pathname) {
     case "/pages/account/login/":
     case "/pages/account/login/index.html":
@@ -30,12 +29,16 @@ function setupRoutingAndListeners() {
     case "/":
     case "/index.html":
     case "/aurtande-auctions/index.html":
+      listeners.renderListings();
+      break;
     case "/pages/listings-member/":
     case "/pages/listings-member/index.html":
     case "/aurtande-auctions/pages/listings-member/":
     case "/aurtande-auctions/pages/listings-member/index.html":
-      listeners.renderListingsNotLoggedIn();
+      listeners.renderListings();
+      listeners.setLogoutFormListener();
       break;
+
     case "/pages/listing/":
     case "/pages/listing/index.html":
     case "/aurtande-auctions/pages/listing/":
@@ -45,6 +48,7 @@ function setupRoutingAndListeners() {
     case "/aurtande-auctions/pages/listing-member/":
     case "/aurtande-auctions/pages/listing-member/index.html":
       listeners.renderListingDetails();
+      listeners.setLogoutFormListener();
       break;
 
     default:

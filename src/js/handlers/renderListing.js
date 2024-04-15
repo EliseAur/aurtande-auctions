@@ -35,7 +35,7 @@ import * as postMethods from "../api/listings/index.js";
 //   }
 // }
 
-export async function renderListingsNotLoggedIn() {
+export async function renderListings() {
   const listings = await postMethods.getListings(100, 100);
   const container = document.querySelector("#listingList");
   container.innerHTML = "";
