@@ -39,7 +39,8 @@ export function listingTemplate(listingData) {
 
   const titleListing = document.createElement("li");
   titleListing.className = "titleListing list-group-item list-group-item-1";
-  listingUtils.createListingTitle(listingData, titleListing);
+  // listingUtils.createListingTitle(listingData, titleListing);
+  listingUtils.createListingTitle(listingData, titleListing, "h5");
 
   const detailsListing = document.createElement("li");
   detailsListing.className = "detailsListing list-group-item list-group-item-2";
