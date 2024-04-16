@@ -34,6 +34,7 @@ export function listingDetailsTemplate(listingData) {
   listingUtils.createListingTags(listingData, tableBody);
   listingUtils.createLastBid(listingData, tableBody, "tr");
   listingUtils.createTimeLeft(listingData, tableBody, "tr");
+  listingUtils.createNextBid(listingData, tableBody, "tr");
 
   detailsTable.appendChild(tableBody);
 

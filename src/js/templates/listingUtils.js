@@ -129,6 +129,17 @@ export function createLastBid(listingData, lastBidContainer, className) {
   lastBidContainer.appendChild(lastBid);
 }
 
+export function createNextBid(listingData, nextBidContainer, className) {
+  const nextBid = document.createElement(className);
+  const latestBidIndex = listingData.bids[listingData.bids.length - 1];
+  const latestBidAmount = latestBidIndex ? latestBidIndex.amount : null;
+  const nextBidAmount = latestBidAmount + 1;
+  nextBid.innerHTML = `<th scope="row" class="p-1 ps-0">Next bid:</th>
+                            <td class="p-1">${nextBidAmount} $</td>`;
+
+  nextBidContainer.appendChild(nextBid);
+}
+
 export function createTimeLeft(listingData, timeLeftContainer, className) {
   const timeLeft = document.createElement(className);
   const endDate = new Date(listingData.endsAt);
