@@ -30,7 +30,6 @@ export function listingTemplate(listingData) {
   card.className = "card";
 
   const cardImage = document.createElement("div");
-  // cardImage.className = "cardImage card-img-top";
   cardImage.className = "img-container";
   listingUtils.createListingImage(listingData, cardImage);
 
@@ -39,13 +38,12 @@ export function listingTemplate(listingData) {
 
   const titleListing = document.createElement("li");
   titleListing.className = "titleListing list-group-item list-group-item-1";
-  // listingUtils.createListingTitle(listingData, titleListing);
   listingUtils.createListingTitle(listingData, titleListing, "h5");
 
   const detailsListing = document.createElement("li");
   detailsListing.className = "detailsListing list-group-item list-group-item-2";
-  listingUtils.createLastBidText(listingData, detailsListing);
-  listingUtils.createTimeLeftText(listingData, detailsListing);
+  listingUtils.createLastBid(listingData, detailsListing, "p");
+  listingUtils.createTimeLeft(listingData, detailsListing, "p");
 
   const buttonListing = document.createElement("li");
   buttonListing.className = "buttonListing list-group-item list-group-item-3";

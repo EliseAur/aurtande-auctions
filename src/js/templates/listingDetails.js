@@ -31,26 +31,11 @@ export function listingDetailsTemplate(listingData) {
   detailsTable.className = "table table-borderless table-dark mb-3 w-auto";
 
   const tableBody = document.createElement("tbody");
-
-  const tableRowTags = document.createElement("tr");
-  const tagsHtml =
-    listingData.tags.length > 0 ? listingData.tags.join(", ") : "No tags";
-  tableRowTags.innerHTML = `<th scope="row" class="p-1 ps-0">Tags:</th>
-                            <td class="p-1">${tagsHtml}</td>`;
-
-  const tableRowLastBid = document.createElement("tr");
-  const lastBidDetails = listingData.bids[listingData.bids.length - 1];
-  if (listingData.bids.length > 0) {
-    tableRowLastBid.innerHTML = `<th scope="row" class="p-1 ps-0">Last bid:</th>
-                                  <td class="p-1">${lastBidDetails.amount} $</td>`;
-  } else {
-    tableRowLastBid.innerHTML = `<th scope="row" class="p-1 ps-0">Last bid:</th>
-    <td class="p-1">No bids yet</td>`;
-  }
+  listingUtils.createListingTags(listingData, tableBody);
+  listingUtils.createLastBid(listingData, tableBody, "tr");
+  listingUtils.createTimeLeft(listingData, tableBody, "tr");
 
   detailsTable.appendChild(tableBody);
-  tableBody.appendChild(tableRowTags);
-  tableBody.appendChild(tableRowLastBid);
 
   listingDetailsContainerChild.appendChild(detailsTable);
   return listingDetailsContainerChild;

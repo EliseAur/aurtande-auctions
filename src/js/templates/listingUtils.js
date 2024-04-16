@@ -63,6 +63,15 @@ export function createListingDescription(
   listingDetailsContainerChild.appendChild(descriptionContainer);
 }
 
+export function createListingTags(listingData, tableBody) {
+  const tableRowTags = document.createElement("tr");
+  const tagsHtml =
+    listingData.tags.length > 0 ? listingData.tags.join(", ") : "No tags";
+  tableRowTags.innerHTML = `<th scope="row" class="p-1 ps-0">Tags:</th>
+                            <td class="p-1">${tagsHtml}</td>`;
+  tableBody.appendChild(tableRowTags);
+}
+
 /**
  * Creates a "View more" button element for a listing on the homepage.
  * The button links to the detailed view of the post.
@@ -89,32 +98,56 @@ export function createVieWMoreButton(listingData, buttonListing) {
   buttonListing.appendChild(viewMoreButton);
 }
 
-export function createLastBidText(listingData, detailsListing) {
-  const lastBid = listingData.bids[listingData.bids.length - 1];
-  const textLastBid = document.createElement("p");
-  textLastBid.className = "card-text mb-1";
-  if (lastBid) {
-    textLastBid.innerHTML = `<strong>Last bid:</strong> ${lastBid.amount} $`;
+export function createLastBid(listingData, lastBidContainer, className) {
+  const lastBid = document.createElement(className);
+  const lastBidIndex = listingData.bids[listingData.bids.length - 1];
+  const lastBidAmount = lastBidIndex ? lastBidIndex.amount : null;
+  if (lastBidIndex) {
+    if (
+      window.location.pathname.includes("listing/") ||
+      window.location.pathname.includes("listing-member")
+    ) {
+      lastBid.innerHTML = `<th scope="row" class="p-1 ps-0">Last bid:</th>
+                            <td class="p-1">${lastBidAmount} $</td>`;
+    } else {
+      lastBid.className = "card-text mb-1";
+      lastBid.innerHTML = `<strong>Last bid:</strong> ${lastBidAmount} $`;
+    }
   } else {
-    textLastBid.innerHTML = `<strong>Last bid:</strong> No bids`;
+    if (
+      window.location.pathname.includes("listing/") ||
+      window.location.pathname.includes("listing-member")
+    ) {
+      lastBid.innerHTML = `<th scope="row" class="p-1 ps-0">Last bid:</th>
+                            <td class="p-1">No bids yet</td>`;
+    } else {
+      lastBid.className = "card-text mb-1";
+      lastBid.innerHTML = `<strong>Last bid:</strong> No bids`;
+    }
   }
-  detailsListing.appendChild(textLastBid);
+
+  lastBidContainer.appendChild(lastBid);
 }
 
-export function createTimeLeftText(listingData, detailsListing) {
-  // Time left
-  const textTimeLeft = document.createElement("p");
-  textTimeLeft.className = "textTimeLeft card-text";
-
+export function createTimeLeft(listingData, timeLeftContainer, className) {
+  const timeLeft = document.createElement(className);
   const endDate = new Date(listingData.endsAt);
   const currentDate = new Date();
-
   // Calculate the time difference in milliseconds
   const timeDifference = endDate.getTime() - currentDate.getTime();
 
   //check if the listing has finished
   if (timeDifference <= 0) {
-    textTimeLeft.innerHTML = `<strong>Time left:</strong> Listing finished`;
+    if (
+      window.location.pathname.includes("listing/") ||
+      window.location.pathname.includes("listing-member")
+    ) {
+      timeLeft.innerHTML = `<th scope="row" class="p-1 ps-0">Time left:</th>
+                            <td class="p-1">Listing finished</td>`;
+    } else {
+      timeLeft.className = "textTimeLeft card-text";
+      timeLeft.innerHTML = `<strong>Time left:</strong> Listing finished`;
+    }
   } else {
     const remainingDays = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
     const remainingHours = Math.floor(
@@ -124,12 +157,20 @@ export function createTimeLeftText(listingData, detailsListing) {
       (timeDifference % (1000 * 60 * 60)) / (1000 * 60),
     );
 
-    // Create the countdown string
     const countdownString = `${remainingDays} days, ${remainingHours} hours, ${remainingMinutes} min`;
 
-    textTimeLeft.innerHTML = `<strong>Time left:</strong> ${countdownString}`;
+    if (
+      window.location.pathname.includes("listing/") ||
+      window.location.pathname.includes("listing-member")
+    ) {
+      timeLeft.innerHTML = `<th scope="row" class="p-1 ps-0">Time left:</th>
+                            <td class="p-1">${countdownString}</td>`;
+    } else {
+      timeLeft.className = "textTimeLeft card-text";
+      timeLeft.innerHTML = `<strong>Last bid:</strong> ${countdownString}`;
+    }
   }
-  detailsListing.appendChild(textTimeLeft);
+  timeLeftContainer.appendChild(timeLeft);
 }
 
 export function createMediaGallery(listingData, listingImagesContainer) {
