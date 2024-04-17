@@ -134,10 +134,49 @@ export function createNextBid(listingData, nextBidContainer, className) {
   const latestBidIndex = listingData.bids[listingData.bids.length - 1];
   const latestBidAmount = latestBidIndex ? latestBidIndex.amount : null;
   const nextBidAmount = latestBidAmount + 1;
-  nextBid.innerHTML = `<th scope="row" class="p-1 ps-0">Next bid:</th>
+  nextBid.innerHTML = `<th scope="row" class="p-1 ps-0">Next bid min:</th>
                             <td class="p-1">${nextBidAmount} $</td>`;
 
   nextBidContainer.appendChild(nextBid);
+
+  return nextBidAmount;
+}
+
+export function createYourBid(yourBidContainer, className, nextBidAmount) {
+  const yourBid = document.createElement(className);
+  const yourBidText = document.createElement("th");
+  yourBidText.scope = "row";
+  yourBidText.className = "p-1 ps-0";
+  yourBidText.textContent = "Your bid:";
+
+  const yourBidInputContainer = document.createElement("td");
+  yourBidInputContainer.className = "p-1";
+
+  const yourBidDollar = document.createElement("span");
+  yourBidDollar.className = "position-absolute ps-2 pt-1 fs-6";
+  yourBidDollar.textContent = "$";
+
+  const yourBidInput = document.createElement("input");
+  yourBidInput.setAttribute("class", "form-control w-50 ps-4 p-1 fs-6");
+  yourBidInput.setAttribute("id", "bidPrice");
+  yourBidInput.setAttribute("name", "bidPrice");
+  yourBidInput.setAttribute("type", "number");
+  yourBidInput.setAttribute("min", nextBidAmount);
+  yourBidInput.setAttribute("placeholder", nextBidAmount);
+  yourBidInput.setAttribute("required", "");
+  yourBidInput.setAttribute("max", "1000");
+
+  if (window.location.pathname.includes("listing-member")) {
+    yourBidInput.disabled = false;
+  } else {
+    yourBidInput.disabled = true;
+  }
+
+  yourBid.appendChild(yourBidText);
+  yourBid.appendChild(yourBidInputContainer);
+  yourBidInputContainer.appendChild(yourBidDollar);
+  yourBidInputContainer.appendChild(yourBidInput);
+  yourBidContainer.appendChild(yourBid);
 }
 
 export function createTimeLeft(listingData, timeLeftContainer, className) {
@@ -247,7 +286,7 @@ export function createModalForGallery(
 ) {
   const modal = document.createElement("div");
   modal.className = "modal fade";
-  modal.id = `image-${index + 1}`; // Index is zero-based, so we add 1
+  modal.id = `image-${index + 1}`;
   modal.tabIndex = "-1";
   modal.ariaLabel = `image-${index + 1}`;
   modal.ariaHidden = "true";
@@ -281,4 +320,125 @@ export function createModalForGallery(
   modalDialog.appendChild(modalContent);
   modal.appendChild(modalDialog);
   listingDetailsContainerChild.appendChild(modal);
+}
+
+export function createSubmitOrLogin(makeABidForm) {
+  if (window.location.pathname.includes("listing-member")) {
+    const submitBidButton = document.createElement("button");
+    submitBidButton.className = "btn btn-secondary flex-fill fs-6 mb-3 w-100";
+    submitBidButton.innerHTML = `<i class="bi bi-credit-card-fill"></i> Submit bid`;
+    makeABidForm.appendChild(submitBidButton);
+  } else {
+    const loginMsg = document.createElement("p");
+    loginMsg.className = "mb-0 description";
+    loginMsg.textContent = "Log in or create your account to make a bid";
+    const loginSectionButtons = document.createElement("div");
+    loginSectionButtons.className = "mt-1 mb-3 d-flex";
+    loginSectionButtons.innerHTML = `<a
+                                      class="btn btn-secondary flex-fill w-100 me-1 fs-6"
+                                      href="../account/login/index.html">
+                                      <i class="bi bi-door-closed-fill me-1"></i>Log in
+                                    </a>
+                                    <a
+                                      class="btn btn-primary flex-fill w-100 me-1 fs-6"
+                                      href="../account/register/index.html">
+                                      <i class="bi bi-person-fill-add"></i> Create account
+                                    </a>`;
+    makeABidForm.appendChild(loginMsg);
+    makeABidForm.appendChild(loginSectionButtons);
+  }
+}
+
+export function createLatestBidTable(
+  listingData,
+  listingDetailsContainerChild,
+) {
+  const bidHistoryTable = document.createElement("div");
+  bidHistoryTable.className = "card p-3 mb-3";
+  const bidHistoryTitle = document.createElement("p");
+  bidHistoryTitle.innerHTML = `<strong>Latest Bids</strong>`;
+  bidHistoryTable.appendChild(bidHistoryTitle);
+
+  // Check if there are no bids
+  if (listingData.bids.length === 0) {
+    const noBidsMessage = document.createElement("p");
+    noBidsMessage.textContent = "No bids yet";
+    bidHistoryTable.appendChild(noBidsMessage);
+  } else {
+    // Create table element
+    const table = document.createElement("table");
+    table.className = "bidHistoryTable table table-borderless table-light mb-0";
+
+    const tbody = document.createElement("tbody");
+
+    let counter = 1;
+
+    // Loop through the latest bids
+    for (
+      let i = listingData.bids.length - 1;
+      i >= 0 && i >= listingData.bids.length - 5;
+      i--
+    ) {
+      const bid = listingData.bids[i];
+      const createdDate = new Date(bid.created);
+      const formattedDate = `${createdDate.getDate()}.${createdDate.getMonth() + 1}.${createdDate.getFullYear()}`;
+
+      const tr = document.createElement("tr");
+
+      const thNumber = document.createElement("th");
+      thNumber.setAttribute("scope", "row");
+      thNumber.innerHTML = `<i class="bi bi-${counter++}-circle-fill"></i>`;
+
+      const tdBidderName = document.createElement("td");
+      tdBidderName.textContent = bid.bidderName;
+      const tdAmount = document.createElement("td");
+      tdAmount.textContent = `${bid.amount} $`;
+      const tdDate = document.createElement("td");
+      tdDate.textContent = formattedDate;
+
+      tr.appendChild(thNumber);
+      tr.appendChild(tdBidderName);
+      tr.appendChild(tdAmount);
+      tr.appendChild(tdDate);
+
+      tbody.appendChild(tr);
+    }
+
+    table.appendChild(tbody);
+
+    bidHistoryTable.appendChild(table);
+  }
+  listingDetailsContainerChild.appendChild(bidHistoryTable);
+}
+
+export function createSellerInfoCard(
+  listingData,
+  listingDetailsContainerChild,
+) {
+  const sellerInfoCard = document.createElement("div");
+  sellerInfoCard.className = "card p-3 mb-5";
+
+  const headingInfoCard = document.createElement("p");
+  headingInfoCard.innerHTML = `<strong>Contact info seller</strong>`;
+
+  const sellerInfo = document.createElement("div");
+  sellerInfo.className = "d-flex flex-row";
+
+  const avatarSrc = listingData.seller.avatar
+    ? listingData.seller.avatar
+    : "../../images/placeholder-profile-img.jpg";
+
+  sellerInfo.innerHTML = `
+                  <div class="w-25 ms-0">
+                    <img src="${avatarSrc}" class="img-fluid profile__user-img rounded-circle w-100 h-100" 
+                    alt="Seller profile image">
+                  </div>
+                  <div class="ms-4 mt-2 mt-sm-3">
+                    <p class="mb-1 fs-5 h3">${listingData.seller.name}</p>
+                    <p>${listingData.seller.email}</p>
+                  </div>`;
+
+  sellerInfoCard.appendChild(headingInfoCard);
+  sellerInfoCard.appendChild(sellerInfo);
+  listingDetailsContainerChild.appendChild(sellerInfoCard);
 }

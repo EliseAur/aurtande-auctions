@@ -76,17 +76,6 @@
 .modal-dialog {
   margin-top: 155px;
 }
-// .card-col {
-//   padding: 0;
-// }
-
-// .card {
-//   max-width: 190px;
-// }
-
-// .card-col {
-//   max-width: 200px;
-// }
 
 .listings-area {
   max-width: 970px;
@@ -101,5 +90,10 @@
 .gallery-image-1 {
   max-height: 250px;
   width: 100%;
+  object-fit: cover;
+}
+
+.modal-body img {
+  max-height: 500px;
   object-fit: cover;
 }
