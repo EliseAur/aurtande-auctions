@@ -1,11 +1,11 @@
 import * as templates from "../templates/index.js";
 import * as postMethods from "../api/listings/index.js";
-// import * as handlers from "./index.js";
+import * as handlers from "./index.js";
 
 /**
- * Retrieves the post ID from the URL query parameters.
+ * Retrieves the listing ID from the URL query parameters.
  *
- * @returns {string|null} The post ID or null if not found.
+ * @returns {string|null} The listing ID or null if not found.
  *
  * @example
  * // Call 'getPostIdFromUrl' to get the post ID from the URL:
@@ -35,10 +35,15 @@ export async function renderListingDetails() {
     const listing = await postMethods.getListing(listingId);
     console.log(listing);
     const container = document.querySelector("#listingDetailsContainer");
-    templates.renderListingDetailsTemplate(listing, container);
+    templates.renderListingDetailsTemplate(listing, container, listingId);
+    handlers.setCreateBidFormListener();
     //   handlers.beAbleToRemovePost(listing);
   }
   // else {
   //   templates.afterDeleteTemplateError();
+  // }
+
+  // if (window.location.pathname.includes("listing-member")) {
+  //   handlers.setCreateBidFormListener();
   // }
 }

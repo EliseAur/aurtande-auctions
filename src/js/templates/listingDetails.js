@@ -1,6 +1,6 @@
 import * as listingUtils from "./listingUtils.js";
 
-export function listingDetailsTemplate(listingData) {
+export function listingDetailsTemplate(listingData, listingId) {
   const listingDetailsContainerChild = document.createElement("div");
   // Title of listing
   listingUtils.createListingTitle(
@@ -29,27 +29,11 @@ export function listingDetailsTemplate(listingData) {
     listingDetailsContainerChild,
   );
 
-  // Bid details and input to make a bid on the listing
-  const makeABidForm = document.createElement("form");
-  const detailsTable = document.createElement("table");
-  detailsTable.className = "table table-borderless table-dark mb-3 w-auto";
-
-  const tableBody = document.createElement("tbody");
-  listingUtils.createListingTags(listingData, tableBody);
-  listingUtils.createLastBid(listingData, tableBody, "tr");
-  listingUtils.createTimeLeft(listingData, tableBody, "tr");
-  const nextBidAmount = listingUtils.createNextBid(
+  listingUtils.createListingDetails(
     listingData,
-    tableBody,
-    "tr",
+    listingDetailsContainerChild,
+    listingId,
   );
-  listingUtils.createYourBid(tableBody, "tr", nextBidAmount);
-
-  detailsTable.appendChild(tableBody);
-  makeABidForm.appendChild(detailsTable);
-  listingUtils.createSubmitOrLogin(makeABidForm);
-
-  listingDetailsContainerChild.appendChild(makeABidForm);
 
   // Latest bids on the listing
   listingUtils.createLatestBidTable(listingData, listingDetailsContainerChild);
@@ -60,7 +44,7 @@ export function listingDetailsTemplate(listingData) {
   return listingDetailsContainerChild;
 }
 
-export function renderListingDetailsTemplate(listingData, parent) {
+export function renderListingDetailsTemplate(listingData, parent, listingId) {
   if (!parent || !(parent instanceof Element)) {
     console.error(
       "Invalid parent element provided for rendering listing template.",
@@ -68,5 +52,5 @@ export function renderListingDetailsTemplate(listingData, parent) {
     return;
   }
 
-  parent.append(listingDetailsTemplate(listingData));
+  parent.append(listingDetailsTemplate(listingData, listingId));
 }

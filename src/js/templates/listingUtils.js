@@ -159,7 +159,7 @@ export function createYourBid(yourBidContainer, className, nextBidAmount) {
   const yourBidInput = document.createElement("input");
   yourBidInput.setAttribute("class", "form-control w-50 ps-4 p-1 fs-6");
   yourBidInput.setAttribute("id", "bidPrice");
-  yourBidInput.setAttribute("name", "bidPrice");
+  yourBidInput.setAttribute("name", "amount");
   yourBidInput.setAttribute("type", "number");
   yourBidInput.setAttribute("min", nextBidAmount);
   yourBidInput.setAttribute("placeholder", nextBidAmount);
@@ -347,6 +347,33 @@ export function createSubmitOrLogin(makeABidForm) {
     makeABidForm.appendChild(loginMsg);
     makeABidForm.appendChild(loginSectionButtons);
   }
+}
+
+export function createListingDetails(
+  listingData,
+  listingDetailsContainerChild,
+  listingId,
+) {
+  // Bid details and input to make a bid on the listing
+  const makeABidForm = document.createElement("form");
+  makeABidForm.className = "bidForm";
+  makeABidForm.id = `bidForm-${listingId}`;
+  makeABidForm.classList.add("bidForm");
+  const detailsTable = document.createElement("table");
+  detailsTable.className = "table table-borderless table-dark mb-3 w-auto";
+
+  const tableBody = document.createElement("tbody");
+  createListingTags(listingData, tableBody);
+  createLastBid(listingData, tableBody, "tr");
+  createTimeLeft(listingData, tableBody, "tr");
+  const nextBidAmount = createNextBid(listingData, tableBody, "tr");
+  createYourBid(tableBody, "tr", nextBidAmount);
+
+  detailsTable.appendChild(tableBody);
+  makeABidForm.appendChild(detailsTable);
+  createSubmitOrLogin(makeABidForm);
+
+  listingDetailsContainerChild.appendChild(makeABidForm);
 }
 
 export function createLatestBidTable(

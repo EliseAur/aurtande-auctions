@@ -50,6 +50,7 @@ export async function getListing(id) {
   const getListingURL = new URL(`${baseURL}${action}/${id}`);
   getListingURL.searchParams.set("_seller", true);
   getListingURL.searchParams.set("_bids", true);
+  getListingURL.searchParams.set("_count", true);
 
   const response = await authFetch(getListingURL.toString());
 
