@@ -9,11 +9,11 @@ function isListingTitleGood(listing) {
   return listing.title.length > 3;
 }
 
-function doesListingHaveImage(listing) {
-  if (listing.media.length > 0) {
-    return listing.media;
-  }
-}
+// function doesListingHaveImage(listing) {
+//   if (listing.media.length > 0) {
+//     return listing.media;
+//   }
+// }
 
 // /**
 //  * Checks if the provided listing is created by the current user.
@@ -39,8 +39,12 @@ function doesListingHaveImage(listing) {
  * @param {Object} listing - The listing object to be checked.
  * @returns {boolean} - Returns true if the listing meets the criteria, otherwise false.
  */
+// function doesListingMeetCriterias(listing) {
+//   return isListingTitleGood(listing) && doesListingHaveImage(listing);
+// }
+
 function doesListingMeetCriterias(listing) {
-  return isListingTitleGood(listing) && doesListingHaveImage(listing);
+  return isListingTitleGood(listing);
 }
 
 /**

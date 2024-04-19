@@ -23,13 +23,12 @@ export function createListingImage(listingData, cardImage) {
   } else {
     if (window.location.href.includes("listings-member")) {
       console.log("media array is undefined or empty");
-      listingImage.src = "https://placehold.co/600x150?text=No+image+available";
+      listingImage.src = "../../images/no-image-available.jpeg";
       listingImage.alt = "Image not found";
     } else {
+      //For the index.html home page not logged in
       console.log("media array is undefined or empty");
-      // listingImage.src = "./images/placeholder-image-not-found.jpg";
-      listingImage.src = "https://placehold.co/600x400?text=Hello\nWorld";
-
+      listingImage.src = "./images/no-image-available.jpeg";
       listingImage.alt = "Image not found";
     }
   }

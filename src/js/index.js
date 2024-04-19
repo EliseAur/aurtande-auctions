@@ -38,7 +38,6 @@ function setupRoutingAndListeners() {
       listeners.renderListings();
       listeners.setLogoutFormListener();
       break;
-
     case "/pages/listing/":
     case "/pages/listing/index.html":
     case "/aurtande-auctions/pages/listing/":
@@ -51,6 +50,14 @@ function setupRoutingAndListeners() {
     case "/aurtande-auctions/pages/listing-member/index.html":
       listeners.renderListingDetails();
       listeners.setLogoutFormListener();
+      break;
+    case "/pages/listing-member/create/":
+    case "/pages/listing-member/create/index.html":
+    case "/aurtande-auctions/pages/listing-member/create/":
+    case "/aurtande-auctions/pages/listing-member/create/index.html":
+      listeners.setLogoutFormListener();
+      listeners.setCreateListingFormListener();
+
       break;
 
     default:
