@@ -23,6 +23,7 @@ export async function login(profile) {
   storage.save("token", accessToken);
   storage.save("profile", user);
   storage.save("userName", user.name);
+  storage.save("credits", user.credits);
 
   alert("You are now logged in");
   window.location.href = "../../listings-member/index.html";
