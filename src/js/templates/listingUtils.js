@@ -445,21 +445,22 @@ export function createSellerInfoCard(
   sellerInfoCard.className = "card p-3 mb-5";
 
   const headingInfoCard = document.createElement("p");
+  headingInfoCard.className = "mx-auto ms-2 mx-sm-0";
   headingInfoCard.innerHTML = `<strong>Contact info seller</strong>`;
 
   const sellerInfo = document.createElement("div");
-  sellerInfo.className = "d-flex flex-row";
+  sellerInfo.className = "d-flex flex-column flex-sm-row";
 
   const avatarSrc = listingData.seller.avatar
     ? listingData.seller.avatar
     : "../../images/placeholder-profile-img.jpg";
 
   sellerInfo.innerHTML = `
-                  <div class="w-25 ms-0">
-                    <img src="${avatarSrc}" class="img-fluid profile__user-img rounded-circle w-100 h-100" 
+                  <div class="mx-auto ms-2 ms-sm-0">
+                    <img src="${avatarSrc}" class="profile-avatar me-auto ms-2 mx-sm-0" 
                     alt="Seller profile image">
                   </div>
-                  <div class="ms-4 mt-2 mt-sm-3">
+                  <div class="mx-auto ms-2 ms-sm-0 mt-2 mt-sm-3">
                     <p class="mb-1 fs-5 h3">${listingData.seller.name}</p>
                     <p>${listingData.seller.email}</p>
                   </div>`;
