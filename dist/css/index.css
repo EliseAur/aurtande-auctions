@@ -11933,6 +11933,7 @@ label {
 
 .account-wrapper {
   padding-top: 30px;
+  max-width: 600px;
 }
 
 .profile-image {
@@ -11985,6 +11986,13 @@ label {
 
 .modal-body img {
   max-height: 500px;
+  object-fit: cover;
+}
+
+.profile-avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
   object-fit: cover;
 }
 

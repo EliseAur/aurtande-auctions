@@ -1,4 +1,5 @@
 import * as listeners from "./handlers/index.js";
+// import { getProfile } from "./api/auth/profile.js";
 
 /**
  * Sets up routing behavior and initializes event listeners based on the current URL path.
@@ -57,6 +58,16 @@ function setupRoutingAndListeners() {
     case "/aurtande-auctions/pages/listing-member/create/index.html":
       listeners.setLogoutFormListener();
       listeners.setCreateListingFormListener();
+      break;
+    case "/pages/account/":
+    case "/pages/account/index.html":
+    case "/aurtande-auctions/pages/account/":
+    case "/aurtande-auctions/pages/account/index.html":
+      listeners.setLogoutFormListener();
+      listeners.renderProfileDetails();
+      listeners.renderProfileListings();
+      listeners.renderProfileBids();
+      listeners.renderProfileWins();
 
       break;
 

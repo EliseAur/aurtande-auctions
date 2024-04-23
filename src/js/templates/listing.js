@@ -49,7 +49,8 @@ export function listingTemplate(listingData) {
   buttonListing.className = "buttonListing list-group-item list-group-item-3";
   if (
     window.location.pathname.includes("/") ||
-    window.location.pathname.includes("/listings-member/")
+    window.location.pathname.includes("/listings-member/") ||
+    window.location.pathname.includes("/account/")
   ) {
     listingUtils.createVieWMoreButton(listingData, buttonListing);
   }

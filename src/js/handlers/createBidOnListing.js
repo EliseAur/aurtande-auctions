@@ -32,6 +32,11 @@ export async function setCreateBidFormListener() {
         // Update credits in local storage
         localStorage.setItem("credits", credits);
 
+        // Store the listing ID in an array in local storage
+        let listingIds = JSON.parse(localStorage.getItem("listingIds")) || [];
+        listingIds.push(listingId);
+        localStorage.setItem("listingIds", JSON.stringify(listingIds));
+
         const createdBid = await createBidOnListing(listingId, bidData.amount);
         updateBidsArray(listing, createdBid);
 
