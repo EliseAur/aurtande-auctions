@@ -48,7 +48,7 @@ export async function renderListings() {
 
 export async function renderProfileListings() {
   const listings = await postMethods.getProfileListings();
-  // console.log(listings);
+  console.log("Profile listings", listings);
   const container = document.querySelector("#myListingsContainer");
   container.innerHTML = "";
 
@@ -59,32 +59,49 @@ export async function renderProfileListings() {
 
 export async function renderProfileBids() {
   const listings = await postMethods.getListings();
-  const listingIds = JSON.parse(localStorage.getItem("listingIds")) || [];
-  // console.log("all listings:", listings);
-  // console.log("listing Ids:", listingIds);
+  const userName = JSON.parse(localStorage.getItem("userName"));
+
   const container = document.querySelector("#myBidsContainer");
   container.innerHTML = "";
 
-  const goodListings = postMethods.filterBadListings(listings);
-  // console.log("Good listings", goodListings);
-
-  // Filter listings from goodListings that have matching listingIds in profileBids
-  const profileBids = goodListings.filter((listing) => {
-    const hasBidsByProfile = listingIds.includes(listing.id);
-    return hasBidsByProfile;
+  // Filter listings based on whether the current user has bids on top of the bidding list
+  const profileBids = listings.filter((listing) => {
+    const lastBidIndex = listing.bids.length - 1;
+    if (
+      lastBidIndex >= 0 &&
+      listing.bids[lastBidIndex].bidderName === userName
+    ) {
+      return true;
+    }
+    return false;
   });
 
-  // console.log("ProfileBids:", profileBids);
-
-  // Render the filtered listings
   templates.renderListingTemplates(profileBids, container);
+
+  // Filter listings based on whether the current user has bids but is not on top of the bidding list
+  const containerNoLead = document.querySelector("#myBidsContainerNoLead");
+  containerNoLead.innerHTML = "";
+
+  const profileBidsNoLead = listings.filter((listing) => {
+    const lastBidIndex = listing.bids.length - 1;
+    if (
+      lastBidIndex >= 0 &&
+      listing.bids[lastBidIndex].bidderName === userName
+    ) {
+      return false; // Exclude listings where user has the leading bid
+    }
+    return listing.bids.some((bid) => bid.bidderName === userName);
+  });
+
+  templates.renderListingTemplates(profileBidsNoLead, containerNoLead);
 }
 
 export async function renderProfileWins() {
   const listings = await postMethods.getListings();
   const profile = await getProfile();
+  console.log("profile", profile);
   const profileWins = profile.wins;
-  // console.log("wins", profileWins);
+  console.log("wins", profileWins);
   // console.log("listings", listings);
   const container = document.querySelector("#myWinsContainer");
   container.innerHTML = "";
