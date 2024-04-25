@@ -66,7 +66,8 @@ function setupRoutingAndListeners() {
       listeners.setLogoutFormListener();
       listeners.renderProfileDetails();
       listeners.renderProfileListings();
-      listeners.renderProfileBids();
+      listeners.renderProfileBidsLead();
+      listeners.renderProfileBidsNoLead();
       listeners.renderProfileWins();
 
       break;

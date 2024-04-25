@@ -399,12 +399,13 @@ export function createLatestBidTable(
 
     let counter = 1;
 
-    // Loop through the latest bids
-    for (
-      let i = listingData.bids.length - 1;
-      i >= 0 && i >= listingData.bids.length - 5;
-      i--
-    ) {
+    // Loop through the 5 latest bids
+    // for (
+    //   let i = listingData.bids.length - 1;
+    //   i >= 0 && i >= listingData.bids.length - 5;
+    //   i--
+    // )
+    for (let i = listingData.bids.length - 1; i >= 0; i--) {
       const bid = listingData.bids[i];
       const createdDate = new Date(bid.created);
       const formattedDate = `${createdDate.getDate()}.${createdDate.getMonth() + 1}.${createdDate.getFullYear()}`;

@@ -1,5 +1,5 @@
 import * as templates from "../templates/index.js";
-import { getProfile } from "../api/auth/profile.js";
+import { getProfile } from "../api/account/profile.js";
 
 /**
  * Renders the profile details in the specified container on the profile page.

@@ -23,13 +23,13 @@ function createProfileDetails(profile, profileDetailsContainer) {
   profileEmail.className = "mb-1";
   profileEmail.textContent = `${profile.email}`;
 
-  const profileCredits = document.createElement("p");
-  profileCredits.className = "mt-3";
-  profileCredits.innerHTML = `<strong>Balance:</strong> ${profile.credits}$`;
+  const profileTemporaryCredits = document.createElement("p");
+  profileTemporaryCredits.className = "mt-3";
+  profileTemporaryCredits.innerHTML = `<strong>Temporary Balance:</strong> ${profile.credits}$`;
 
   profileDetailsContainer.appendChild(profileUserName);
   profileDetailsContainer.appendChild(profileEmail);
-  profileDetailsContainer.appendChild(profileCredits);
+  profileDetailsContainer.appendChild(profileTemporaryCredits);
 }
 
 // function createMyListings(profile, myListingsContainer) {

@@ -17,6 +17,7 @@ export function logout() {
   storage.remove("token");
   storage.remove("profile");
   storage.remove("userName");
+  storage.remove("bidListingIds");
 
   alert("You are now logged out");
   // window.location.href = "../../index.html";

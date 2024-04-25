@@ -29,11 +29,11 @@ function getListingIdFromUrl() {
  */
 export async function renderListingDetails() {
   const listingId = getListingIdFromUrl();
-  console.log("Listing id:", listingId);
+  console.log("Listing id:", listingId); // does not log correct
 
   if (listingId) {
     const listing = await postMethods.getListing(listingId);
-    console.log(listing);
+    console.log("Listing object:", listing); // Logs correct
     const container = document.querySelector("#listingDetailsContainer");
     templates.renderListingDetailsTemplate(listing, container, listingId);
     handlers.setCreateBidFormListener();
