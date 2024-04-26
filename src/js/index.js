@@ -1,4 +1,5 @@
 import * as listeners from "./handlers/index.js";
+import * as profileMethods from "./api/account/index.js";
 // import { getProfile } from "./api/auth/profile.js";
 
 /**
@@ -69,6 +70,11 @@ function setupRoutingAndListeners() {
       listeners.renderProfileBidsLead();
       listeners.renderProfileBidsNoLead();
       listeners.renderProfileWins();
+      profileMethods.getBidsILeadAmount();
+      profileMethods.getBidsIWinAmount();
+      profileMethods.getMySellingAmount();
+      profileMethods.getProfileCredits();
+      profileMethods.calcReservedCredits();
 
       break;
 
