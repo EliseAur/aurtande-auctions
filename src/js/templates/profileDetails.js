@@ -1,5 +1,6 @@
 // import * as templates from "./index.js";
 // import * as postMethods from "../api/listings/index.js";
+import * as profileMethods from "../api/account/index.js";
 
 function createProfileAvatar(profile, avatarContainer) {
   const profileAvatar = document.createElement("img");
@@ -14,7 +15,7 @@ function createProfileAvatar(profile, avatarContainer) {
   avatarContainer.appendChild(profileAvatar);
 }
 
-function createProfileDetails(profile, profileDetailsContainer) {
+async function createProfileDetails(profile, profileDetailsContainer) {
   const profileUserName = document.createElement("p");
   profileUserName.className = "mb-1 fs-4 h3";
   profileUserName.textContent = `${profile.name}`;
@@ -25,11 +26,18 @@ function createProfileDetails(profile, profileDetailsContainer) {
 
   const profileTemporaryCredits = document.createElement("p");
   profileTemporaryCredits.className = "mt-3";
-  profileTemporaryCredits.innerHTML = `<strong>Temporary Balance:</strong> ${profile.credits}$`;
+  profileTemporaryCredits.innerHTML = `<strong>Temporary credit:</strong> ${profile.credits}$`;
+
+  const profileCurrentCredits = document.createElement("p");
+  profileCurrentCredits.className = "mt-3";
+  const currentCredit = await profileMethods.calcReservedCredits();
+  console.log(currentCredit);
+  profileCurrentCredits.innerHTML = `<strong>Current credit:</strong> ${currentCredit}$`;
 
   profileDetailsContainer.appendChild(profileUserName);
   profileDetailsContainer.appendChild(profileEmail);
   profileDetailsContainer.appendChild(profileTemporaryCredits);
+  profileDetailsContainer.appendChild(profileCurrentCredits);
 }
 
 // function createMyListings(profile, myListingsContainer) {

@@ -216,7 +216,7 @@ export function createTimeLeft(listingData, timeLeftContainer, className) {
                             <td class="p-1">${countdownString}</td>`;
     } else {
       timeLeft.className = "textTimeLeft card-text";
-      timeLeft.innerHTML = `<strong>Last bid:</strong> ${countdownString}`;
+      timeLeft.innerHTML = `<strong>Time left:</strong> ${countdownString}`;
     }
   }
   timeLeftContainer.appendChild(timeLeft);
