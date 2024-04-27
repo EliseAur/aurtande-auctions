@@ -45,7 +45,7 @@ export async function register(profile) {
   const result = await response.json();
   console.log("register result:", result);
 
-  alert("Your registration was a success! You are now logged in.");
+  alert("Your registration was a success! Login to explore listings.");
   // window.location.href = "../../listings-member/index.html";
   window.location.href = "../login/index.html";
 }

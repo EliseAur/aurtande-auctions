@@ -11927,6 +11927,10 @@ label {
   padding-top: 85px;
 }
 
+.intro-box {
+  max-width: 340px;
+}
+
 .content-wrapper {
   padding-top: 110px;
 }

@@ -126,6 +126,7 @@ export async function setCreateBidFormListener() {
   const listingId = getListingIdFromUrl();
 
   const bidderProfile = await profileMethods.getProfile();
+  console.log(bidderProfile);
 
   bidForm.addEventListener("submit", async (event) => {
     event.preventDefault();
@@ -180,7 +181,7 @@ export async function setCreateBidFormListener() {
         updateBidsArray(listing, createdBid);
 
         alert(
-          `Your bid was successfully added. Your balance is now: ${credits} $`,
+          `Your bid was successfully added. Your temporary balance is now: ${credits} $`,
         );
         bidForm.querySelector("input[name='amount']").value = "";
         location.reload();

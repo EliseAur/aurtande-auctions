@@ -26,8 +26,8 @@ export async function getProfileCredits() {
   return profileCredits;
 }
 
-export function setReservedCredits(reservedCredits) {
-  localStorage.setItem("reservedCredits", reservedCredits);
+export function setCurrentCredits(currentCredits) {
+  localStorage.setItem("currentCredits", currentCredits);
 }
 
 export async function calcReservedCredits() {
@@ -48,7 +48,7 @@ export async function calcReservedCredits() {
   console.log("Current Credits:", currentCredits);
 
   // Set the reserved credits in local storage
-  setReservedCredits(currentCredits);
+  setCurrentCredits(currentCredits);
 
   return currentCredits;
 }

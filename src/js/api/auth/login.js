@@ -19,12 +19,31 @@ export async function login(profile) {
     body,
   });
 
-  const { accessToken, ...user } = await response.json();
-  storage.save("token", accessToken);
-  storage.save("profile", user);
-  storage.save("userName", user.name);
-  storage.save("credits", user.credits);
+  if (response.ok) {
+    const { accessToken, ...user } = await response.json();
+    storage.save("token", accessToken);
+    storage.save("profile", user);
+    storage.save("userName", user.name);
 
-  alert("You are now logged in");
-  window.location.href = "../../listings-member/index.html";
+    alert("You are now logged in");
+    window.location.href = "../../listings-member/index.html";
+  } else {
+    if (response.status === 401) {
+      alert(
+        "Invalid credentials or you are not registered. Please check your email and password or register before logging in.",
+      );
+    } else {
+      // Handle other error cases
+      console.error("Error logging in:", response.statusText);
+      alert("An error occurred while logging in. Please try again later.");
+    }
+  }
 }
+
+// const { accessToken, ...user } = await response.json();
+// storage.save("token", accessToken);
+// storage.save("profile", user);
+// storage.save("userName", user.name);
+
+// alert("You are now logged in");
+// window.location.href = "../../listings-member/index.html";

@@ -33,10 +33,14 @@ const method = "post";
 export async function createListing(listingData) {
   const createListingURL = API_AUCTION_URL + action;
 
-  const response = await authFetch(createListingURL, {
-    method,
-    body: JSON.stringify(listingData),
-  });
-  console.log("createListing listingData:", listingData);
-  return await response.json();
+  try {
+    const response = await authFetch(createListingURL, {
+      method,
+      body: JSON.stringify(listingData),
+    });
+    return await response.json();
+  } catch (error) {
+    console.error("Error creating listing:", error);
+    throw error;
+  }
 }
