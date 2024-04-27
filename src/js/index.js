@@ -70,12 +70,17 @@ function setupRoutingAndListeners() {
       listeners.renderProfileBidsLead();
       listeners.renderProfileBidsNoLead();
       listeners.renderProfileWins();
-      profileMethods.getBidsILeadAmount();
+      // profileMethods.getBidsILeadAmount();
       profileMethods.getBidsIWinAmount();
       profileMethods.getMySellingAmount();
       profileMethods.getProfileCredits();
       profileMethods.calcReservedCredits();
-
+      break;
+    case "/pages/account/edit/":
+    case "/pages/account/edit/index.html":
+    case "/aurtande-auctions/pages/account/edit/":
+    case "/aurtande-auctions/pages/account//edit/index.html":
+      listeners.setUpdateProfileFormListener();
       break;
 
     default:
