@@ -74,7 +74,7 @@ function setupRoutingAndListeners() {
       profileMethods.getBidsIWinAmount();
       profileMethods.getMySellingAmount();
       profileMethods.getProfileCredits();
-      profileMethods.calcReservedCredits();
+      profileMethods.calcCurrentCredits();
       break;
     case "/pages/account/edit/":
     case "/pages/account/edit/index.html":

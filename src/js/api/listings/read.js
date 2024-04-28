@@ -1,10 +1,8 @@
 import { API_AUCTION_URL } from "../constants.js";
 import { authFetch } from "../authFetch.js";
 
-// const method = "get";
-
 /**
- * Retrieves a list of posts with additional information about the author, comments, and reactions.
+ * Retrieves a list of listings with additional information about the seller and bids.
  *
  * @returns {Promise<Object[]>} - A promise that resolves to an array of post objects.
  */
@@ -12,25 +10,16 @@ export async function getListings() {
   const baseURL = API_AUCTION_URL;
   const action = "/listings";
   const getListingURL = new URL(`${baseURL}${action}`);
-  // Set query parameters for pagination
-  // getListingURL.searchParams.set("limit", limit);
-  // getListingURL.searchParams.set("offset", offset);
 
   // Set query parameters for sorting
   getListingURL.searchParams.set("sort", "created");
-  // getListingURL.searchParams.set("sortOrder", "desc");
-  // limit = 100, offset = 0
-
   getListingURL.searchParams.set("_seller", true);
   getListingURL.searchParams.set("_bids", true);
-  // getListingURL.searchParams.set("_tag", true);
 
   getListingURL.searchParams.set(
     "_active",
     window.location.pathname.includes("/account/") ? false : true,
   );
-
-  // console.log("Constructed URL:", getListingURL.toString());
 
   const response = await authFetch(getListingURL.toString());
 
@@ -38,7 +27,7 @@ export async function getListings() {
 }
 
 /**
- * Retrieves a specific listing by its ID with additional information about....
+ * Retrieves a specific listing by its ID with additional information about the seller, bids and count.
  *
  * @param {string} id - The ID of the listing to retrieve.
  * @throws {Error} - Throws an error if the listing ID is not provided.

@@ -13,16 +13,20 @@ import * as storage from "../../storage/index.js";
  *   console.error("Logout failed:", error.message);
  * }
  */
+
+/**
+ * Logs out the user by removing authentication-related data from storage.
+ * Displays an alert notifying the user that they are logged out and redirects them to the index page.
+ * @returns {void}
+ */
 export function logout() {
   storage.remove("token");
   storage.remove("profile");
   storage.remove("userName");
-  storage.remove("bidListingIds");
+  storage.remove("currentCredits");
 
   alert("You are now logged out");
-  // window.location.href = "../../index.html";
 
-  // Get the pathname of the current URL
   const currentPath = window.location.pathname;
 
   // Split the pathname into an array of directories

@@ -1,9 +1,9 @@
 /**
  * Checks if the title of a listing is considered good based on a minimum length criterion.
  *
- * @param {Object} listing - The post object to be checked.
- * @param {string} listing.title - The title of the post.
- * @returns {boolean} - Returns true if the post title meets the criteria, otherwise false.
+ * @param {Object} listing - The listing object to be checked.
+ * @param {string} listing.title - The title of the listing.
+ * @returns {boolean} - Returns true if the listing title meets the criteria, otherwise false.
  */
 function isListingTitleGood(listing) {
   return listing.title.length > 3;

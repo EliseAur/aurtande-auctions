@@ -1,24 +1,23 @@
 import { API_AUCTION_URL } from "../constants.js";
 import { authFetch } from "../authFetch.js";
 
-const action = "/listings";
-const method = "post";
-
+/**
+ * Creates a bid on a specific listing.
+ * @param {string} listingId - The ID of the listing to bid on.
+ * @param {number} amount - The amount of the bid.
+ * @returns {Promise<Object>} A Promise that resolves with the created bid object.
+ * @throws {Error} If the bid creation fails.
+ */
 export async function createBidOnListing(listingId, amount) {
+  const action = "/listings";
+  const method = "post";
   const bidOnListingURL = `${API_AUCTION_URL}${action}/${listingId}/bids`;
-  // console.log("Bid on listing url:", bidOnListingURL);
 
   try {
     const createdBid = await authFetch(bidOnListingURL, {
       method,
       body: JSON.stringify({
-        // body: bidData.body,
-        // replyToId: bidData.replyToId || null,
-        // body: bidData.body,
         amount: amount,
-        // bidderName: bidData.bidderName,
-        // created: bidData.created,
-        // id: bidData.id,
       }),
     });
     console.log("Created bid try:", createdBid);

@@ -30,7 +30,7 @@ async function createProfileDetails(profile, profileDetailsContainer) {
 
   const profileCurrentCredits = document.createElement("p");
   profileCurrentCredits.className = "mt-3";
-  const currentCredit = await profileMethods.calcReservedCredits();
+  const currentCredit = await profileMethods.calcCurrentCredits();
   console.log(currentCredit);
   profileCurrentCredits.innerHTML = `<strong>Current credit:</strong> ${currentCredit}$`;
 

@@ -1,8 +1,10 @@
 import { API_AUCTION_URL } from "../constants.js";
 import { authFetch } from "../authFetch.js";
 
-// GET/auction/profiles/<name>/bids
-
+/**
+ * Retrieves the bids made by the current user from the server.
+ * @returns {Promise<object[]>} An array of bid objects made by the user.
+ */
 export async function getProfileBids() {
   const storedUsername = localStorage.getItem("userName");
   const trimmedUsername = storedUsername
@@ -20,10 +22,7 @@ export async function getProfileBids() {
   getProfileBidsURL.searchParams.set("sort", "created");
   getProfileBidsURL.searchParams.set("_listing", true);
 
-  console.log("Constructed URL:", getProfileBidsURL.toString());
-
   const response = await authFetch(getProfileBidsURL.toString());
-  console.log("getProfileBids from read.js", response);
 
   return await response.json();
 }

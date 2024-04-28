@@ -1,35 +1,16 @@
 import { API_AUCTION_URL } from "../constants.js";
-// import { login } from "./login.js";
-
-const action = "/auth/register";
-const method = "post";
 
 /**
- * Registers a new user by sending a request to the registration endpoint.
- * After successful registration, the user is redirected to the index page.
- *
- * @param {Object} profile - The user profile information.
- * @param {string} profile.username - The username of the user.
- * @param {string} profile.email - The email of the user.
- * @param {string} profile.password - The password of the user.
- * @throws {Error} - Throws an error if the registration fails.
- *
- * @example
- * // Example registration with a user profile.
- * const userProfile = {
- *   username: "exampleUser",
- *   email: "example@noroff.no",
- *   password: "examplePassword"
- * };
- *
- * try {
- *   await register(userProfile);
- *   console.log("User registered successfully!");
- * } catch (error) {
- *   console.error("Registration failed:", error.message);
- * }
+ * Registers a new user profile.
+ * @param {Object} profile - The profile data to register.
+ * @param {string} profile.name - The username.
+ * @param {string} profile.email - The email address.
+ * @param {string} profile.password - The password.
+ * @returns {Promise<void>} A Promise that resolves once the registration is successful.
  */
 export async function register(profile) {
+  const action = "/auth/register";
+  const method = "post";
   const registerURL = API_AUCTION_URL + action;
 
   const body = JSON.stringify(profile);
@@ -42,10 +23,10 @@ export async function register(profile) {
     body,
   });
 
-  const result = await response.json();
-  console.log("register result:", result);
+  // Intentionally unused variable
+  // eslint-disable-next-line no-unused-vars
+  const _ = await response.json();
 
   alert("Your registration was a success! Login to explore listings.");
-  // window.location.href = "../../listings-member/index.html";
   window.location.href = "../login/index.html";
 }

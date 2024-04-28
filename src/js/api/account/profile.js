@@ -2,20 +2,9 @@ import { API_AUCTION_URL } from "../constants.js";
 import { authFetch } from "../authFetch.js";
 
 /**
- * Fetches the user profile information including followers and following details, post count and all posts created by the user logged in.
- *
- * @throws {Error} Throws an error if there is an issue fetching the profile.
- *
- * @returns {Promise<Object>} A promise that resolves to the user profile object.
- *
- * @example
- * // Call the getProfile function to fetch the user profile.
- * try {
- *   const userProfile = await getProfile();
- *   console.log("User profile:", userProfile);
- * } catch (error) {
- *   console.error("Error fetching profile:", error.message);
- * }
+ * Retrieves the profile information of the current user from the server.
+ * @returns {Promise<object>} A promise that resolves to an object containing the profile information.
+ * @throws {Error} If there is an error fetching the profile information.
  */
 export async function getProfile() {
   // Retrieve the username from local storage
@@ -29,23 +18,16 @@ export async function getProfile() {
   }
 
   const action = `/profiles/${trimmedUsername}`;
-  // const method = "get";
   const baseURL = API_AUCTION_URL;
   const getProfileURL = new URL(`${baseURL}${action}`);
   getProfileURL.searchParams.set("_listings", true);
-  // getProfileURL.searchParams.set("_following", true);
-  // getProfileURL.searchParams.set("_count", true);
-  // getProfileURL.searchParams.set("_posts", true);
 
   try {
     const response = await authFetch(getProfileURL.toString());
     const profile = await response.json();
-    // console.log(profile);
     return profile;
   } catch (error) {
     console.error("Error fetching profile:", error);
     throw error;
   }
 }
-
-// getProfile();
