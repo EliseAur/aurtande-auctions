@@ -5,23 +5,11 @@ export function createListingImage(listingData, cardImage) {
   listingImage.className = "listingImage card-img-top";
   listingImage.width = "100%";
 
-  //Dynamically sets the image source (src) of the image element to a placeholder image if the original image fails to load due to an error.
-  // listingImage.onerror = function () {
-  //   console.error("Error loading image:", this.src);
-  //   if (window.location.href.includes("listings-member")) {
-  //     this.src = "../../images/error-loading-image.jpeg";
-  //   } else {
-  //     // this.src = "./images/placeholder-image-not-found.jpg";
-  //     this.src = "../../images/error-loading-image.jpeg";
-  //   }
-  // };
-
   listingImage.onerror = function () {
     console.error("Error loading image:", this.src);
     this.src = "../../images/error-loading-image.jpeg";
   };
 
-  //Checks if listingData.media exists and contains at least one element. If listingData.media is not empty, it sets the image source (src) of the image element to the URL of the first element in listingData.media. If listingData.media is undefined or empty, it also sets the image source to a placeholder image based on the current page's URL.
   if (listingData.media && listingData.media.length > 0) {
     listingImage.src = listingData.media[0];
     listingImage.alt = `${listingData.title}`;
@@ -40,7 +28,6 @@ export function createListingTitle(listingData, titleContainer, className) {
   if (
     window.location.pathname.includes("listing/") ||
     window.location.pathname.includes("listing-member")
-    // window.location.pathname.includes("account/")
   ) {
     title.className = "h2 mb-2";
   } else {
@@ -338,33 +325,6 @@ export function createModalForGallery(
   listingDetailsContainerChild.appendChild(modal);
 }
 
-// export function createSubmitOrLogin(makeABidForm) {
-//   if (window.location.pathname.includes("listing-member")) {
-//     const submitBidButton = document.createElement("button");
-//     submitBidButton.className = "btn btn-secondary flex-fill fs-6 mb-3 w-100";
-//     submitBidButton.innerHTML = `<i class="bi bi-credit-card-fill"></i> Submit bid`;
-//     makeABidForm.appendChild(submitBidButton);
-//   } else {
-//     const loginMsg = document.createElement("p");
-//     loginMsg.className = "mb-0 description";
-//     loginMsg.textContent = "Log in or create your account to make a bid";
-//     const loginSectionButtons = document.createElement("div");
-//     loginSectionButtons.className = "mt-1 mb-3 d-flex";
-//     loginSectionButtons.innerHTML = `<a
-//                                       class="btn btn-secondary flex-fill w-100 me-1 fs-6"
-//                                       href="../account/login/index.html">
-//                                       <i class="bi bi-door-closed-fill me-1"></i>Log in
-//                                     </a>
-//                                     <a
-//                                       class="btn btn-primary flex-fill w-100 me-1 fs-6"
-//                                       href="../account/register/index.html">
-//                                       <i class="bi bi-person-fill-add"></i> Create account
-//                                     </a>`;
-//     makeABidForm.appendChild(loginMsg);
-//     makeABidForm.appendChild(loginSectionButtons);
-//   }
-// }
-
 export function createSubmitOrLogin(
   makeABidForm,
   listingSellerName,
@@ -474,12 +434,6 @@ export function createLatestBidTable(
 
     let counter = 1;
 
-    // Loop through the 5 latest bids
-    // for (
-    //   let i = listingData.bids.length - 1;
-    //   i >= 0 && i >= listingData.bids.length - 5;
-    //   i--
-    // )
     for (let i = listingData.bids.length - 1; i >= 0; i--) {
       const bid = listingData.bids[i];
       const createdDate = new Date(bid.created);

@@ -5,22 +5,6 @@ import * as listingUtils from "./listingUtils.js";
  *
  * @param {Object} listingData - The data of the listing.
  * @returns {HTMLDivElement} - The created listing template as a HTMLDivElement.
- *
- * @example
- * // Example usage:
- * const listing = listingTemplate({
- *   author: {
- *     name: "John Doe",
- *     avatar: "path/to/avatar.jpg",
- *   },
- *   title: "Post Title",
- *   body: "Post content...",
- *   media: "path/to/media.jpg",
- *   comments: [...],
- *   reactions: [...],
- *   created: "2023-12-01T12:34:56.789Z",
- * });
- * document.body.appendChild(post);
  */
 export function listingTemplate(listingData) {
   const listing = document.createElement("div");

@@ -45,19 +45,14 @@ export function setCurrentCredits(currentCredits) {
 export async function calcCurrentCredits() {
   // Get user's current credits
   let currentCredits = 1000;
-  console.log("Current Credits:", currentCredits);
 
   // Subtract the amount of winning bids
   const winAmount = await getBidsIWinAmount();
   currentCredits -= winAmount;
-  console.log("Subtracted Win Amount:", winAmount);
 
   // Add the amount of sales
   const sellingAmount = await getMySellingAmount();
   currentCredits += sellingAmount;
-  console.log("Added Selling Amount:", sellingAmount);
-
-  console.log("Current Credits:", currentCredits);
 
   // Set the reserved credits in local storage
   setCurrentCredits(currentCredits);

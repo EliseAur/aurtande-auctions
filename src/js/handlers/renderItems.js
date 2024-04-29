@@ -1,5 +1,15 @@
 import * as templates from "../templates/index.js";
 
+/**
+ * Renders items into the specified container.
+ * This function populates the specified container with HTML content based on the provided data.
+ * If the data array is empty, it displays a message indicating that no items are available.
+ * If a loading message is provided, it displays the loading message while fetching data.
+ * @param {Array} data - The array of items to render.
+ * @param {string} containerSelector - The CSS selector for the container element where items will be rendered.
+ * @param {string} [noItemsMessage] - The message to display when no items are available.
+ * @param {string} [loadingMessage] - The message to display while loading items.
+ */
 export async function renderItems(
   data,
   containerSelector,

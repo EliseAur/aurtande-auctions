@@ -11941,7 +11941,7 @@ label {
 }
 
 .profile-image {
-  max-width: 130px;
+  max-width: 140px;
 }
 
 .content-wrapper .img-fluid {
@@ -11994,8 +11994,8 @@ label {
 }
 
 .profile-avatar {
-  width: 120px;
-  height: 120px;
+  width: 140px;
+  height: 140px;
   border-radius: 50%;
   object-fit: cover;
 }
