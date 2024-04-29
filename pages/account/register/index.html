@@ -18,7 +18,7 @@
       crossorigin="anonymous"
       defer
     ></script>
-    <script src="./src/js/index.js" defer type="module"></script>
+    <script src="../../../src/js/index.js" defer type="module"></script>
   </head>
   <body class="body-signin px-0 d-flex flex-column vh-100">
     <header>
@@ -57,9 +57,17 @@
               <li class="nav-item">
                 <a
                   id="signOutButton"
+                  class="nav-link fs-6 px-2 my-2 mx-1"
+                  href="../login/index.html"
+                  ><i class="bi bi-door-open-fill me-1"></i>Sign in</a
+                >
+              </li>
+              <li class="nav-item">
+                <a
+                  id="signOutButton"
                   class="nav-link fs-6 px-2 my-2 mx-1 current"
                   href="#"
-                  ><i class="bi bi-door-open-fill me-1"></i>Sign in</a
+                  ><i class="bi bi-person-add me-1"></i>Register</a
                 >
               </li>
             </ul>
@@ -83,7 +91,6 @@
       class="form-signin d-flex flex-column justify-content-center vh-100 vw-100 mx-auto py-3 px-4"
     >
       <div class="px-sm-4">
-        <!--Register form  -->
         <form id="registerForm">
           <h1 class="h2 mb-3">Create account</h1>
           <div class="form-group mb-2">
@@ -130,7 +137,7 @@
               placeholder="URL"
             />
           </div>
-          <button class="btn btn-secondary py-1 w-100">Create account</button>
+          <button class="btn btn-secondary py-1 w-100">Register</button>
         </form>
         <div class="form-group mb-3 mt-4">
           <label>Already a member?</label>

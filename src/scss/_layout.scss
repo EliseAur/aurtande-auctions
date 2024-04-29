@@ -2,60 +2,30 @@
   padding-top: 85px;
 }
 
+.intro-box {
+  max-width: 340px;
+}
+
 .content-wrapper {
   padding-top: 110px;
 }
 
 .account-wrapper {
   padding-top: 30px;
+  max-width: 750px;
 }
-
-// .follow-button {
-//   width: 154px;
-// }
-
-// .profile-image,
-// .user-img {
-//   width: 65px;
-//   height: 65px;
-// }
 
 .profile-image {
-  max-width: 130px;
+  max-width: 140px;
 }
-
-// .comment {
-//   border-radius: $btn-border-radius;
-// }
 
 .content-wrapper .img-fluid {
   border-radius: $listing-images-border-radius;
 }
 
-// .nameAndTitleDiv {
-//   overflow: hidden;
-// }
-
-// #postContainer .feed-post {
-//   margin-top: 30px;
-// }
-
-// .buttonDiv {
-//   grid-template-columns: 94px 94px auto;
-// }
-
-// .buttonDiv small {
-//   grid-column: 4;
-// }
-
 .viewMoreButton {
   max-width: 94px;
 }
-
-// .commentCount,
-// .reactionsCount {
-//   max-width: 50px;
-// }
 
 .navbar-brand img {
   max-width: 170px;
@@ -76,14 +46,31 @@
 .modal-dialog {
   margin-top: 155px;
 }
-// .card-col {
-//   padding: 0;
-// }
 
-// .card {
-//   max-width: 190px;
-// }
+.listings-area {
+  max-width: 970px;
+}
 
-// .card-col {
-//   max-width: 200px;
-// }
+.gallery-image {
+  height: 120px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.gallery-image-1 {
+  max-height: 250px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.modal-body img {
+  max-height: 500px;
+  object-fit: cover;
+}
+
+.profile-avatar {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  object-fit: cover;
+}
