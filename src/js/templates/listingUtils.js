@@ -7,7 +7,11 @@ export function createListingImage(listingData, cardImage) {
 
   listingImage.onerror = function () {
     console.error("Error loading image:", this.src);
-    this.src = "../../images/error-loading-image.jpeg";
+    if (window.location.pathname.includes("/listings-member/")) {
+      this.src = "../../images/error-loading-image.jpeg";
+    } else {
+      this.src = "./images/error-loading-image.jpeg";
+    }
   };
 
   if (listingData.media && listingData.media.length > 0) {
@@ -15,8 +19,13 @@ export function createListingImage(listingData, cardImage) {
     listingImage.alt = `${listingData.title}`;
   } else {
     console.log("media array is undefined or empty");
-    listingImage.src = "../../images/no-image-available.jpeg";
-    listingImage.alt = "Image not found";
+    if (window.location.pathname.includes("/listings-member/")) {
+      listingImage.src = "../../images/no-image-available.jpeg";
+      listingImage.alt = "Image not found";
+    } else {
+      listingImage.src = "./images/no-image-available.jpeg";
+      listingImage.alt = "Image not found";
+    }
   }
   cardImage.appendChild(listingImage);
 }
