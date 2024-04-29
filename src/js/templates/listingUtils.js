@@ -25,7 +25,7 @@ export function createListingImage(listingData, cardImage) {
       listingImage.src = "../../images/no-image-available.jpeg";
       listingImage.alt = "Image not available";
     } else if (window.location.pathname.includes("/account/")) {
-      this.src = "../../images/no-image-available.jpeg";
+      listingImage.src = "../../images/no-image-available.jpeg";
       listingImage.alt = "Image not available";
     } else {
       listingImage.src = "./images/no-image-available.jpeg";
