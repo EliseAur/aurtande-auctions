@@ -12,3 +12,4 @@ export * from "./updateProfileImg.js";
 export * from "./searchListings.js";
 export * from "./sortListings.js";
 export * from "./deleteListing.js";
+export * from "./updateListing.js";

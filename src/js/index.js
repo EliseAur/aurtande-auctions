@@ -82,6 +82,13 @@ function setupRoutingAndListeners() {
     case "/aurtande-auctions/pages/account//edit/index.html":
       listeners.setUpdateProfileFormListener();
       break;
+    case "/pages/listing-member/edit/":
+    case "/pages/listing-member/edit/index.html":
+    case "/aurtande-auctions/pages/listing-member/edit/":
+    case "/aurtande-auctions/pages/listing-member/edit/index.html":
+      listeners.setLogoutFormListener();
+      listeners.setUpdateListingFormListener();
+      break;
 
     default:
   }
