@@ -9,6 +9,8 @@ export function createListingImage(listingData, cardImage) {
     console.error("Error loading image:", this.src);
     if (window.location.pathname.includes("/listings-member/")) {
       this.src = "../../images/error-loading-image.jpeg";
+    } else if (window.location.pathname.includes("/account/")) {
+      this.src = "../../images/error-loading-image.jpeg";
     } else {
       this.src = "./images/error-loading-image.jpeg";
     }
@@ -21,10 +23,13 @@ export function createListingImage(listingData, cardImage) {
     console.log("media array is undefined or empty");
     if (window.location.pathname.includes("/listings-member/")) {
       listingImage.src = "../../images/no-image-available.jpeg";
-      listingImage.alt = "Image not found";
+      listingImage.alt = "Image not available";
+    } else if (window.location.pathname.includes("/account/")) {
+      this.src = "../../images/no-image-available.jpeg";
+      listingImage.alt = "Image not available";
     } else {
       listingImage.src = "./images/no-image-available.jpeg";
-      listingImage.alt = "Image not found";
+      listingImage.alt = "Image not available";
     }
   }
   cardImage.appendChild(listingImage);
