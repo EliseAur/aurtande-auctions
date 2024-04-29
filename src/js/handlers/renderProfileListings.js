@@ -108,3 +108,11 @@ export async function renderProfileWins() {
     container.innerHTML = `<div class="container w-100 pt-3 ps-2"><p>Error loading your wins. Please try again later.</p></div>`;
   }
 }
+
+export async function renderAllProfileListings() {
+  renderProfileListings();
+  renderProfileBidsLead();
+  renderProfileBidsNoLead();
+  renderProfileWins();
+  profileMethods.calcCurrentCredits();
+}

@@ -1,6 +1,4 @@
 import * as listeners from "./handlers/index.js";
-import * as profileMethods from "./api/account/index.js";
-// import { getProfile } from "./api/auth/profile.js";
 
 /**
  * Sets up routing behavior and initializes event listeners based on the current URL path.
@@ -66,20 +64,13 @@ function setupRoutingAndListeners() {
     case "/aurtande-auctions/pages/account/index.html":
       listeners.setLogoutFormListener();
       listeners.renderProfileDetails();
-      listeners.renderProfileListings();
-      listeners.renderProfileBidsLead();
-      listeners.renderProfileBidsNoLead();
-      listeners.renderProfileWins();
-      // profileMethods.getBidsILeadAmount();
-      profileMethods.getBidsIWinAmount();
-      profileMethods.getMySellingAmount();
-      profileMethods.getProfileCredits();
-      profileMethods.calcCurrentCredits();
+      listeners.renderAllProfileListings();
       break;
     case "/pages/account/edit/":
     case "/pages/account/edit/index.html":
     case "/aurtande-auctions/pages/account/edit/":
     case "/aurtande-auctions/pages/account//edit/index.html":
+      listeners.setLogoutFormListener();
       listeners.setUpdateProfileFormListener();
       break;
     case "/pages/listing-member/edit/":
