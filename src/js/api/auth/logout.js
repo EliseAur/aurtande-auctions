@@ -26,25 +26,29 @@ export function logout() {
   storage.remove("currentCredits");
 
   alert("You are now logged out");
-  window.location.href =
-    "https://eliseaur.github.io/aurtande-auctions/index.html";
 
-  // const currentPath = window.location.pathname;
+  if (window.location.pathname.includes(".github.io/")) {
+    window.location.href =
+      "https://eliseaur.github.io/aurtande-auctions/index.html";
+  } else {
+    const currentPath = window.location.pathname;
 
-  // // Split the pathname into an array of directories
-  // const pathParts = currentPath.split("/");
+    // Split the pathname into an array of directories
+    const pathParts = currentPath.split("/");
 
-  // // Determine the index page's relative path
-  // let indexPagePath = "";
-  // if (pathParts.includes("pages")) {
-  //   // If the current page is located inside the 'pages' directory
-  //   const pagesIndex = pathParts.indexOf("pages");
-  //   indexPagePath = "../".repeat(pathParts.length - pagesIndex) + "index.html";
-  // } else {
-  //   // If the current page is located directly in the root directory
-  //   indexPagePath = "index.html";
-  // }
+    // Determine the index page's relative path
+    let indexPagePath = "";
+    if (pathParts.includes("pages")) {
+      // If the current page is located inside the 'pages' directory
+      const pagesIndex = pathParts.indexOf("pages");
+      indexPagePath =
+        "../".repeat(pathParts.length - pagesIndex) + "index.html";
+    } else {
+      // If the current page is located directly in the root directory
+      indexPagePath = "index.html";
+    }
 
-  // // Redirect the user to the index page
-  // window.location.href = indexPagePath;
+    // Redirect the user to the index page
+    window.location.href = indexPagePath;
+  }
 }
