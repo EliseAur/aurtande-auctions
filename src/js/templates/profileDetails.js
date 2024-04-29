@@ -25,11 +25,11 @@ async function createProfileDetails(profile, profileDetailsContainer) {
   profileEmail.textContent = `${profile.email}`;
 
   const profileTemporaryCredits = document.createElement("p");
-  profileTemporaryCredits.className = "mt-3";
+  profileTemporaryCredits.className = "mt-3 mb-1";
   profileTemporaryCredits.innerHTML = `<strong>Temporary credit:</strong> ${profile.credits}$`;
 
   const profileCurrentCredits = document.createElement("p");
-  profileCurrentCredits.className = "mt-3";
+  profileCurrentCredits.className = "mt-1";
   const currentCredit = await profileMethods.calcCurrentCredits();
   console.log(currentCredit);
   profileCurrentCredits.innerHTML = `<strong>Current credit:</strong> ${currentCredit}$`;
