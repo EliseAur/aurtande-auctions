@@ -11,3 +11,4 @@ export * from "./renderProfileListings.js";
 export * from "./updateProfileImg.js";
 export * from "./searchListings.js";
 export * from "./sortListings.js";
+export * from "./deleteListing.js";
