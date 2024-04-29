@@ -8,9 +8,9 @@ import * as handlers from "./index.js";
  * @returns {string|null} The listing ID or null if not found.
  *
  * @example
- * // Call 'getPostIdFromUrl' to get the post ID from the URL:
- * const postId = getPostIdFromUrl();
- * console.log(postId); // The post ID or null
+ * // Call 'getListingIdFromUrl' to get the listing ID from the URL:
+ * const listingId = getListingIdFromUrl();
+ * console.log("listingId:", listingId); // The listing ID or null
  */
 function getListingIdFromUrl() {
   const urlParams = new URLSearchParams(location.search);
@@ -18,7 +18,7 @@ function getListingIdFromUrl() {
 }
 
 /**
- * Renders the details of a specific post and sets up functionality
+ * Renders the details of a specific listing and sets up functionality
  * for removing the post if the current user is the author.
  *
  * @returns {void}
@@ -29,21 +29,16 @@ function getListingIdFromUrl() {
  */
 export async function renderListingDetails() {
   const listingId = getListingIdFromUrl();
-  console.log("Listing id:", listingId); // does not log correct
+  const userName = JSON.parse(localStorage.getItem("userName"));
 
   if (listingId) {
     const listing = await postMethods.getListing(listingId);
-    console.log("Listing object:", listing); // Logs correct
+    console.log("Listing object:", listing);
     const container = document.querySelector("#listingDetailsContainer");
     templates.renderListingDetailsTemplate(listing, container, listingId);
     handlers.setCreateBidFormListener();
-    //   handlers.beAbleToRemovePost(listing);
+    if (userName === listing.seller.name) {
+      handlers.beAbleToDeleteListing(listing);
+    }
   }
-  // else {
-  //   templates.afterDeleteTemplateError();
-  // }
-
-  // if (window.location.pathname.includes("listing-member")) {
-  //   handlers.setCreateBidFormListener();
-  // }
 }
