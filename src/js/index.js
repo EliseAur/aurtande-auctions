@@ -28,6 +28,7 @@ function setupRoutingAndListeners() {
       break;
     case "/":
     case "/index.html":
+    case "/aurtande-auctions/":
     case "/aurtande-auctions/index.html":
       listeners.renderListings();
       break;
