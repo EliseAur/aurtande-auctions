@@ -49,10 +49,10 @@ export function setupSearchFunctionality(goodListings) {
   const searchInput = document.querySelector("#search-input");
   const searchForm = document.querySelector("#search-form");
   const container = document.querySelector("#listingList");
-  const sortDropdown = document.querySelector("#sort-listings");
+  // const sortDropdown = document.querySelector("#sort-listings");
 
   // Call the sorting setup function
-  handlers.setupSortDropdown(goodListings);
+  // handlers.setupSortDropdown(goodListings);
 
   let currentSearchResults = goodListings;
 
@@ -73,24 +73,27 @@ export function setupSearchFunctionality(goodListings) {
   }
 
   function applySortingAndDisplayResults(container) {
-    const selectedOption = sortDropdown.value;
-    let sortedListings;
+    //   const selectedOption = sortDropdown.value;
+    //   let sortedListings;
 
-    switch (selectedOption) {
-      case "popular":
-        sortedListings =
-          handlers.sortListingsByPopularity(currentSearchResults);
-        break;
-      case "ending":
-        sortedListings =
-          handlers.sortListingsByEndingSoon(currentSearchResults);
-        break;
-      case "default":
-      default:
-        sortedListings = currentSearchResults;
-    }
+    //   switch (selectedOption) {
+    //     case "popular":
+    //       sortedListings =
+    //         handlers.sortListingsByPopularity(currentSearchResults);
+    //       break;
+    //     case "ending":
+    //       sortedListings =
+    //         handlers.sortListingsByEndingSoon(currentSearchResults);
+    //       break;
+    //     case "finished":
+    //       sortedListings = handlers.sortListingsByFinished(currentSearchResults);
+    //       break;
+    //     case "default":
+    //     default:
+    //       sortedListings = currentSearchResults;
+    //   }
 
-    handlers.updateFeedWithSearchSortResults(sortedListings, container);
+    handlers.updateFeedWithSearchSortResults(currentSearchResults, container);
   }
 }
 

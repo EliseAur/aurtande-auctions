@@ -12,10 +12,7 @@ export async function login(profile) {
   const method = "post";
 
   const loginURL = API_AUCTION_URL + action;
-  console.log("This is the login URL", loginURL);
-
   const body = JSON.stringify(profile);
-  console.log(body);
 
   const response = await fetch(loginURL, {
     headers: {

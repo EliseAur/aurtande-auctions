@@ -15,7 +15,6 @@ import { login } from "../api/auth/login.js";
  */
 export function setLoginFormListener() {
   const form = document.querySelector("#loginForm");
-  console.log(form);
 
   if (form) {
     form.addEventListener("submit", (event) => {

@@ -29,7 +29,6 @@ export async function setCreateBidFormListener() {
     try {
       const formData = new FormData(bidForm);
       const bidData = Object.fromEntries(formData.entries());
-      console.log("biddata:", bidData);
 
       bidData.amount = Number(
         bidForm.querySelector("input[name='amount']").value,

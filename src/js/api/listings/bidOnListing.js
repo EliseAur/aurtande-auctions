@@ -20,7 +20,6 @@ export async function createBidOnListing(listingId, amount) {
         amount: amount,
       }),
     });
-    console.log("Created bid try:", createdBid);
     return await createdBid.json();
   } catch (error) {
     console.error("Error response from server:", error.response);

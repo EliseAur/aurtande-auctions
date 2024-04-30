@@ -6,7 +6,6 @@ export * from "./renderListingDetails.js";
 export * from "./createBidOnListing.js";
 export * from "./createListing.js";
 export * from "./renderProfile.js";
-export * from "./renderItems.js";
 export * from "./renderProfileListings.js";
 export * from "./updateProfileImg.js";
 export * from "./searchListings.js";

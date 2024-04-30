@@ -47,6 +47,14 @@ export function listingTemplate(listingData) {
   cardTextList.appendChild(detailsListing);
   cardTextList.appendChild(buttonListing);
 
+  // Check if the listing is finished and hide the card if necessary
+  // const timeLeftContainers = detailsListing.querySelectorAll(".textTimeLeft");
+  // timeLeftContainers.forEach((timeLeftContainer) => {
+  //   if (timeLeftContainer.innerText === "Listing finished") {
+  //     listing.style.display = "none";
+  //   }
+  // });
+
   return listing;
 }
 
@@ -60,6 +68,15 @@ export function listingTemplate(listingData) {
 export function renderListingTemplates(listingDataList, parent) {
   const listingElements = listingDataList.map((listingData) => {
     const listingElement = listingTemplate(listingData);
+
+    // Check if the listing is finished and hide the card if necessary
+    // const timeLeftContainers = detailsListing.querySelectorAll(".textTimeLeft");
+    // timeLeftContainers.forEach((timeLeftContainer) => {
+    //   if (timeLeftContainer.innerText === "Listing finished") {
+    //     listing.style.display = "none";
+    //   }
+    // });
+
     return listingElement;
   });
 
