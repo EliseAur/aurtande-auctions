@@ -15,11 +15,7 @@ export async function getListings() {
   getListingURL.searchParams.set("sort", "created");
   getListingURL.searchParams.set("_seller", true);
   getListingURL.searchParams.set("_bids", true);
-
-  getListingURL.searchParams.set(
-    "_active",
-    window.location.pathname.includes("/account/") ? false : true,
-  );
+  // getListingURL.searchParams.set("_active", true,)
 
   const response = await authFetch(getListingURL.toString());
 

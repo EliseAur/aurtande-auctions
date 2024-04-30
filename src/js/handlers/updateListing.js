@@ -69,9 +69,7 @@ export async function setUpdateListingFormListener() {
 
       try {
         const updatedListing = await listingMethods.updateListing(listingData);
-        console.log("updatedListing", updatedListing);
         const updatedListingId = updatedListing.id;
-        console.log("updated listingId", updatedListingId);
         alert("Your listing was successfully updated.");
         location.href = `../index.html?id=${updatedListingId}`;
       } catch (error) {

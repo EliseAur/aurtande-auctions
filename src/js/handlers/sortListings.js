@@ -1,24 +1,38 @@
 import * as handlers from "./index.js";
+import * as listingMethods from "../api/listings/index.js";
+
+function getNonFinishedListings(listings) {
+  const currentDate = new Date();
+  return listings.filter((listing) => new Date(listing.endsAt) > currentDate);
+}
 
 export function sortListingsByLatest(listings) {
-  return listings.slice().sort((a, b) => {
+  const filteredListings = getNonFinishedListings(listings);
+  return filteredListings.slice().sort((a, b) => {
     // Compare the dates in descending order
     return new Date(b.createdAt) - new Date(a.createdAt);
   });
 }
 
 export function sortListingsByPopularity(listings) {
-  return listings.slice().sort((a, b) => {
+  const filteredListings = getNonFinishedListings(listings);
+  return filteredListings.slice().sort((a, b) => {
     // Compare the number of bids in descending order
     return b._count.bids - a._count.bids;
   });
 }
 
 export function sortListingsByEndingSoon(listings) {
-  return listings.slice().sort((a, b) => {
+  const filteredListings = getNonFinishedListings(listings);
+  return filteredListings.slice().sort((a, b) => {
     // Compare the ending dates in ascending order
     return new Date(a.endsAt) - new Date(b.endsAt);
   });
+}
+
+export function sortListingsByFinished(listings) {
+  const finishedListings = listingMethods.filterOnlyFinishedListings(listings);
+  return finishedListings;
 }
 
 export function setupSortDropdown(listings) {
@@ -41,11 +55,16 @@ export function setupSortDropdown(listings) {
       case "ending":
         sortedListings = sortListingsByEndingSoon(listings);
         break;
+      case "finished":
+        sortedListings = sortListingsByFinished(listings);
+        break;
+      case "latest":
+        sortedListings = sortListingsByLatest(listings);
+        break;
       case "default":
       default:
         sortedListings = listings;
     }
-
     handlers.updateFeedWithSearchSortResults(sortedListings, container);
   }
 }

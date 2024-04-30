@@ -15,7 +15,6 @@ import { logout } from "../api/auth/logout.js";
  */
 export function setLogoutFormListener() {
   const signOutButton = document.querySelector("#signOutButton");
-  console.log(window.location.href);
 
   if (signOutButton) {
     signOutButton.addEventListener("click", (event) => {

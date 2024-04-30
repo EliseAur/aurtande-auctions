@@ -36,8 +36,6 @@ export async function beAbleToDeleteListing(listing) {
 
     const listingId = getListingIdFromUrl();
 
-    console.log("user Name if user is equal to seller", currentUserName);
-
     if (deleteButton && updateButton) {
       deleteButton.addEventListener("click", async (event) => {
         event.preventDefault();

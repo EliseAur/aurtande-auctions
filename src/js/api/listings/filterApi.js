@@ -9,27 +9,19 @@ function isListingTitleGood(listing) {
   return listing.title.length > 3;
 }
 
+function isListingNotFinished(listing) {
+  const currentDate = new Date();
+  return new Date(listing.endsAt) > currentDate;
+}
+
+function isListingFinished(listing) {
+  const currentDate = new Date();
+  return new Date(listing.endsAt) <= currentDate;
+}
+
 // function doesListingHaveImage(listing) {
 //   if (listing.media.length > 0) {
 //     return listing.media;
-//   }
-// }
-
-// /**
-//  * Checks if the provided listing is created by the current user.
-//  *
-//  * @param {Object} listing - The listing object to be checked.
-//  * @param {string} listing.author.name - The name of the listing author.
-//  * @returns {string|null} - Returns the listing author's name if it matches the current user, otherwise null.
-//  */
-// function isListingCreatedByCurrentUser(listing) {
-//   const user = localStorage.getItem("userName");
-
-//   const profileUserName = user ? user.trim().replace(/^"(.*)"$/, "$1") : null;
-//   const authorName = listing.author.name.trim();
-
-//   if (profileUserName === authorName) {
-//     return listing.author.name;
 //   }
 // }
 
@@ -39,12 +31,16 @@ function isListingTitleGood(listing) {
  * @param {Object} listing - The listing object to be checked.
  * @returns {boolean} - Returns true if the listing meets the criteria, otherwise false.
  */
-// function doesListingMeetCriterias(listing) {
-//   return isListingTitleGood(listing) && doesListingHaveImage(listing);
-// }
-
-function doesListingMeetCriterias(listing) {
+function doesListingMeetCriteriasA(listing) {
   return isListingTitleGood(listing);
+}
+
+function doesListingMeetCriteriasB(listing) {
+  return isListingTitleGood(listing) && isListingNotFinished(listing);
+}
+
+function doesListingMeetCriteriasC(listing) {
+  return isListingTitleGood(listing) && isListingFinished(listing);
 }
 
 /**
@@ -53,6 +49,15 @@ function doesListingMeetCriterias(listing) {
  * @param {Object[]} listings - An array of listings objects to be filtered.
  * @returns {Object[]} - An array of listings that meet the general criteria.
  */
-export function filterBadListings(listings) {
-  return listings.filter(doesListingMeetCriterias);
+export function filterBadListingsA(listings) {
+  return listings.filter(doesListingMeetCriteriasA);
+}
+
+export function filterBadListingsB(listings) {
+  return listings.filter(doesListingMeetCriteriasB);
+}
+
+export function filterOnlyFinishedListings(listings) {
+  const filteredListings = listings.filter(doesListingMeetCriteriasC);
+  return filteredListings;
 }

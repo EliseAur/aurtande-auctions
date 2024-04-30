@@ -33,7 +33,6 @@ export async function renderListingDetails() {
 
   if (listingId) {
     const listing = await postMethods.getListing(listingId);
-    console.log("Listing object:", listing);
     const container = document.querySelector("#listingDetailsContainer");
     templates.renderListingDetailsTemplate(listing, container, listingId);
     handlers.setCreateBidFormListener();

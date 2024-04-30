@@ -27,7 +27,6 @@ export async function renderProfileDetails() {
   const profile = await getProfile();
 
   if (profile) {
-    // const container = document.querySelector("#profileDetailsContainer");
     templates.renderProfileTemplate(profile);
   } else {
     console.error("Profile data not found");

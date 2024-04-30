@@ -11773,6 +11773,10 @@ textarea.form-control-lg {
   box-shadow: none;
 }
 
+#sort-listings {
+  width: 215px;
+}
+
 .form-control {
   border-radius: 0.2rem;
   background-clip: border-box;

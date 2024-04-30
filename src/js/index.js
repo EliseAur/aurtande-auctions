@@ -81,7 +81,6 @@ function setupRoutingAndListeners() {
       listeners.setLogoutFormListener();
       listeners.setUpdateListingFormListener();
       break;
-
     default:
   }
 }
