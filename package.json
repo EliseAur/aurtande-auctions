@@ -1,6 +1,6 @@
 {
   "name": "aurtande-auctions",
-  "version": "0.0.5",
+  "version": "0.1.0",
   "description": "Semester Project 2 - Create an Auction website using an API powered by Noroff",
   "type": "module",
   "main": "index.js",
