@@ -17,7 +17,7 @@ export async function renderProfileListings() {
     if (goodListings.length === 0) {
       const noItemsDiv = document.createElement("div");
       noItemsDiv.className = "noItems container w-100 pt-3 ps-2";
-      noItemsDiv.innerHTML = `<p>$"There are no listings to display."</p>`;
+      noItemsDiv.innerHTML = `<p>You have no listings yet. Create a listing to see your listings.</p>`;
       container.appendChild(noItemsDiv);
     } else {
       templates.renderListingTemplates(goodListings, container);
@@ -54,7 +54,7 @@ export async function renderProfileBidsLead() {
     if (goodListings.length === 0) {
       const noItemsDiv = document.createElement("div");
       noItemsDiv.className = "noItems container w-100 pt-3 ps-2";
-      noItemsDiv.innerHTML = `<p>$"There are no listings to display."</p>`;
+      noItemsDiv.innerHTML = `<p>You have no bids in the lead.</p>`;
       container.appendChild(noItemsDiv);
     } else {
       templates.renderListingTemplates(profileBidsLead, container);
@@ -65,7 +65,7 @@ export async function renderProfileBidsLead() {
     return profileBidsLead;
   } catch (error) {
     console.error("Error loading profile bids:", error);
-    container.innerHTML = `<div class="container w-100 pt-3 ps-2"><p>Error loading profile bids. Please try again later.</p></div>`;
+    container.innerHTML = `<div class="container w-100 pt-3 ps-2"><p>Error loading your bids. Please try again later.</p></div>`;
   }
 }
 
@@ -90,7 +90,7 @@ export async function renderProfileBidsNoLead() {
     if (profileBidsNoLead.length === 0) {
       const noItemsDiv = document.createElement("div");
       noItemsDiv.className = "noItems container w-100 pt-3 ps-2";
-      noItemsDiv.innerHTML = `<p>$"There are no listings to display."</p>`;
+      noItemsDiv.innerHTML = `<p>There are no listings to display</p>`;
       container.appendChild(noItemsDiv);
     } else {
       templates.renderListingTemplates(profileBidsNoLead, container);
@@ -118,7 +118,7 @@ export async function renderProfileWins() {
     if (profileWins.length === 0) {
       const noItemsDiv = document.createElement("div");
       noItemsDiv.className = "noItems container w-100 pt-3 ps-2";
-      noItemsDiv.innerHTML = `<p>$"There are no listings to display."</p>`;
+      noItemsDiv.innerHTML = `<p>There are no listings to display. Keep on bidding to get wins. </p>`;
       container.appendChild(noItemsDiv);
     } else {
       templates.renderListingTemplates(profileWins, container);
