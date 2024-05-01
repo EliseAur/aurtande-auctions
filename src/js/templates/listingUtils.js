@@ -380,12 +380,12 @@ export function createSubmitOrLogin(
     loginSectionButtons.innerHTML = `<a
                                       class="btn btn-secondary flex-fill w-100 me-1 fs-6"
                                       href="../account/login/index.html">
-                                      <i class="bi bi-door-closed-fill me-1"></i>Log in
+                                      <i class="bi bi-door-closed-fill me-1"></i> Sign in
                                     </a>
                                     <a
                                       class="btn btn-primary flex-fill w-100 me-1 fs-6"
                                       href="../account/register/index.html">
-                                      <i class="bi bi-person-fill-add"></i> Create account
+                                      <i class="bi bi-person-fill-add"></i> Register
                                     </a>`;
     makeABidForm.appendChild(loginMsg);
     makeABidForm.appendChild(loginSectionButtons);
