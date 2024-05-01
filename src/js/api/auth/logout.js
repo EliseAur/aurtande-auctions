@@ -39,7 +39,24 @@ export function logout() {
   // // Redirect to the index page
   // window.location.href = baseURL + "/index.html";
 
-  window.location.href = "/index.html";
+  // window.location.href = "/index.html";
+
+  // Check if the site is running locally or on GitHub Pages
+  if (
+    window.location.hostname === "localhost" ||
+    window.location.hostname === "127.0.0.1"
+  ) {
+    // Redirect to the local index page
+    window.location.href = "/index.html";
+  } else {
+    // Redirect to the GitHub Pages root directory
+    window.location.href =
+      "https://eliseaur.github.io/aurtande-auctions/index.html";
+  }
+
+  //-------------------------------------------
+
+  // worked locally
 
   // const currentPath = window.location.pathname;
 
