@@ -20,7 +20,6 @@ export function createListingImage(listingData, cardImage) {
     listingImage.src = listingData.media[0];
     listingImage.alt = `${listingData.title}`;
   } else {
-    console.log("media array is undefined or empty");
     if (window.location.pathname.includes("/listings-member/")) {
       listingImage.src = "../../images/no-image-available.jpeg";
       listingImage.alt = "Image not available";
@@ -149,8 +148,6 @@ export function createYourBid(
   listingData,
 ) {
   const userName = JSON.parse(localStorage.getItem("userName"));
-  console.log(userName);
-  console.log(listingData.seller.name);
   const yourBid = document.createElement(className);
   const yourBidText = document.createElement("th");
   yourBidText.scope = "row";
@@ -183,7 +180,6 @@ export function createYourBid(
     window.location.pathname.includes("listing-member") &&
     listingData.seller.name === userName
   ) {
-    console.log("seller name", listingData.seller.name);
     yourBidInput.disabled = true;
   } else {
     yourBidInput.disabled = true;
@@ -478,7 +474,10 @@ export function createLatestBidTable(
 
     bidHistoryTable.appendChild(table);
   }
-  listingDetailsContainerChild.appendChild(bidHistoryTable);
+
+  if (window.location.pathname.includes("/listing-member/")) {
+    listingDetailsContainerChild.appendChild(bidHistoryTable);
+  }
 }
 
 export function createSellerInfoCard(
