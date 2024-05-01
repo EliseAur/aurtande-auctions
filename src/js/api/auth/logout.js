@@ -27,8 +27,19 @@ export function logout() {
 
   alert("You are now logged out");
 
-  window.location.href =
-    "https://eliseaur.github.io/aurtande-auctions/index.html";
+  // window.location.href =
+  //   "https://eliseaur.github.io/aurtande-auctions/index.html";
+
+  // Redirect the user to the index page
+  // window.location.href = "/aurtande-auctions/index.html";
+
+  // // Determine the base URL dynamically
+  // const baseURL = window.location.href.split("/").slice(0, 4).join("/");
+
+  // // Redirect to the index page
+  // window.location.href = baseURL + "/index.html";
+
+  window.location.href = "/index.html";
 
   // const currentPath = window.location.pathname;
 
