@@ -8,7 +8,7 @@ This is the Semester Project 2 - Create an Auction website using an API powered 
 
 ### Live Demo:
 
-[Live Demo](https://eliseaur.github.io/aurtande-auctions/)
+- **Link:** https://eliseaur.github.io/aurtande-auctions/
 
 ### Elements that had to be implemented in the project:
 
@@ -31,7 +31,7 @@ I also made functionalities like:
 
 - HTML
 - CSS
-- JavaScript (not custom JS)
+- Vanilla JavaScript
 - SASS
 - Bootstrap
 
