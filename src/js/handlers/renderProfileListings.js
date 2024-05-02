@@ -62,7 +62,7 @@ export async function renderProfileBidsLead() {
       userName,
     );
 
-    if (goodListings.length === 0) {
+    if (profileBidsLead.length === 0) {
       const noItemsDiv = document.createElement("div");
       noItemsDiv.className = "noItems container w-100 pt-3 ps-2";
       noItemsDiv.innerHTML = `<p>You have no bids in the lead.</p>`;
