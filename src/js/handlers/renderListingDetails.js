@@ -19,25 +19,22 @@ function getListingIdFromUrl() {
 
 /**
  * Renders the details of a specific listing and sets up functionality
- * for removing the post if the current user is the author.
+ * for placing a bid on the listing and for removing the listing.
  *
- * @returns {void}
+ * @returns {Promise<void>} - A promise that resolves when the listing details have been rendered
  *
  * @example
- * // Call 'renderPostDetails' to render details of a specific post:
- * await renderPostDetails();
+ * // Call 'renderListingDetails' to render details of a specific listing:
+ * await renderListingDetails();
  */
 export async function renderListingDetails() {
   const listingId = getListingIdFromUrl();
-  const userName = JSON.parse(localStorage.getItem("userName"));
 
   if (listingId) {
     const listing = await postMethods.getListing(listingId);
     const container = document.querySelector("#listingDetailsContainer");
     templates.renderListingDetailsTemplate(listing, container, listingId);
     handlers.setCreateBidFormListener();
-    if (userName === listing.seller.name) {
-      handlers.beAbleToDeleteListing(listing);
-    }
+    handlers.beAbleToDeleteListing(listing);
   }
 }

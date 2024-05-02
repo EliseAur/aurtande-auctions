@@ -45,26 +45,40 @@ export function search(query, listings) {
   }
 }
 
+/**
+ * Sets up search functionality by adding event listeners to the search input and form.
+ * Updates the display of search results based on user input.
+ *
+ * @param {Array<Object>} goodListings - An array of listings to search through.
+ */
 export function setupSearchFunctionality(goodListings) {
   const searchInput = document.querySelector("#search-input");
   const searchForm = document.querySelector("#search-form");
   const container = document.querySelector("#listingList");
-  // const sortDropdown = document.querySelector("#sort-listings");
-
-  // Call the sorting setup function
-  // handlers.setupSortDropdown(goodListings);
 
   let currentSearchResults = goodListings;
 
   searchInput.addEventListener("keyup", handleSearchInput);
   searchForm.addEventListener("submit", handleSearchSubmit);
 
+  /**
+   * Handles the input event on the search input field.
+   * Updates the display of search results based on the input value.
+   *
+   * @param {Event} event - The input event.
+   */
   function handleSearchInput(event) {
     const inputValue = event.currentTarget.value.trim().toLowerCase();
     currentSearchResults = handlers.search(inputValue, goodListings); // Update current search results
     applySortingAndDisplayResults(container);
   }
 
+  /**
+   * Handles the form submit event for the search form.
+   * Prevents the default form submission behavior and updates the search results based on the input value.
+   *
+   * @param {Event} event - The form submit event.
+   */
   function handleSearchSubmit(event) {
     event.preventDefault();
     const inputValue = searchInput.value.trim().toLowerCase();
@@ -72,27 +86,16 @@ export function setupSearchFunctionality(goodListings) {
     applySortingAndDisplayResults(container);
   }
 
+  /**
+   * Applies sorting options and displays the sorted results in the specified container.
+   *
+   * @param {Element} container - The container element where the sorted results will be displayed.
+   * @param {Array<Object>} currentSearchResults - The current search results to be sorted and displayed.
+   */
   function applySortingAndDisplayResults(container) {
-    //   const selectedOption = sortDropdown.value;
-    //   let sortedListings;
-
-    //   switch (selectedOption) {
-    //     case "popular":
-    //       sortedListings =
-    //         handlers.sortListingsByPopularity(currentSearchResults);
-    //       break;
-    //     case "ending":
-    //       sortedListings =
-    //         handlers.sortListingsByEndingSoon(currentSearchResults);
-    //       break;
-    //     case "finished":
-    //       sortedListings = handlers.sortListingsByFinished(currentSearchResults);
-    //       break;
-    //     case "default":
-    //     default:
-    //       sortedListings = currentSearchResults;
-    //   }
-
+    // Setup sorting dropdown for search results
+    handlers.setupSortDropdown(currentSearchResults);
+    // Update feed with sorted search results
     handlers.updateFeedWithSearchSortResults(currentSearchResults, container);
   }
 }

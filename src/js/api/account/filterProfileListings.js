@@ -1,6 +1,10 @@
 import * as listingMethods from "../listings/index.js";
 import * as profileMethods from "./index.js";
 
+/**
+ * Retrieves all listings and filters out bad listings.
+ * @returns {Promise<Array>} A promise that resolves to an array of good listings.
+ */
 async function getAllGoodListings() {
   try {
     const listings = await listingMethods.getListings();
@@ -11,11 +15,19 @@ async function getAllGoodListings() {
   }
 }
 
+/**
+ * Retrieves the username from local storage.
+ * @returns {string} The username retrieved from local storage.
+ */
 function getUserName() {
   const userName = JSON.parse(localStorage.getItem("userName"));
   return userName;
 }
 
+/**
+ * Filters listings where the user has placed the leading bid.
+ * @returns {Promise<Array>} A promise that resolves to an array of listings where the user has placed the leading bid.
+ */
 export async function filterProfileBidsLead() {
   const goodListings = await getAllGoodListings();
   const userName = getUserName();
@@ -36,6 +48,12 @@ export async function filterProfileBidsLead() {
   return filteredListingsLead;
 }
 
+/**
+ * Filters listings where the user has placed bids but not the leading bid.
+ * @param {Array} listings - The array of listings to filter.
+ * @param {string} userName - The username of the user.
+ * @returns {Array} An array of listings where the user has placed bids but not the leading bid.
+ */
 export async function filterProfileBidsNoLead(listings, userName) {
   const currentDateTime = new Date();
 
@@ -59,6 +77,10 @@ export async function filterProfileBidsNoLead(listings, userName) {
   return filteredListings;
 }
 
+/**
+ * Filters listings where the user has won.
+ * @returns {Promise<Array>} A promise that resolves to an array of listings that the user has won.
+ */
 export async function filterProfileWins() {
   const listings = await listingMethods.getListings();
   const profile = await profileMethods.getProfile();

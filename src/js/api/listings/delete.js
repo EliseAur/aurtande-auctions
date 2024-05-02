@@ -2,23 +2,17 @@ import { API_AUCTION_URL } from "../constants.js";
 import { authFetch } from "../authFetch.js";
 
 /**
- * Removes a post by sending a DELETE request to the server.
+ * Deletes a listing with the specified ID.
  *
- * @param {string} id - The ID of the post to be deleted.
- * @throws {Error} - Throws an error if the deletion fails or if the post ID is not provided.
+ * @param {string} id - The ID of the listing to be deleted.
+ * @returns {Promise<void|Object>} - A promise that resolves with no value if the deletion is successful,
+ *                                   or an object containing error information if the deletion fails.
+ *
+ * @throws {Error} Throws an error if the ID is not provided.
  *
  * @example
- * // Example usage: Deleting a post by its ID.
- * const postIdToDelete = "123456"; // Replace with the actual post ID
- *
- * try {
- *   const deletedPost = await removePost(postIdToDelete);
- *   console.log("Post deleted successfully:", deletedPost);
- * } catch (error) {
- *   console.error("Post deletion failed:", error.message);
- * }
- *
- * @returns {Promise<Object>} - A promise that resolves to the deleted post data.
+ * // Call 'deleteListing' to delete a listing with the specified ID:
+ * await deleteListing("listing_id");
  */
 export async function deleteListing(id) {
   const action = "/listings";

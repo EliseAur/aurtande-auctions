@@ -1,7 +1,7 @@
 import { logout } from "../api/auth/logout.js";
 
 /**
- * Sets up an event listener for the logout button.
+ * Sets up an event listener for the "sign out" button.
  * When the button is clicked, it prevents the default click behavior
  * and calls the logout function to clear the user's data from local storage
  * and log them out.

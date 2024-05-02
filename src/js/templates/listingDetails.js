@@ -1,5 +1,11 @@
 import * as listingUtils from "./listingUtils.js";
 
+/**
+ * Creates a template for displaying the details of a listing.
+ * @param {Object} listingData - The data of the listing.
+ * @param {string} listingId - The ID of the listing.
+ * @returns {HTMLElement} - The container element containing the listing details template.
+ */
 export function listingDetailsTemplate(listingData, listingId) {
   const listingDetailsContainerChild = document.createElement("div");
   // Title of listing
@@ -29,6 +35,7 @@ export function listingDetailsTemplate(listingData, listingId) {
     listingDetailsContainerChild,
   );
 
+  // Listing details
   listingUtils.createListingDetails(
     listingData,
     listingDetailsContainerChild,

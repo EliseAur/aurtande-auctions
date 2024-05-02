@@ -5,7 +5,9 @@ import * as templates from "../templates/index.js";
 /**
  * Renders listings in the feed when the user is not logged in or logged in, filtering and sorting as needed,
  * and sets up search and sort functionality.
- * @returns {void}
+ *
+ * @returns {Promise<Array<Object>>} - A promise that resolves with an array of good listings.
+ *
  * @example
  * // Call 'renderListings' to render listings in the feed for index.js or listings-member/index.js:
  * await renderListings();
