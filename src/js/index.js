@@ -70,7 +70,7 @@ function setupRoutingAndListeners() {
     case "/pages/account/edit/":
     case "/pages/account/edit/index.html":
     case "/aurtande-auctions/pages/account/edit/":
-    case "/aurtande-auctions/pages/account//edit/index.html":
+    case "/aurtande-auctions/pages/account/edit/index.html":
       listeners.setLogoutFormListener();
       listeners.setUpdateProfileFormListener();
       break;
