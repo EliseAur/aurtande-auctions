@@ -11,7 +11,7 @@ import * as profileMethods from "../api/account/index.js";
  */
 export async function setUpdateProfileFormListener() {
   const form = document.querySelector("#editProfile");
-  const button = document.querySelector("button");
+  const button = document.querySelector("form button");
 
   if (form && button) {
     //disable the form with the button before it is uploaded
