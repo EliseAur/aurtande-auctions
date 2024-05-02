@@ -1,3 +1,11 @@
+/**
+ * Creates a listing image element and appends it to the specified container.
+ * If the listing data contains media, it sets the image source and alt attributes
+ * accordingly. If no media is available, it sets a default image source.
+ * If the image fails to load, it sets an error image source.
+ * @param {Object} listingData - The listing data object containing media information.
+ * @param {HTMLElement} cardImage - The container element to which the image will be appended.
+ */
 export function createListingImage(listingData, cardImage) {
   // Listing image
   const listingImage = document.createElement("img");
@@ -34,6 +42,14 @@ export function createListingImage(listingData, cardImage) {
   cardImage.appendChild(listingImage);
 }
 
+/**
+ * Creates a listing title element with the specified class name and appends it to the given container.
+ * Sets the title text content to the title of the listing data.
+ * If the current page is a listing page or a listing member page, it sets a specific class for styling.
+ * @param {Object} listingData - The listing data object containing the title information.
+ * @param {HTMLElement} titleContainer - The container element to which the title will be appended.
+ * @param {string} className - The class name to be applied to the title element.
+ */
 export function createListingTitle(listingData, titleContainer, className) {
   const title = document.createElement(className);
   title.textContent = listingData.title;
@@ -49,18 +65,37 @@ export function createListingTitle(listingData, titleContainer, className) {
   titleContainer.appendChild(title);
 }
 
+/**
+ * Creates a listing description container with the description text content and appends it to the given container.
+ * @param {Object} listingData - The listing data object containing the description information.
+ * @param {HTMLElement} listingDetailsContainerChild - The container element to which the description container will be appended.
+ */
 export function createListingDescription(
   listingData,
   listingDetailsContainerChild,
 ) {
   const descriptionContainer = document.createElement("div");
   descriptionContainer.className = "descriptionContainer";
-  descriptionContainer.innerHTML = `
+
+  if (listingData.description) {
+    descriptionContainer.innerHTML = `
   <p class="mb-0 mt-2"><strong>Description:</strong></p>
   <p class="description">${listingData.description}</p>`;
+  } else {
+    descriptionContainer.innerHTML = `
+  <p class="mb-0 mt-2"><strong>Description:</strong></p>
+  <p class="description">No description provided.</p>`;
+  }
+
   listingDetailsContainerChild.appendChild(descriptionContainer);
 }
 
+/**
+ * Creates a listing tags table row element with the tags information and appends it to the given table body.
+ * If the listing has tags, it joins them into a string separated by commas; otherwise, it displays "No tags".
+ * @param {Object} listingData - The listing data object containing the tags information.
+ * @param {HTMLElement} tableBody - The table body element to which the tags row will be appended.
+ */
 export function createListingTags(listingData, tableBody) {
   const tableRowTags = document.createElement("tr");
   const tagsHtml =
@@ -71,16 +106,10 @@ export function createListingTags(listingData, tableBody) {
 }
 
 /**
- * Creates a "View more" button element for a listing on the homepage.
- * The button links to the detailed view of the post.
- *
- * @param {Object} listingData - The data of the listing.
- * @param {HTMLElement} buttonListing - The container to which the button is appended.
- *
- * @returns {void}
- *
- * @example
- * createVieWMoreButton(listingData, buttonDiv);
+ * Creates a "View more" button element for a listing with the appropriate link based on the current page.
+ * Appends the button to the specified container element.
+ * @param {Object} listingData - The listing data object containing the ID information.
+ * @param {HTMLElement} buttonListing - The container element to which the button will be appended.
  */
 export function createVieWMoreButton(listingData, buttonListing) {
   const viewMoreButton = document.createElement("a");
@@ -97,6 +126,13 @@ export function createVieWMoreButton(listingData, buttonListing) {
   buttonListing.appendChild(viewMoreButton);
 }
 
+/**
+ * Creates a container element for displaying the last bid information of a listing.
+ * Appends the container to the specified parent element.
+ * @param {Object} listingData - The listing data object containing the bids information.
+ * @param {HTMLElement} lastBidContainer - The parent element to which the last bid container will be appended.
+ * @param {string} className - The class name to be applied to the last bid element.
+ */
 export function createLastBid(listingData, lastBidContainer, className) {
   const lastBid = document.createElement(className);
   const lastBidIndex = listingData.bids[listingData.bids.length - 1];
@@ -128,6 +164,14 @@ export function createLastBid(listingData, lastBidContainer, className) {
   lastBidContainer.appendChild(lastBid);
 }
 
+/**
+ * Creates a container element for displaying the minimum next bid amount of a listing.
+ * Appends the container to the specified parent element.
+ * @param {Object} listingData - The listing data object containing the bids information.
+ * @param {HTMLElement} nextBidContainer - The parent element to which the next bid container will be appended.
+ * @param {string} className - The class name to be applied to the next bid element.
+ * @returns {number} - The minimum next bid amount.
+ */
 export function createNextBid(listingData, nextBidContainer, className) {
   const nextBid = document.createElement(className);
   const latestBidIndex = listingData.bids[listingData.bids.length - 1];
@@ -141,6 +185,14 @@ export function createNextBid(listingData, nextBidContainer, className) {
   return nextBidAmount;
 }
 
+/**
+ * Creates a container element for displaying the user's bid input field.
+ * Appends the container to the specified parent element.
+ * @param {HTMLElement} yourBidContainer - The parent element to which the user's bid container will be appended.
+ * @param {string} className - The class name to be applied to the user's bid element.
+ * @param {number} nextBidAmount - The minimum next bid amount.
+ * @param {Object} listingData - The listing data object containing the seller information.
+ */
 export function createYourBid(
   yourBidContainer,
   className,
@@ -192,6 +244,13 @@ export function createYourBid(
   yourBidContainer.appendChild(yourBid);
 }
 
+/**
+ * Creates a container element for displaying the time left until the end of the listing.
+ * Appends the container to the specified parent element.
+ * @param {Object} listingData - The listing data object containing the end date information.
+ * @param {HTMLElement} timeLeftContainer - The parent element to which the time left container will be appended.
+ * @param {string} className - The class name to be applied to the time left element.
+ */
 export function createTimeLeft(listingData, timeLeftContainer, className) {
   const timeLeft = document.createElement(className);
   const endDate = new Date(listingData.endsAt);
@@ -236,6 +295,13 @@ export function createTimeLeft(listingData, timeLeftContainer, className) {
   timeLeftContainer.appendChild(timeLeft);
 }
 
+/**
+ * Creates a media gallery with images from the provided listing data.
+ * If there are no images available, it will display a placeholder image.
+ * If an image fails to load, it will display an error image.
+ * @param {Object} listingData - The data of the listing containing media information.
+ * @param {HTMLElement} listingImagesContainer - The container element where the media gallery will be appended.
+ */
 export function createMediaGallery(listingData, listingImagesContainer) {
   const firstImageRow = document.createElement("div");
   firstImageRow.className = "row";
@@ -251,6 +317,7 @@ export function createMediaGallery(listingData, listingImagesContainer) {
   imgContainer4.className = "imageContainer p-1 col-4 ";
 
   const placeholderImageUrl = "../../images/no-image-available.jpeg";
+  const errorImageUrl = "../../images/error-loading-image.jpeg";
 
   const image1 = document.createElement("img");
   image1.className = "gallery-image-1 img-fluid p-1";
@@ -258,6 +325,9 @@ export function createMediaGallery(listingData, listingImagesContainer) {
   image1.alt = `${listingData.title}`;
   image1.dataset.bsToggle = "modal";
   image1.dataset.bsTarget = "#image-1";
+  image1.onerror = function () {
+    this.src = errorImageUrl;
+  };
 
   const image2 = document.createElement("img");
   image2.className = "gallery-image img-fluid";
@@ -265,6 +335,9 @@ export function createMediaGallery(listingData, listingImagesContainer) {
   image2.alt = `${listingData.title}`;
   image2.dataset.bsToggle = "modal";
   image2.dataset.bsTarget = "#image-2";
+  image2.onerror = function () {
+    this.src = errorImageUrl;
+  };
 
   const image3 = document.createElement("img");
   image3.className = "gallery-image img-fluid";
@@ -272,6 +345,9 @@ export function createMediaGallery(listingData, listingImagesContainer) {
   image3.alt = `${listingData.title}`;
   image3.dataset.bsToggle = "modal";
   image3.dataset.bsTarget = "#image-3";
+  image3.onerror = function () {
+    this.src = errorImageUrl;
+  };
 
   const image4 = document.createElement("img");
   image4.className = "gallery-image img-fluid";
@@ -279,6 +355,9 @@ export function createMediaGallery(listingData, listingImagesContainer) {
   image4.alt = `${listingData.title}`;
   image4.dataset.bsToggle = "modal";
   image4.dataset.bsTarget = "#image-4";
+  image4.onerror = function () {
+    this.src = errorImageUrl;
+  };
 
   firstImageRow.appendChild(image1);
   secondImageRow.appendChild(imgContainer2);
@@ -292,6 +371,12 @@ export function createMediaGallery(listingData, listingImagesContainer) {
   listingImagesContainer.appendChild(secondImageRow);
 }
 
+/**
+ * Creates a modal for displaying a gallery image.
+ * @param {Object} listingData - The data of the listing containing media information.
+ * @param {HTMLElement} listingDetailsContainerChild - The container element where the modal will be appended.
+ * @param {number} index - The index of the image in the media array.
+ */
 export function createModalForGallery(
   listingData,
   listingDetailsContainerChild,
@@ -335,6 +420,12 @@ export function createModalForGallery(
   listingDetailsContainerChild.appendChild(modal);
 }
 
+/**
+ * Creates either a bid submission button or login/register buttons based on user authentication status.
+ * @param {HTMLElement} makeABidForm - The form element where the button(s) will be appended.
+ * @param {string} listingSellerName - The name of the seller of the listing.
+ * @param {Object} listingData - The data of the listing.
+ */
 export function createSubmitOrLogin(
   makeABidForm,
   listingSellerName,
@@ -392,6 +483,12 @@ export function createSubmitOrLogin(
   }
 }
 
+/**
+ * Creates and appends the listing details, including bid details and bid submission form.
+ * @param {Object} listingData - The data of the listing.
+ * @param {HTMLElement} listingDetailsContainerChild - The container element where the listing details will be appended.
+ * @param {string} listingId - The ID of the listing.
+ */
 export function createListingDetails(
   listingData,
   listingDetailsContainerChild,
@@ -420,6 +517,11 @@ export function createListingDetails(
   listingDetailsContainerChild.appendChild(makeABidForm);
 }
 
+/**
+ * Creates and appends the latest bid table.
+ * @param {Object} listingData - The data of the listing.
+ * @param {HTMLElement} listingDetailsContainerChild - The container element where the latest bid table will be appended.
+ */
 export function createLatestBidTable(
   listingData,
   listingDetailsContainerChild,
@@ -480,6 +582,11 @@ export function createLatestBidTable(
   }
 }
 
+/**
+ * Creates and appends the seller information card.
+ * @param {Object} listingData - The data of the listing.
+ * @param {HTMLElement} listingDetailsContainerChild - The container element where the seller information card will be appended.
+ */
 export function createSellerInfoCard(
   listingData,
   listingDetailsContainerChild,

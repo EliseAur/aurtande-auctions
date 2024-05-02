@@ -7,6 +7,26 @@ import * as storage from "../../storage/index.js";
  * @returns {Promise<void>} A promise that resolves once the login process is complete.
  * @throws {Error} If there is an error during the login process.
  */
+
+/**
+ * Logs in the user with the provided profile data, authenticating against the server.
+ * Saves authentication token and user profile data to local storage upon successful login.
+ * Redirects to the member listings page upon successful login.
+ *
+ * @param {Object} profile - The user profile data including email and password for login.
+ * @returns {Promise<void>} A promise that resolves once the login process is complete.
+ * @throws {Error} If there is an error during the login process.
+ *
+ * @example
+ * // Define the profile data:
+ * const profile = {
+ *   email: "example@stud.noroff.no",
+ *   password: "password123"
+ * };
+ *
+ * // Call 'login' to authenticate the user with the provided profile:
+ * login(profile);
+ */
 export async function login(profile) {
   const action = "/auth/login";
   const method = "post";

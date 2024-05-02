@@ -1,8 +1,7 @@
 import * as listingUtils from "./listingUtils.js";
 
 /**
- * Creates a template for displaying listings on the home page when the user is not logged in/logged in, account, and listing details page.
- *
+ * Creates a template for displaying listings on the home page and account page.
  * @param {Object} listingData - The data of the listing.
  * @returns {HTMLDivElement} - The created listing template as a HTMLDivElement.
  */
@@ -47,35 +46,17 @@ export function listingTemplate(listingData) {
   cardTextList.appendChild(detailsListing);
   cardTextList.appendChild(buttonListing);
 
-  // Check if the listing is finished and hide the card if necessary
-  // const timeLeftContainers = detailsListing.querySelectorAll(".textTimeLeft");
-  // timeLeftContainers.forEach((timeLeftContainer) => {
-  //   if (timeLeftContainer.innerText === "Listing finished") {
-  //     listing.style.display = "none";
-  //   }
-  // });
-
   return listing;
 }
 
 /**
  * Renders multiple listing templates for a list of listing data and appends them to the specified parent element.
- *
  * @param {Array<Object>} listingDataList - The list of listing data to render.
  * @param {Element} parent - The parent element to which the post templates will be appended.
- *
  */
 export function renderListingTemplates(listingDataList, parent) {
   const listingElements = listingDataList.map((listingData) => {
     const listingElement = listingTemplate(listingData);
-
-    // Check if the listing is finished and hide the card if necessary
-    // const timeLeftContainers = detailsListing.querySelectorAll(".textTimeLeft");
-    // timeLeftContainers.forEach((timeLeftContainer) => {
-    //   if (timeLeftContainer.innerText === "Listing finished") {
-    //     listing.style.display = "none";
-    //   }
-    // });
 
     return listingElement;
   });

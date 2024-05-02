@@ -2,33 +2,20 @@ import * as templates from "../templates/index.js";
 import { getProfile } from "../api/account/profile.js";
 
 /**
- * Renders the profile details in the specified container on the profile page.
- * If the profile exists, the profile template is added to the container.
- * If the profile data is not found, an error message is logged.
+ * Renders the profile details for the current user.
  *
- * @returns {void}
- *
- * @example
- * // Call 'renderProfileDetails' to render the profile details:
- * await renderProfileDetails();
+ * @returns {Promise<void>} - A promise that resolves when the profile details have been rendered.
  */
-// export async function renderProfileDetails() {
-//   const profile = await getProfile();
-
-//   if (profile) {
-//     const container = document.querySelector("#profileDetailsContainer");
-//     templates.renderProfileTemplate(profile, container);
-//   } else {
-//     console.error("Profile data not found");
-//   }
-// }
-
 export async function renderProfileDetails() {
-  const profile = await getProfile();
+  try {
+    const profile = await getProfile();
 
-  if (profile) {
-    templates.renderProfileTemplate(profile);
-  } else {
-    console.error("Profile data not found");
+    if (profile) {
+      templates.renderProfileTemplate(profile);
+    } else {
+      console.error("Profile data not found");
+    }
+  } catch (error) {
+    console.error("Error rendering profile details:", error);
   }
 }

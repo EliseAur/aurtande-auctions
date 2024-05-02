@@ -2,6 +2,12 @@ import * as listingMethods from "../api/listings/index.js";
 import * as profileMethods from "../api/account/index.js";
 import * as templates from "../templates/index.js";
 
+/**
+ * Renders the listings associated with the user's profile.
+ * Displays the listings created by the user.
+ *
+ * @returns {Promise<Array<Object>>} - A promise that resolves to an array of the user's listings.
+ */
 export async function renderProfileListings() {
   const container = document.querySelector("#myListingsContainer");
   container.innerHTML = "";
@@ -33,6 +39,11 @@ export async function renderProfileListings() {
   }
 }
 
+/**
+ * Renders the listings where the user's bids are leading.
+ *
+ * @returns {Promise<Array<Object>>} - A promise that resolves to an array of listings where the user's bids are leading.
+ */
 export async function renderProfileBidsLead() {
   const container = document.querySelector("#myBidsContainer");
   container.innerHTML = "";
@@ -69,6 +80,11 @@ export async function renderProfileBidsLead() {
   }
 }
 
+/**
+ * Renders the listings where the user's bids are not leading.
+ *
+ * @returns {Promise<Array<Object>>} - A promise that resolves to an array of listings where the user's bids are not leading.
+ */
 export async function renderProfileBidsNoLead() {
   const container = document.querySelector("#myBidsContainerNoLead");
   container.innerHTML = "";
@@ -105,6 +121,11 @@ export async function renderProfileBidsNoLead() {
   }
 }
 
+/**
+ * Renders the listings where the user has won the bids.
+ *
+ * @returns {Promise<Array<Object>>} - A promise that resolves to an array of listings where the user has won the bids.
+ */
 export async function renderProfileWins() {
   const container = document.querySelector("#myWinsContainer");
   container.innerHTML = "";
@@ -133,6 +154,11 @@ export async function renderProfileWins() {
   }
 }
 
+/**
+ * Renders all the listings associated with the user's profile, including their own listings, bids where they are leading, bids where they are not leading, and wins.
+ *
+ * @returns {Promise<void>} - A promise that resolves when all listings associated with the user's profile have been rendered.
+ */
 export async function renderAllProfileListings() {
   await renderProfileListings();
   await renderProfileBidsLead();

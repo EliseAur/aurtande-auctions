@@ -2,7 +2,7 @@ import { API_AUCTION_URL } from "../constants.js";
 import { authFetch } from "../authFetch.js";
 
 /**
- * Creates a bid on a specific listing.
+ * Creates/place a bid on a specific listing.
  * @param {string} listingId - The ID of the listing to bid on.
  * @param {number} amount - The amount of the bid.
  * @returns {Promise<Object>} A Promise that resolves with the created bid object.
@@ -23,6 +23,6 @@ export async function createBidOnListing(listingId, amount) {
     return await createdBid.json();
   } catch (error) {
     console.error("Error response from server:", error.response);
-    throw new Error("Failed to make a bid in the listing");
+    throw new Error("Failed to place a bid in the listing");
   }
 }
