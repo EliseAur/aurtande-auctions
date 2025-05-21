@@ -44,7 +44,7 @@ Anyone with a stud.noroff.no email address can register and test the website.
 1. Clone the repo:
 
 ```bash
-git clone git@github.com:EliseAur/aurtande-auctions.git
+git clone https://EliseAur/aurtande-auctions.git
 ```
 
 2. Install the dependencies:
@@ -67,7 +67,7 @@ npm run dev
 ```
 ### Live Demo
 
-- **Link:** https://eliseaur.github.io/aurtande-auctions/
+**Link:** https://eliseaur.github.io/aurtande-auctions/
 
 **Note:**  
 To test all features, register with a `stud.noroff.no` email address.
