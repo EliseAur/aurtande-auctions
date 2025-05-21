@@ -44,7 +44,7 @@ Anyone with a stud.noroff.no email address can register and test the website.
 1. Clone the repo:
 
 ```bash
-git clone https://EliseAur/aurtande-auctions.git
+git clone https://github.com/EliseAur/aurtande-auctions.git
 ```
 
 2. Install the dependencies:
