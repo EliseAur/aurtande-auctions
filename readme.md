@@ -2,16 +2,17 @@
 
 ![Social media site - Stronger together](images/readme-img-small.jpg)
 
-## Description:
+## Description
 
-This is the Semester Project 2 - Create an Auction website using an API powered by Noroff.
+Aurtande Auctions is a full-featured auction website built as part of the Noroff Semester Project 2. The goal was to create a modern, responsive web application where users can register, log in, and participate in online auctions. 
 
-### Live Demo:
+Registered users can create their own auction listings, upload images, set deadlines, and provide detailed descriptions for their items. Users can also place bids on other users’ listings, view the bidding history, and manage their own listings by updating or deleting them as needed. 
 
-- **Link:** https://eliseaur.github.io/aurtande-auctions/
+The platform is designed to be responsive, user-friendly and accessible, allowing unregistered users to browse and search through available listings. The application integrates with the Noroff Auction API to handle user authentication, listing management, and bidding functionality. 
 
-### Elements that had to be implemented in the project:
+Anyone with a stud.noroff.no email address can register and test the website.
 
+### List of features
 - A user with a stud.noroff.no email may register
 - A registered user may login
 - A registered user may logout
@@ -21,57 +22,57 @@ This is the Semester Project 2 - Create an Auction website using an API powered 
 - A registered user may add a Bid to another user’s Listing
 - A registered user may view Bids made on a Listing
 - An unregistered user may search through Listings
-
-I also made functionalities like:
-
 - A registered user may update their listing
 - A registered user may delete their listing
+- A registered user may view their own Listings
+- A registered user may view their own Bids
+- A registered user may view their winning Bids
 
-### Built With:
 
-- HTML
-- CSS
-- Vanilla JavaScript
-- SASS
-- Bootstrap
+## Built With
 
-## Installation:
+- [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML)
+- [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS)
+- [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+- [Sass](https://sass-lang.com/)
+- [Bootstrap](https://getbootstrap.com/)
 
-To install the project, clone the repository from GitHub:
+## Getting Started
+
+### Installing
+
+1. Clone the repo:
 
 ```bash
-git clone https://github.com/EliseAur/aurtande-auctions.git
-cd aurtande-auctions
+git clone git@github.com:EliseAur/aurtande-auctions.git
 ```
 
-Then install the dependencies:
+2. Install the dependencies:
 
-```bash
+```
 npm install
 ```
 
-## Usage:
+### Running
 
-To build the project and start the development server, run:
+To run the app and start the development server run the following commands:
+
+```bash
+npm start
+```
+Or
 
 ```bash
 npm run dev
 ```
+### Live Demo
 
-This will compile the Sass files, start a development server, and watch for changes.
+- **Link:** https://eliseaur.github.io/aurtande-auctions/
 
-## Scripts:
+**Note:**  
+To test all features, register with a `stud.noroff.no` email address.
 
-- **npm run build:** Compiles Sass files to CSS.
-- **npm run watch:** Watches for changes in Sass files and compiles them to CSS.
-- **npm start:** Starts a development server.
-- **npm run dev:** Runs watch and start scripts in parallel.
-- **npm run format:** Formats JavaScript files using Prettier.
-- **npm run lint:** Lints JavaScript files using ESLint.
-- **npm run lint-fix:** Fixes linting issues in JavaScript files.
-- **npm run prepare:** Installs Husky hooks.
-
-## How to contribute:
+## Contributing
 
 1. **Fork the repo:** Click on the "Fork" button and clone your fork locally.
 2. **Create a branch:** Create a new branch. If you are fixing a bug, name your branch 'fix/the-issue', if you are adding a new feature, use 'feature/feature-name'.
@@ -85,16 +86,13 @@ This will compile the Sass files, start a development server, and watch for chan
 5. **Push to your fork:** Push changes to your fork on github.
 6. **Open a Pull Request:** Open a pull request from your fork to the 'js-functionality' branch of the main repository. Provide a detailed description of your changes.
 
-## License:
+
+## Contact
+
+Feel free to contact me if you have any questions or feedback about the project:
+[My Linkedin](https://www.linkedin.com/in/elise-aurtande/)
+
+## License
 
 This project is licensed under the ISC License. See the LICENSE file for details.
 
-## Author:
-
-- Elise Aurtande
-
-## Contact:
-
-Feel free to contact me if you have any questions or feedback about the project.
-
-- **GitHub:** www.github.com/EliseAur
